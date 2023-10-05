@@ -2,26 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  html {
+    @apply dark:bg-slate-800;
   }
+
+  body {
+    @apply grid gap-y-2 lg:container dark:bg-slate-950 lg:mx-auto  
+      grid-cols-[60px_1fr_48px_48px_48px]
+      lg:grid-cols-[280px_1fr_60px_60px_60px] 
+      /* grid-template-columns: 280px 1fr 1fr; */
+      grid-rows-[min-content_1fr_min-content] ;
+      min-height: 100vh;
+      
+  }
+
+  aside,
+  header {
+    @apply bg1;
+  }
+
+  aside {
+    @apply col-span-1 row-start-2 me-4 hidden flex-col lg:flex;
+  }
+
+  main {
+    @apply col-span-5 row-start-2 h-screen rounded p-2 text-black  dark:bg-slate-900 dark:text-slate-100 lg:col-span-4 lg:col-start-2 ;
+  }
+
+  footer {
+    @apply col-span-5 row-start-3  center   border-t-2 border-slate-500/50 my-4
+    
+    p-4 text-center text-sm font-light text-slate-600 dark:text-slate-600 dark:border-slate-500/10 ;
+  }
+
+  header {
+    @apply flex  col-span-5 col-start-1 row-start-1 sm:justify-between text-xl  ;
+  }
+
+  hr {
+    @apply my-2 bg-slate-500 opacity-25;
+  }
+ 
+   input[type="password"],[type="text"],[type="email"]{
+    @apply bg-gray-50 border-2 border-primary text-gray-900 text-sm rounded-lg focus:ring-primary  outline-none
+    focus:border-blue-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
+     dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500  
+  }
+   
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .icon {
+    @apply h-10 w-10 rounded-full p-2 text-slate-100 hover:bg-gray-100/25 hover:text-slate-400 mt-2;
+    cursor: pointer;
+ 
+  }
+  .bg1 {
+    @apply flex bg-primary_bg p-1 text-slate-100 dark:bg-primary_bg_dark select-none
+  }
+  .center {
+    @apply flex content-center items-center justify-center;
+  }
+  .z_mode{
+    @apply fixed left-0 top-0 z-20 h-full  w-full bg-black/75
+  }
 }

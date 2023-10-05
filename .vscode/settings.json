@@ -1,0 +1,14 @@
+{
+  "cSpell.words": ["Clise", "tailwindcss"],
+  "css.lint.unknownAtRules": "ignore",
+  "editor.formatOnSave": false,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  } ,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  }
+}
