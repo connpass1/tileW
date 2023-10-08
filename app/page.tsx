@@ -4,7 +4,7 @@ export default function Home() {
  
 
   return <Template>
-  <button    >
+  <button>
   <FaSpinner className="animate-spin h-5 w-5 mr-3 "  />
 
   Processing...

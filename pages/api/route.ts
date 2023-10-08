@@ -3,7 +3,7 @@ let promise = new Promise((resolve, reject) => {
 
   setTimeout(() => {
     // переведёт промис в состояние fulfilled с результатом "result"
-    resolve({ ups:"result"});
+    resolve({ ups:"result",time: Date.now()});
   }, 1000);
 
 })

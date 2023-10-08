@@ -5,6 +5,8 @@ export default function Page() {
   const router = useRouter()
   const segment = useSelectedLayoutSegment()
  
+ 
+ 
   return (
       <>
           <p>Active segment: {segment}</p>
@@ -12,7 +14,7 @@ export default function Page() {
       type="button"
       onClick={() => router.push('/', { scroll: false })}
     >
-      Dashboard
+     push /
     </button>
     </>
   )
