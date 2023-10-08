@@ -11,7 +11,7 @@ export default async function Page({ params }: { params: { col: string ,uid: str
  if(!data ) notFound();
   return  <>  {JSON.stringify(data)}</>
  
-  }
+}
   
   
  

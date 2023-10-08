@@ -11,7 +11,8 @@ export interface IItem {
     images: string[]  | undefined;
     price:number | undefined;
     created:any;
-    updated:any
+    updated: any;
+   
  }
  export class Item implements IItem{
      title="";

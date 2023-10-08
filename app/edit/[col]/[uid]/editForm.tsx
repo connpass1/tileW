@@ -11,7 +11,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaSpinner } from "react-icons/fa6";
 
-export default function editForm( initData:IItem  ) {
+export default function editForm( initData:Item  ) {
   const {
     register,
     handleSubmit,
@@ -22,8 +22,7 @@ export default function editForm( initData:IItem  ) {
   const [loading,setLoading] = useState  (false );
   
   const onSubmit = (data: Item) => {
-    console.log(data);
-    
+    console.log(data); 
     setLoading(true)
     
     if (data.created === null) data.created = serverTimestamp();

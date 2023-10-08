@@ -11,8 +11,8 @@ export default async function products( req: NextApiRequest,
   const querySnapshot = await getDocs(collection(firestore, col as string));
  
   const items: DocumentData[] = [];
-  querySnapshot.forEach(document => {
-      items.push(document.data())
+  querySnapshot.forEach(document => {document.id
+      items.push({ ...document.data(),uid:document.id  })
   }) 
       return res.status(200).json(items)
     
