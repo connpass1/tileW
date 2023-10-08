@@ -1,10 +1,12 @@
-import { firestore} from "@/app/db/firebaseAuth";
-import { doc, getDoc  } from "firebase/firestore";
+import { firestore } from "@/app/db/firebaseAuth";
+import { doc, getDoc } from "firebase/firestore/lite";
+ 
  
  
 async function getData() {
-  
-    const docRef = doc(firestore, "items", "hhhhh");
+   
+ 
+    const docRef = doc(firestore, "items/hhhhh");
     const docSnap = await getDoc(docRef);
     
     if (docSnap.exists()) {
