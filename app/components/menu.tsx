@@ -4,7 +4,7 @@ export default function Menu() {
   return    <ul className="p-2 text-sm text-slate-200    mb-2 divide-y divide-slate-500/25  [&>*]:p-2  
     [&>*]:flex [&>*]:w-full">
     {[1, 2, 3, 4, ].map((v) =>  <Link key={v} href="/">  <li key={v}> {v}</li> </Link>)}
-      <Link href="/items/slug" ><li> /items/slug</li></Link> 
+    
      <Link href="/login" > <li> login</li></Link>  
      <Link  href="/test/client" ><li>/test/client</li></Link>
       <Link href="/test/slug" ><li>/test/[slug]</li></Link>
@@ -12,9 +12,9 @@ export default function Menu() {
      <Link  href="/test/tilewind" ><li>/test/tilewind</li></Link> 
      <Link  href="/items/items" ><li> items</li></Link>
      <Link  href="/items/items/test" ><li> /items/test</li></Link>
-     <Link  href="/api/items/test" ><li>/api/items/test</li></Link>
+     <Link  href="/api/test/test/test" ><li>/api/test/test/test</li></Link>
      <Link  href="/edit/items/test" ><li>/edit/items/test</li></Link>
     <Link href="/edit/items" ><li>/edit/itemst</li></Link>
-    <Link  href="/ups/items" ><li>/ups/itemst</li></Link>
+    
  </ul> 
 }

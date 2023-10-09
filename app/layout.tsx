@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
+import dynamic from 'next/dynamic';
 import { Inter, Roboto } from "next/font/google";
 import Link from "next/link";
 import { BiHome } from "react-icons/bi";
 import Drawer from "./components/drawer";
-import Menu from "./components/menu"; 
+import Menu from "./components/menu";
 import Search from "./components/search";
-import dynamic from 'next/dynamic'
+import "./globals.css";
  
 const ThemeHandler = dynamic(() => import('./components/themeHandler') )
-import "./globals.css";
 
 const roboto = Roboto({
   weight: "300",
@@ -27,8 +27,7 @@ export default function RootLayout({ children,}: {children: React.ReactNode;}) {
    
   return (
     <html lang="ru" className="dark">
-      <body className={inter.className}>
-       
+      <body className={inter.className}> 
         <header> 
          <Drawer/>
           <Link className="hidden lg:block"
@@ -37,8 +36,7 @@ export default function RootLayout({ children,}: {children: React.ReactNode;}) {
             <BiHome className="icon"/>
           </Link>  
         </header> 
-        <ThemeHandler />
-         
+        <ThemeHandler /> 
         <Search/>
         {children}  
         <aside className={roboto.className}>

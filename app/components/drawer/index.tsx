@@ -1,20 +1,14 @@
 import { BiMenu, BiX } from "react-icons/bi";
 import Menu from "../menu";
+import Checkbox from "./checkbox";
 
 export default function Drawer() {
-  return (
-    
+  return (  
       <div className="flex lg:hidden justify-self-start">
          <label htmlFor="drawer-toggle">
               <BiMenu  className='icon'/>
             </label>
-
-        <input
-          type="checkbox"
-          id="drawer-toggle"
-          className="peer sr-only collapse relative"
-          defaultChecked={false}
-        />
+        <Checkbox/> 
         <div
           className="duration-800 z_mode  -translate-x-full transform 
         bg-black/80   transition-all peer-checked:translate-x-0"
@@ -23,11 +17,9 @@ export default function Drawer() {
             <label htmlFor="drawer-toggle" className="border-solid border-b-gray-500/25 border-b flex justify-end p-1">
               <BiX className='icon'/>
             </label>
-          <Menu/> 
-           
+          <Menu/>     
           </div>
         </div>
       </div>
-    
   );
 }

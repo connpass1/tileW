@@ -10,7 +10,7 @@ async function getData(col: string  ) {
  
 export default async function Page({ params }: { params: { col: string  } }) {
   const data = await getData( params.col  )
-  if (!data) notFound();
+  if (!Array.isArray(data)) notFound();
   
   const items = data as Item []
   return<>   <ul>  {items.map(it => <li key={it.uid}><Link href={`/items/items/${it.uid}`}>{it.title}</Link> </li>)}  </ul></>
