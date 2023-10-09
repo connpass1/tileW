@@ -14,6 +14,7 @@ export default function Menu() {
      <Link  href="/items/items/test" ><li> /items/test</li></Link>
      <Link  href="/api/items/test" ><li>/api/items/test</li></Link>
      <Link  href="/edit/items/test" ><li>/edit/items/test</li></Link>
-     <Link  href="/edit/items" ><li>/edit/itemst</li></Link>
+    <Link href="/edit/items" ><li>/edit/itemst</li></Link>
+    <Link  href="/ups/items" ><li>/ups/itemst</li></Link>
  </ul> 
 }

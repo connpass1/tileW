@@ -7,7 +7,7 @@ import AditForm from './editForm';
 async function getData(col: string, uid: string) {
   
    
-  const docRef = doc(firestore, `${col}/ ${uid}`);
+  const docRef = doc(firestore, `${col}/${uid}`);
   const docSnap = await getDoc(docRef);
   if (docSnap.exists()) return new Item( docSnap.data()  as IItem )
 
