@@ -3,21 +3,23 @@
  
 import { firestore } from "@/app/db/firebaseAuth";
 import { maxMessage, minMessage, requiredMessage } from "@/utils/messages";
-import { IItem, Item } from "@/utils/models/item";
+import { Item } from "@/utils/models/item";
 import styles from "@/utils/styles/form.module.css";
 import { labelStyle } from "@/utils/styles/style";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore/lite";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { BiCloudUpload } from "react-icons/bi";
 import { FaSpinner } from "react-icons/fa6";
-
 export default function editForm( initData:Item  ) {
+
+ 
   const {
     register,
-    handleSubmit,
+    handleSubmit,reset,
     setError,clearErrors,
     formState: { errors },
-  } = useForm ({  defaultValues: new Item(initData)}); 
+  } = useForm ({  defaultValues:  initData }); 
  
   const [loading,setLoading] = useState  (false );
   
@@ -27,7 +29,7 @@ export default function editForm( initData:Item  ) {
     
     if (data.created === null) data.created = serverTimestamp();
     else data.updated = serverTimestamp();
-   // const docRef = doc(firestore, `items/ ${initData.uid}`);
+  
    const docRef = doc(firestore, "items", initData.uid);
    setDoc(docRef, { ...data })  
   .then((snap) => { 
@@ -38,46 +40,53 @@ export default function editForm( initData:Item  ) {
      }
     ) 
   }; 
-
+  const onReset  = ( ) => { reset( initData)  }
+  const handleFile= ( ) => {    }
+ 
   const dis = Object.keys(errors).length>0;
   return (
 
-    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-      <p className={styles.err}> {JSON.stringify(initData)} </p>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      
       <label   className={labelStyle(errors?.price ) }>price </label>
-      <input  type="number" className="input "
-        {...register("price", { min: 0 })} 
-      />
+      <input  type="number" className="input"  {...register("price", { min: 0 })} /> 
+      <label   className={labelStyle(errors?.quantity ) }>quantity </label>
+      <input  type="number" className="input"  {...register("quantity", { min: 0 })} />
+      <label   className={labelStyle(errors?.quantity ) }>quantity </label>
+      <input  type="number" className="input"  {...register("rate", { min: 0 })} />
+
+
+      
       <label   className={labelStyle(errors?.title ) }>title </label>
-      <input
-        type="text"
-       
-        {...register("title", {
-          required: true,
-         
-        })}
-      />
-      <label   className={labelStyle(errors?.title ) }>
-description
-      </label>
+      <input type="text"  {...register("title", {  required: true, })}  /> 
+      <label   className={labelStyle(errors?.title ) }>description </label> 
       <textarea
-       className="input invalid:bg-error"
-        
+       className="input invalid:bg-error" 
         {...register("description", {
           required: true,
           maxLength: 55,
           minLength: 5,
         })}
       />
-
+<div  className="flex items-center justify-center w-full  col-span-2">
+    <label htmlFor="dropzone-file"  className="center flex-col   w-full h-48 border-2
+     border-gray-300 border-solid rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 
+     hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+        <div  className="flex flex-col items-center justify-center pt-3 pb-3 text-gray-500 dark:text-gray-400">
+        <BiCloudUpload className="w-8 h-8"/>
+            <p  className="mb-2 text-sm  "><span  className="font-semibold">Click to upload</span> or drag and drop</p>
+            <p  className="text-xs   ">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+        </div>
+        <input id="dropzone-file" type="file"  className="hidden" onChange={handleFile}/>
+    </label>
+    </div>
 {dis && <p  className={styles.err}>
         {(errors?.title?.type === "required") ? requiredMessage("title") : 
         (errors?.description?.type === "required") ?  requiredMessage("description") :
         (errors?.description?.type === "maxLength") ?  maxMessage("description",55) :
         (errors?.description?.type === "minLength") ?  minMessage("description",5) :  
         (errors?.uid) ?  errors?.uid.message :  
-        (errors?.price) ?   "цена нее корректна" : ""
-        
+        (errors?.price) ?   "цена нее корректна" : "" 
         }  
      </p>
       }
@@ -91,11 +100,9 @@ description
       <button type="button" onClick={()=>{ setError('uid', { type: 'custom', message: 'custom message' }); }}  className={styles.but}> 
        test
       </button> 
-      <button type="button" onClick={()=>{     clearErrors('uid') }}  className={styles.but}> 
-        clearErrors
-      </button>
-      <button type="reset" onClick={()=>{     clearErrors('uid') }}  className={styles.but}> 
-        clearErrors
+      
+      <button type="button" onClick={ onReset }  className={styles.host}> 
+        отмена
       </button>
     </form>
   );

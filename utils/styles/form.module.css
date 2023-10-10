@@ -13,4 +13,4 @@
 
 }
  
-.err{ @apply col-span-2  text-error     p-2 text-base/loose italic} 
+.err{ @apply col-span-2  text-error  bg-black/30  px-4  py-2 rounded-lg text-base/loose italic} 

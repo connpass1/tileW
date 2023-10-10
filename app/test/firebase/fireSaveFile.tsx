@@ -14,6 +14,7 @@ export default function FireSaveFile() {
     if (file) {  
     console.log(file.name, "   -", file.size, "   -", file.type);
     const storageRef = ref(storage, "test.jpg");
+    
     uploadBytes(storageRef, file).then((snapshot) => {
       console.log('Uploaded a blob or file!');
       setState("Uploaded a blob or file!")

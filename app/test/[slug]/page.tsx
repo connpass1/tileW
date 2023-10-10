@@ -1,11 +1,10 @@
 "use client";
  
 import React from "react";
-import { usePathname, useRouter } from 'next/navigation';
 export default function Page({ params }: { params: { slug: string } }) {
   const [data, setData] = React.useState({time:100});
   React.useEffect(() => {
-      fetch('http://localhost:3000/api/hello', {
+    fetch(`#${process.env.NEXT_PUBLIC_API_URL}`  , {
       next: { revalidate: 60 }
     }
       ).then((res) => {
@@ -16,7 +15,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   }, [params]);
 
   return (
-    <div>{params.slug}{ data?.time }</div>
+    <div>slug -{params.slug}- {process.env.NEXT_PUBLIC_API_URL} - { data?.time } </div>
   );
 }
 

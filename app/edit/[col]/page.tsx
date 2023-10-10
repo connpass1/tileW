@@ -12,7 +12,10 @@ export default async function EditItems({ params }: { params: { col: string  } }
   const data = await getData( params.col  )
  if(!data ) notFound();
  const items = data as Item []
- return <ul><li><AddForm/></li>  {items.map(it => <li key={it.uid}><Link href={`/edit/items/${it.uid}`}> {JSON.stringify(it )}</Link> </li>)}  </ul>
+ return <ul><li><AddForm/></li>  {items.map(it => <li key={it.uid}>
+  <Link href={`/edit/items/${it.uid}`}> 
+ <pre>{JSON.stringify(it )} </pre></Link>
+  </li>)}  </ul>
   
   }
 

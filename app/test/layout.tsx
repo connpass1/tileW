@@ -9,17 +9,16 @@ export default function Layout({ children,}: {children: React.ReactNode;}) {
  
   <p>test</p>
     
-    <ul className="text-lime-800 list-disc">
+    <ul className="text-lime-800  p-8 text-lg">
 <Link href="/test/loading"><li>loading</li></Link>
 <Link href="/test/ssr"><li>ssr</li></Link>
 <Link href="/test/tilewind"><li>tilewind</li></Link>
 <Link href="/test/client"><li>client</li></Link>
-          <Link href="/test/slug1"><li>slug1</li></Link>
+           
           <Link href="/test/firebase"><li>firebase</li></Link>  
-          <Link  href="/api/items" ><li>/api/items</li></Link>
-     <Link  href="/api/items/test" ><li>/api/items/test</li></Link>
- <Link  href="/api/hello" ><li>api hello1</li></Link> <Link  href="/api/route" ><li>api route1</li></Link>  <Link  href="/api/hello1" ><li>api hello1</li></Link>
-       
+          <Link href="/test/firebase/upload"><li>/test/upload</li></Link>
+     <Link  href="/api" ><li> api  test</li></Link>
+  
     </ul>
 {children}
  
