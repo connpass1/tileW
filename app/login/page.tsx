@@ -2,12 +2,13 @@
  
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { FaSpinner } from "react-icons/fa6";
 import { signIn } from "../db/firebaseAuth";
  
-import { maxMessage, minMessage, requiredMessage } from "@/utils/messages";
+ 
+import { minLength } from "@/utils/messages";
 import styles from "@/utils/styles/form.module.css";
 import { labelStyle } from "@/utils/styles/style";
+import ErrorMessage from "../components/elements/errorMessage";
   interface IFormInput {
     email: string;
     password: string;
@@ -53,27 +54,20 @@ import { labelStyle } from "@/utils/styles/style";
       </div>
         <label  htmlFor="email"  className={labelStyle(errors?.email)}>email</label>
         <input type="text" id="email"
-          {...register("email", {
-            required: true, 
-            pattern:/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        {...register("email", { 
+          ...minLength("email",5),
+          pattern: {
+            val: /^ [^\s@]+@[^\s@]+\.[^\s@]+$/,
+            message:"не валидный email"
+          },
+        
           })}
         /> 
       
         <label  htmlFor="password" className={labelStyle(errors?.password) }>password</label>
-      <input type="text" id="password"{...register("password", { required: true, maxLength: 30,minLength:5})} />
+      <input type="text" id="password"{...register("password",   minLength("password",5) )} />
       
-      {disabled && <div className={styles.err}>
-        {(errors?.email?.type === "required") ? requiredMessage("email") :
-        (errors?.email?.type === "pattern") ? "email не валидный" :
-        (errors?.password?.type === "required") ? requiredMessage("пароль") :
-        (errors?.password?.type === "maxLength") ?  maxMessage("пароль",30) :
-        (errors?.password?.type === "minLength") ?  minMessage("пароль",5) : "?"
-        } 
-      </div>} 
-      {error &&<div className={styles.err}>{JSON.stringify(error)}</div>}
-      <button type="submit" disabled={disabled} className={styles.but}  >
-        {loading && <FaSpinner className="animate-spin h-5 w-5 mr-3" />}
-        применить</button> 
+      <ErrorMessage errors={errors} loading={loading}/>
         <button type="reset" className={styles.host} >отмена</button> 
       </form>
     

@@ -1,6 +1,8 @@
 import { Item } from '@/utils/models/item';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import React from 'react';
 import AddForm from '../../edit/[col]/addForm';
 async function getData(col: string  ) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${col}`,  { cache: 'no-store' }  ) 
@@ -12,12 +14,16 @@ export default async function EditItems({ params }: { params: { col: string  } }
   const data = await getData( params.col  )
  if(!data ) notFound();
  const items = data as Item []
- return <ul><li><AddForm/></li>  {items.map(it => <li key={it.uid}>
-  <Link href={`/edit/items/${it.uid}`}> 
- <pre>{JSON.stringify(it )} </pre></Link>
-  </li>)}  </ul>
-  
-  }
+ return <div className='grid grid-cols-2'> {items.map(it => <React.Fragment key={it.uid}>
+   {it.preview ? <Image src={it.preview} alt={it.title} /> : "?"}
+
+   <Link href={`/edit/items/${it.uid}`}>   {it.title}   </Link>
+
+ </React.Fragment> 
+) }
+     <AddForm/> 
+   </div >
+}
 
    
 

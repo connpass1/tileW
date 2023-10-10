@@ -16,9 +16,9 @@ export default function Uploader() {
 
   const handleSave = () => {
     const storageRef = ref(storage, "test.jpg");
-    uploadString(storageRef, file, 'base64').then((snapshot) => {
+    uploadString(storageRef, file, 'data_url').then((snapshot) => {
       snapshot.ref.fullPath
-      console.log('snapshot.ref.fullPath');
+      console.log( snapshot.ref.fullPath );
     }); 
 }
 
