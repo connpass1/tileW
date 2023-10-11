@@ -1,6 +1,6 @@
 
-import BackButton from "./backButton";
 import { Metadata } from "next";
+import BackButton from "./backButton";
 
  
 export const metadata: Metadata = {
@@ -10,9 +10,7 @@ export const metadata: Metadata = {
 export default function Layout({ children,}: {children: React.ReactNode;}) {
   return <main className="z_mode center justify-center">
    <div className="bg1 rounded   grid grid-cols-1 gap-3 p-3 pt-0">
-   {children}
-      
-   
+   {children} 
     <BackButton/>
     </div> </main> 
 }

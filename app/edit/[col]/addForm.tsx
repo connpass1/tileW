@@ -1,5 +1,6 @@
 "use client";
 import ErrorMessage from "@/app/components/elements/errorMessage";
+import Label from "@/app/components/elements/label";
 import { maxLength, minLength } from "@/utils/messages";
 import styles from "@/utils/styles/form.module.css";
 import { usePathname, useRouter } from "next/navigation";
@@ -24,9 +25,7 @@ export default function AddForm(  ) {
   const dis = errors?.path?.type !== undefined;
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-      <label >
-        path
-      </label>
+      <Label  htmlFor=" path"/> 
       <input
         type="text" 
         {...register("path", {

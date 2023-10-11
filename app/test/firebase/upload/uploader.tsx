@@ -1,14 +1,11 @@
 "use client";
-import { BiCloudUpload } from "react-icons/bi";
-
-import { useState } from "react";
-
 import { storage } from "@/app/db/firebaseAuth";
 import { ref, uploadString } from "firebase/storage";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { BiCloudUpload } from "react-icons/bi";
  
  
-
+ 
 const canvasW = 40;
 export default function Uploader() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -33,8 +30,7 @@ export default function Uploader() {
           img.src = URL.createObjectURL(file);
           img.onload = () => { 
             context.clearRect(0, 0, canvasW, canvasW)
-            context.drawImage(img, 0, 0, canvasW, canvasW);
-           
+            context.drawImage(img, 0, 0, canvasW, canvasW); 
               setFile(canvas.toDataURL() );
              
           };
