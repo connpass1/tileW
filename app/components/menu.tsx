@@ -2,8 +2,7 @@ import Link from "next/link";
 
 export default function Menu() {
   return    <ul className="p-2 text-sm text-slate-200    mb-2 divide-y divide-slate-500/25  [&>*]:p-2  
-    [&>*]:flex [&>*]:w-full">
-    {[1, 2, 3, 4, ].map((v) =>  <Link key={v} href="/">  <li key={v}> {v}</li> </Link>)}
+    [&>*]:flex [&>*]:w-full"> 
     
      <Link href="/login" > <li> login</li></Link>  
      <Link  href="/test/client" ><li>/test/client</li></Link>

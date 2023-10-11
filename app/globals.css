@@ -65,10 +65,10 @@
     @apply fixed left-0 top-0 z-20 h-full  w-full bg-black/75
   }
 
-  .input{
-    @apply bg-gray-50 border-2 border-primary text-gray-900 text-sm rounded-lg focus:ring-primary  outline-none
+  .input{  
+    @apply bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary  outline-none
     focus:border-blue-500 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
-     dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:dark:bg-gray-600 hover:border-white shadow hover:shadow-lg
+     dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:dark:bg-gray-600 hover:border-primary shadow hover:shadow-lg
 
   }
 } 

@@ -21,7 +21,7 @@ export default async function Page({ params }: { params: { col: string, uid: str
   const {col,uid}= params
   const data = await getData(col,uid)
   
-  return <div className='center'>
+  return <div className='center flex-col gap-2'>
      <AditForm   {  ...data}  /> 
      <Link href={`/items/${col}/${uid}`}>vew</Link>
      

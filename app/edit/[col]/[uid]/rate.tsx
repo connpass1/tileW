@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BiSolidStar } from "react-icons/bi";
-
+ 
 export default function Rate({ num,onChange}:{num: number ,onChange:(x: number)=> void} ) {
     const  [state,setState]=useState(num)
     const handle = (x: number) => {

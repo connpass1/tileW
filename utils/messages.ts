@@ -10,8 +10,7 @@ export const required = (field: string) => {
 export const minLength = (field: string, num: number) => {
     return {
         required: `${field} - обязательное поле`,
-        minLength: `${field} - минимум ${num} знаков`
-
+        minLength: `${field} - минимум ${num} знаков`  
     }  as any
 }
 

@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 
-import NextImage from "next/image";
+ 
+import Preview from "@/app/components/elements/preview";
 import { useRef } from "react";
-import { BiCloudUpload } from "react-icons/bi";
  
 interface IFase {
   onCrop: (url:string)=>void ;
@@ -33,11 +33,7 @@ export default function Uploader({ onCrop,w,h,url }:IFase     )   {
     
     return <div  className="input"> <label htmlFor="dropzone-file"  className=" center py-4 cursor-pointer"> 
 
-       {(url?.length>0)?  <NextImage src={url} alt="preview" width={w} height={h} /> : 
-        
-        <BiCloudUpload className="h-16 w-16" /> 
-        
-        }
+      <Preview url={url } /> 
         <input id="dropzone-file" type="file"  className="hidden" onChange={handleFile}/>
      
     </label>

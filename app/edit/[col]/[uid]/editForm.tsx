@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
  
-import ErrorMessage from "@/app/components/elements/errorMessage";
+import ErrorMessage, { ResetButton } from "@/app/components/elements/errorMessage";
 import Label from "@/app/components/elements/label";
+ 
 import { firestore } from "@/app/db/firebaseAuth";
 import { minLength } from "@/utils/messages";
 import { Item } from "@/utils/models/item";
@@ -18,7 +19,7 @@ export default function EditForm( initData:Item  ) {
     register,
     handleSubmit,reset,
     setError,clearErrors,setValue, 
-    formState: { errors },
+    formState: { errors, isDirty},
   } = useForm ({  defaultValues:  initData }); 
  
   const [loading, setLoading] = useState(false);
@@ -33,21 +34,31 @@ export default function EditForm( initData:Item  ) {
     else data.updated = serverTimestamp(); 
    const docRef = doc(firestore, "items", initData.uid);
    setDoc(docRef, { ...data })  
-  .then((snap) => { 
-         console.log( snap );
-         setLoading(false)
+  .then((snap) => {   
+    setLoading(false)
+    console.log(snap); 
        }).catch((e) => {  
-        setLoading(false) 
+         setLoading(false) 
+         console.error(e);
+         setError('uid', { type: 'custom', message: "ошибка загрузки"});
      }
     ) 
   }; 
   const onReset  = ( ) => { reset( initData)  } 
   return (
       <form onSubmit={handleSubmit(onSubmit)}   className={styles.form}>
-      <Label  htmlFor="price" errors={errors}/>
-      <input type="number" className="input"  {...register("price", { min: 0 })} /> 
-      <Label  htmlFor="quantity" errors={errors}/>  
-      <input  type="number" className="input"  {...register("quantity", { min: 0 })} /> 
+      <Label htmlFor="price" errors={errors} /> 
+      <input type="number" className="input"  {...register("price", { min: 0 })} />  
+      <Label htmlFor="quantity"  />
+      <select   {...register("quantity" )}
+        className="input p-1.5">
+ 
+  <option value={0} >нет в наличии</option>
+  <option value={1}>ожидается</option>
+  <option value={2}>предложение ограничено</option>
+  <option value={3}>много</option>
+</select>
+  
       <Label htmlFor="preview" errors={errors} /> 
       <input type="text" {...register("preview")}  className="hidden"   /> 
       <Uploader onCrop={(url) => setPreview(url)} w={80} h={80} url={preview}/> 
@@ -63,16 +74,9 @@ export default function EditForm( initData:Item  ) {
          minLength("description", 10)  
         )}
       /> 
-    <ErrorMessage errors={errors }loading={loading} />   
-      <button type="button" onClick={()=>{ setError('uid', { type: 'custom', message: 'custom message' }); }}  className={styles.but}> 
-       test
-      </button>  
-      <button type="button" onClick={ onReset }  className={styles.host}> 
-        отмена
-      </button> 
-      <button type="button" onClick={() =>setValue("price",25)}>  
-        отмена
-      </button>
+      <ErrorMessage errors={errors} loading={loading}  />  
+      <ResetButton    onClick={ onReset }  disabled={!isDirty} />
+      
     </form>
   );
 }
