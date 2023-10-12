@@ -2,7 +2,6 @@
 import ErrorMessage from "@/app/components/elements/errorMessage";
 import Label from "@/app/components/elements/label";
 import { maxLength, minLength } from "@/utils/messages";
-import styles from "@/utils/styles/form.module.css";
 import { usePathname, useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
  
@@ -24,7 +23,7 @@ export default function AddForm(  ) {
 
   const dis = errors?.path?.type !== undefined;
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+    <form onSubmit={handleSubmit(onSubmit)} className="grid m-4  grid-cols-[min-content_1fr] gap-4 p-4">
       <Label  htmlFor=" path"/> 
       <input
         type="text" 

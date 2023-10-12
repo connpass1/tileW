@@ -7,7 +7,7 @@ import Label from "@/app/components/elements/label";
 import { firestore } from "@/app/db/firebaseAuth";
 import { minLength } from "@/utils/messages";
 import { Item } from "@/utils/models/item";
-import styles from "@/utils/styles/form.module.css";
+ 
 import { doc, serverTimestamp, setDoc } from "firebase/firestore/lite";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -46,7 +46,7 @@ export default function EditForm( initData:Item  ) {
   }; 
   const onReset  = ( ) => { reset( initData)  } 
   return (
-      <form onSubmit={handleSubmit(onSubmit)}   className={styles.form}>
+      <form onSubmit={handleSubmit(onSubmit)}   className="grid m-4  grid-cols-[min-content_1fr] gap-4 p-4">
       <Label htmlFor="price" errors={errors} /> 
       <input type="number" className="input"  {...register("price", { min: 0 })} />  
       <Label htmlFor="quantity"  />
