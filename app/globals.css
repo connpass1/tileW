@@ -7,14 +7,13 @@
     @apply dark:bg-slate-800;
   }
 
-  body {
-    @apply grid gap-y-2 lg:container dark:bg-slate-950 lg:mx-auto min-h-full 
+  body { 
+    @apply grid lg:gap-y-2 lg:container dark:bg-slate-950 lg:mx-auto min-h-full 
       grid-cols-[60px_1fr_48px_48px_48px]
       lg:grid-cols-[280px_1fr_60px_60px_60px] 
       /* grid-template-columns: 280px 1fr 1fr; */
       grid-rows-[min-content_1fr_min-content] ;
-      
-      
+       
   }
 
   aside,
@@ -31,7 +30,7 @@
   }
 
   footer {
-    @apply col-span-5 row-start-3  center   border-t-2 border-slate-500/50 my-4
+    @apply col-span-5 row-start-3  center   border-t-2 border-slate-500/50 lg:my-4
     
     p-4 text-center text-sm font-light text-slate-600 dark:text-slate-600 dark:border-slate-500/10 ;
   }
@@ -62,7 +61,7 @@
     @apply flex content-center items-center justify-center;
   }
   .z_mode{
-    @apply fixed left-0 top-0 z-20 h-full  w-full bg-black/75
+    @apply fixed left-0 top-0 z-20 h-full  w-full 
   }
 
   .input{  

@@ -10,8 +10,8 @@ export default function Drawer() {
             </label>
         <Checkbox/> 
         <div
-          className="duration-800 z_mode  -translate-x-full transform 
-        bg-black/80   transition-all peer-checked:translate-x-0"
+          className="duration-800 z_mode  -translate-x-full transform bg-white/50
+        dark:bg-black/80   transition-all peer-checked:translate-x-0"
         >
           <div className="bg1 h-full w-3/4 flex-col shadow-lg ">
             <label htmlFor="drawer-toggle" className="border-solid border-b-gray-500/25 border-b flex justify-end p-1">

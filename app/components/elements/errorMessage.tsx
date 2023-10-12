@@ -20,8 +20,8 @@ export default function ErrorMessage({ errors, loading = undefined, text = "пр
     return <>
         {errorMessage && < div className="@apply col-span-2 text-white bg-error  dark:text-error dark:bg-black/30  px-4  py-2 rounded-sm text-sm italic">
         {errorMessage} </div >}  
-        <button type="submit" disabled={errorMessage !== null} className={`${buttonStyle}   bg-primary_dark   hover:bg-primary  text-gray-400 hover:text-gray-200   
-   disabled:hover:bg-primary_dark disabled:hover:text-gray-400 ` } 
+        <button type="submit" disabled={errorMessage !== null} className={`${buttonStyle}   bg-primary_dark  enabled:hover:bg-primary  text-gray-400 enabled:hover:text-gray-200   
+     ` } 
   >  
       {loading&& <FaSpinner className="animate-spin h-5 w-5 mr-3" />} 
        {text}
@@ -33,15 +33,17 @@ interface IButton {
     text?: string | undefined;
     disabled?: boolean;
     onClick?:()=>void | undefined
-       
+    className ?: string | undefined  
 }
   
-export   function ResetButton({  text = "отмена", disabled = false,onClick=undefined }:IButton) { 
+const style="bg-transparent   border border-solid border-gray-700  text-gray-700  dark:text-gray-400 enabled:hover:bg-gray-200    enabled:shover:bg-gray-700/20  "
+
+
+export   function ResetButton({  text = "отмена", disabled = false,onClick=undefined , className=style}:IButton) { 
     
  
     return <button type={onClick ? "reset" : "button"} disabled={disabled} onClick={onClick}
-        className={`${buttonStyle}     bg-transparent   border border-solid border-gray-700  
-        text-gray-700  dark:text-gray-400  hover:bg-gray-200    hover:bg-gray-700/20  disabled:hover:bg-transparent`  }   >{text}</button> 
+        className={`${buttonStyle}  ${className}`}   >{text}</button> 
     
      
 } 

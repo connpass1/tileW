@@ -1,17 +1,23 @@
 import { Metadata } from "next/types";
 import React from "react";
 import { Bs0SquareFill, Bs4SquareFill, BsFillPlugFill } from "react-icons/bs";
-
+import Link from "next/link";
 export const metadata: Metadata = {
   title: `${process.env.NEXT_PUBLIC_SITE_NAME} -404`,
 };
-const Error404: React.FC = () =>  <main  className="center "> 
- <div  className="flex flex-col  h-full gap-2 text-8xl   justify-between p-8 text-yellow-800 lg:w-4/6 lg:h-4/6">
-  <div  className="text-4xl flex items-baseline gap-2 ">  страница не найдена !  </div>
-  <div className="flex  justify-end">  <BsFillPlugFill /></div>
-  <div className="gap-2  center lg:text-9xl">   <Bs4SquareFill /> <Bs0SquareFill /> <Bs4SquareFill/> </div>
-   <BsFillPlugFill className="rotate-180"/>
-   </div>
+
+const Error404: React.FC = () =>  <main className= "center" > 
+  
+ 
+        <div className="mx-auto max-w-screen-sm text-center">
+            <h1 className="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-slate-800 dark:text-slate-500">404</h1>
+            <p className="mb-4 text-3xl tracking-tight font-bold text-slate-700 md:text-4xl  dark:text-slate-400">Что-то пошло не так..</p>
+            <p className="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">К сожалению, мы не можем найти эту страницу. На главной странице вы найдете много интересного. </p>
+          <Link href="/" className="inline-flex text-white bg-primary  hover:bg-primary_light   focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 my-4">
+            Вернуться на домашнюю страницу</Link>
+        </div>   
+ 
+ 
  </main>
 
 export default Error404;
