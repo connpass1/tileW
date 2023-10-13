@@ -1,4 +1,4 @@
-import { firestore } from '@/app/db/firebaseAuth';
+import { firestore } from '@/utils/db/firebaseAuth';
 import { doc, getDoc } from 'firebase/firestore/lite';
   
 import { NextResponse, type NextRequest } from "next/server";

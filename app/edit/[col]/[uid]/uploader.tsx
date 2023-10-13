@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
  
-import Preview from "@/app/components/elements/preview";
+import Preview from "@/components/elements/preview";
 import { useRef } from "react";
  
 interface IFase {

@@ -1,4 +1,4 @@
-import { firestore } from '@/app/db/firebaseAuth';
+import { firestore } from '@/utils/db/firebaseAuth';
 import { IItem, Item } from '@/utils/models/item';
 import { doc, getDoc } from 'firebase/firestore/lite';
 import Link from 'next/link';

@@ -3,13 +3,13 @@ import dynamic from 'next/dynamic';
 import { Inter, Roboto } from "next/font/google";
 import Link from "next/link";
 import { BiHome } from "react-icons/bi";
-import Drawer from "./components/drawer";
-import Menu from "./components/menu";
-import Search from "./components/search";
+import Drawer from "@/components/drawer";
+import Menu from "@/components/menu";
+import Search from "@/components/search";
 import "./globals.css";
  
-const ThemeHandler = dynamic(() => import('./components/themeHandler') )
-
+const ThemeHandler = dynamic(() => import('@/components/themeHandler') )
+const UserHandler = dynamic(() => import('@/components/userHandler') )
 const roboto = Roboto({
   weight: "300",
   subsets: ["latin", "cyrillic"],
@@ -36,9 +36,10 @@ export default function RootLayout({ children,}: {children: React.ReactNode;}) {
             <BiHome className="icon"/>
           </Link>  
         </header> 
-        <ThemeHandler /> 
-        <Search/>
+     
+        <main>
         {children}  
+        </main>
         <aside className={roboto.className}>
          <Menu/>
         </aside> 
@@ -48,6 +49,10 @@ export default function RootLayout({ children,}: {children: React.ReactNode;}) {
           </Link>
           footer
         </footer>
+   
+        <ThemeHandler /> 
+<UserHandler/>
+        <Search/>
       </body>
     </html>
   );

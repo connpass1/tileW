@@ -24,10 +24,20 @@
   aside {
     @apply col-span-1 row-start-2 me-4 hidden flex-col lg:flex;
   }
-
-  main {
-    @apply col-span-5 row-start-2 h-screen rounded p-2 text-black  dark:bg-slate-900 dark:text-slate-100 lg:col-span-4 lg:col-start-2 ;
+  menu{ 
+    @apply p-2 text-sm text-gray-400      
+ 
+}
+menu li{
+  @apply  flex hover:text-gray-50 p-2 border-b border-gray-500/25 hover:bg-gray-100/5  child:w-full
+}
+  
+  main { 
+    @apply col-span-5 row-start-2 h-screen rounded   text-black  dark:bg-slate-900 dark:text-slate-100 lg:col-span-4 lg:col-start-2 ;
   }
+
+  
+
 
   footer {
     @apply col-span-5 row-start-3  center   border-t-2 border-slate-500/50 lg:my-4
@@ -54,6 +64,8 @@
     cursor: pointer;
  
   }
+  .btn { @apply font-semibold col-span-2  p-2  center  disabled:opacity-25  select-none rounded-md select-none}
+ 
   .bg1 {
     @apply flex bg-primary_bg p-1 text-slate-100 dark:bg-primary_bg_dark select-none
   }

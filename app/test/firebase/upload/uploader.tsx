@@ -1,5 +1,5 @@
 "use client";
-import { storage } from "@/app/db/firebaseAuth";
+import { storage } from "@/utils/db/firebaseAuth";
 import { ref, uploadString } from "firebase/storage";
 import { useRef, useState } from "react";
 import { BiCloudUpload } from "react-icons/bi";

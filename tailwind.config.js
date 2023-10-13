@@ -18,12 +18,16 @@ const config: Config = {
         maskColor: "rgba(0,0,0,0.7)",
         error_dark: "#991b1b",
         error_light: "#dc2626",
-        error:"#b91c1c"
+        error:"#b91c1c" 
+   
       },
     },
   },
   plugins: [
-
-  ],
+    function ({ addVariant }) {
+        addVariant('child', '& > *');
+        addVariant('child-hover', '& > *:hover');
+    }
+],
 }
 export default config

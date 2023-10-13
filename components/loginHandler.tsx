@@ -22,9 +22,9 @@ useEffect(()=>{
     setDark(!dark); 
   };
   
-  
-if(dark)  return      <BsFillMoonStarsFill onClick={changeDark } className="col-start-4 icon  row-start-1"/>  
-  return      <BsFillBrightnessHighFill onClick={changeDark } className="col-start-4 icon  row-start-1"/> 
- 
+  return<>
+   {dark?<BsFillMoonStarsFill onClick={changeDark } className="col-start-5 icon  row-start-1"/> : 
+         <BsFillBrightnessHighFill onClick={changeDark } className="col-start-5 icon  row-start-1"/> }
+ </>
   
 }

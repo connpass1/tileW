@@ -1,5 +1,5 @@
  
-import { storage } from "@/app/db/firebaseAuth";
+import { storage } from "@/utils/db/firebaseAuth";
 import { getDownloadURL, ref } from "firebase/storage";
 import Image from "next/image";
 import FireDoc from "./fireDoc";
@@ -27,8 +27,7 @@ export default async function Page() {
   return <> 
         {JSON.stringify(data)}
  <FireDoc/>
- <FireSaveFile/>
- 
+ <FireSaveFile/> 
    <Image  src=  {data}  
      width={500}
      height={500}

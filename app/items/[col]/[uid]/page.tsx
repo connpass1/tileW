@@ -1,4 +1,4 @@
-import Preview from '@/app/components/elements/preview';
+import Preview from '@/components/elements/preview';
 import { notFound } from 'next/navigation';
 import { BiSolidStar } from 'react-icons/bi';
 export const revalidate = 3600 // revalidate at most every hour

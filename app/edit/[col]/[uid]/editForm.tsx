@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
  
-import ErrorMessage, { ResetButton } from "@/app/components/elements/errorMessage";
-import Label from "@/app/components/elements/label";
+import ErrorMessage, { ResetButton } from "@/components/elements/errorMessage";
+import Label from "@/components/elements/label";
  
-import { firestore } from "@/app/db/firebaseAuth";
+import { firestore } from "@/utils/db/firebaseAuth";
 import { minLength } from "@/utils/messages";
 import { Item } from "@/utils/models/item";
  

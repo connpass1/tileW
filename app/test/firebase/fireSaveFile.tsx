@@ -1,6 +1,6 @@
 'use client';
 
-import { storage } from "@/app/db/firebaseAuth";
+import { storage } from "@/utils/db/firebaseAuth";
 import { ref, uploadBytes } from "firebase/storage";
 import { useState } from "react";
 export default function FireSaveFile() {

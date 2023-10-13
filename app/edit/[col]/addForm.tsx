@@ -1,6 +1,6 @@
 "use client";
-import ErrorMessage from "@/app/components/elements/errorMessage";
-import Label from "@/app/components/elements/label";
+import ErrorMessage from "@/components/elements/errorMessage";
+import Label from "@/components/elements/label";
 import { maxLength, minLength } from "@/utils/messages";
 import { usePathname, useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";

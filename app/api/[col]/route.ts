@@ -1,4 +1,4 @@
-import { firestore } from '@/app/db/firebaseAuth';
+import { firestore } from '@/utils/db/firebaseAuth';
 import { DocumentData, collection, getDocs } from 'firebase/firestore/lite';
 import { NextResponse, type NextRequest } from "next/server";
 export async function GET(
