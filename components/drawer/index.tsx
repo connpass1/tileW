@@ -13,7 +13,7 @@ export default function Drawer() {
           className="duration-800 z_mode  -translate-x-full transform bg-white/50
         dark:bg-black/80   transition-all peer-checked:translate-x-0"
         >
-          <div className="bg1 h-full w-3/4 flex-col shadow-lg ">
+          <div className="menu h-full w-3/4 flex-col shadow-lg child:p-2">
             <label htmlFor="drawer-toggle" className="border-solid border-b-gray-500/25 border-b flex justify-end p-1">
               <BiX className='icon'/>
             </label>

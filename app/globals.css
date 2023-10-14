@@ -8,11 +8,12 @@
   }
 
   body { 
-    @apply grid lg:gap-y-2 lg:container dark:bg-slate-950 lg:mx-auto min-h-full 
-      grid-cols-[60px_1fr_48px_48px_48px]
+    @apply grid lg:gap-y-2 lg:container dark:bg-slate-950 lg:mx-auto min-h-screen 
+      grid-cols-[60px_1fr_48px_48px_60px]
       lg:grid-cols-[280px_1fr_60px_60px_60px] 
       /* grid-template-columns: 280px 1fr 1fr; */
-      grid-rows-[min-content_1fr_min-content] ;
+      grid-rows-[60px_max-content_min-content]   text-gray-900  dark:text-gray-400;
+    
        
   }
 
@@ -22,53 +23,61 @@
   }
 
   aside {
-    @apply col-span-1 row-start-2 me-4 hidden flex-col lg:flex;
+    @apply col-span-1 row-start-2 me-4 hidden flex-col lg:flex  menu;
   }
-  menu{ 
-    @apply p-2 text-sm text-gray-400      
  
-}
-menu li{
-  @apply  flex hover:text-gray-50 p-2 border-b border-gray-500/25 hover:bg-gray-100/5  child:w-full
-}
-  
+ 
   main { 
-    @apply col-span-5 row-start-2 h-screen rounded   text-black  dark:bg-slate-900 dark:text-slate-100 lg:col-span-4 lg:col-start-2 ;
+    @apply col-span-5 row-start-2 h-full rounded     lg:dark:bg-slate-900   lg:col-span-4 lg:col-start-2 p-2 min-h-screen;
   }
-
-  
-
-
+ 
   footer {
-    @apply col-span-5 row-start-3  center   border-t-2 border-slate-500/50 lg:my-4
+    @apply col-span-5 row-start-3  center   border-t-2 border-slate-500/50 lg:my-4 shadow
     
     p-4 text-center text-sm font-light text-slate-600 dark:text-slate-600 dark:border-slate-500/10 ;
   }
 
   header {
-    @apply flex  col-span-5 col-start-1 row-start-1 sm:justify-between text-xl  ;
+    @apply  bg-blue-700  flex  col-span-5 col-start-1 row-start-1 sm:justify-between text-xl px-1 h-full;
   }
-
+ 
   hr {
-    @apply my-2 bg-slate-500 opacity-25;
+    @apply my-2 bg-gray-500 opacity-25;
   }
  
    input[type="password"],[type="text"],[type="email"],[type="number"],textarea{
-    @apply input  w-full p-1.5 
-  
-}}
+    @apply input  w-full p-1.5  
+}
+aside a{
+  @apply p-2 
+}
+ 
+
+}
+
 
 @layer components {
   .icon {
-    @apply h-10 w-10 rounded-full p-2 text-slate-100 hover:bg-gray-100/25 hover:text-slate-400 mt-2;
-    cursor: pointer;
- 
+    @apply h-10 w-10 rounded-xl p-2    center cursor-pointer m-3  hover:bg-gray-50/10    text-gray-50 dark:text-gray-400  dark:hover:bg-gray-500/10 
+    dark:hover:text-gray-100 
   }
+ 
+ 
   .btn { @apply font-semibold col-span-2  p-2  center  disabled:opacity-25  select-none rounded-md select-none}
- 
+   
+
   .bg1 {
-    @apply flex bg-primary_bg p-1 text-slate-100 dark:bg-primary_bg_dark select-none
+    @apply flex   dark:bg-slate-900      select-none
+    
   }
+   
+  .menu  {
+    @apply bg1 px-2
+  }
+  .menu a{
+    @apply   border-b border-gray-500/10 hover:bg-slate-500/10 focus:bg-slate-500/5 
+  }
+   
   .center {
     @apply flex content-center items-center justify-center;
   }

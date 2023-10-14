@@ -2,12 +2,10 @@ import Link from "next/link";
 import { BsFillDoorOpenFill } from "react-icons/bs";
 export default function Layout({ children,}: {children: React.ReactNode;}) {
 
-  return<> 
+  return    <div className="grid-col-1  ">
 
-  <main className="grid-col-1  ">
- 
-  <p>test</p>
-    
+
+  
     <ul className="text-lime-800  p-8 text-lg">
 <Link href="/test/loading"><li>loading</li></Link>
 <Link href="/test/ssr"><li>ssr</li></Link>
@@ -21,5 +19,5 @@ export default function Layout({ children,}: {children: React.ReactNode;}) {
     </ul>
 {children}
  
-</main >  </>
+</div >  
 }

@@ -1,11 +1,12 @@
+import Drawer from "@/components/drawer";
+import Menu from "@/components/menu";
+import Search from "@/components/search";
 import type { Metadata } from "next";
 import dynamic from 'next/dynamic';
 import { Inter, Roboto } from "next/font/google";
 import Link from "next/link";
+import Image from 'next/image'
 import { BiHome } from "react-icons/bi";
-import Drawer from "@/components/drawer";
-import Menu from "@/components/menu";
-import Search from "@/components/search";
 import "./globals.css";
  
 const ThemeHandler = dynamic(() => import('@/components/themeHandler') )
@@ -27,7 +28,10 @@ export default function RootLayout({ children,}: {children: React.ReactNode;}) {
    
   return (
     <html lang="ru" className="dark">
-      <body className={inter.className}> 
+      <body className={inter.className}>
+      <main>
+        {children}  
+        </main>
         <header> 
          <Drawer/>
           <Link className="hidden lg:block"
@@ -37,18 +41,32 @@ export default function RootLayout({ children,}: {children: React.ReactNode;}) {
           </Link>  
         </header> 
      
-        <main>
-        {children}  
-        </main>
+       
         <aside className={roboto.className}>
          <Menu/>
         </aside> 
-        <footer className={roboto.className}>
-          <Link href="/" className="hover:text-slate-400 p-2">
-            main
-          </Link>
-          footer
-        </footer>
+      
+        <footer    className={roboto.className}>
+    <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div className="sm:flex sm:items-center sm:justify-between">
+            
+                <Image src="/vercel.svg"  height={48} width={48}  alt="vercel" />
+            
+            <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <Link href="#" className="mr-4 hover:underline md:mr-6 ">About</Link>
+                </li>
+                <li>
+                    <Link href="#" className="mr-4 hover:underline md:mr-6">Privacy Policy</Link>
+                </li>
+                
+            </ul>
+        </div>
+        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" className="hover:underline">Flowbite™</a>. All Rights Reserved.</span>
+    </div>
+</footer>
+
    
         <ThemeHandler /> 
 <UserHandler/>
