@@ -61,7 +61,7 @@ export default function Login() {
            
         Вход</label>  
             <label htmlFor="type"
-              className=" border-primary  primary cursor-pointer  border-b-2   peer-checked:text-gray-500 font-medium  peer-checked:border-transparent" >
+              className=" border-primary text-primary cursor-pointer  border-b-2   peer-checked:text-gray-500 font-medium  peer-checked:border-transparent" >
              
         Регистрация</label>
           </div>
@@ -82,7 +82,7 @@ export default function Login() {
         
       <ErrorText text={errors?.password?.message}  />  
       <ErrorText text={(errors as any)?.custom?.message}  /> 
-      <SubmitButton disabled ={ Object.keys(errors).length<1}  
+      <SubmitButton disabled ={ Object.keys(errors).length>0}  
        loading={ loading} 
        text={reg?"создать аккаунт":"войти"}/> 
      
