@@ -25,10 +25,9 @@
   aside {
     @apply col-span-1 row-start-2 me-4 hidden flex-col lg:flex  menu;
   }
- 
- 
+  
   main { 
-    @apply col-span-5 row-start-2 h-full rounded     lg:dark:bg-slate-900   lg:col-span-4 lg:col-start-2 p-2 min-h-screen;
+    @apply col-span-5 row-start-2 h-full rounded   lg:dark:bg-slate-900   lg:col-span-4 lg:col-start-2 p-2 min-h-screen;
   }
  
   footer {
@@ -45,8 +44,8 @@
     @apply my-2 bg-gray-500 opacity-25;
   }
  
-   input[type="password"],[type="text"],[type="email"],[type="number"],textarea{
-    @apply input  w-full p-1.5  
+   input[type="text"],[type="email"],[type="number"],textarea{
+    @apply input  w-full  
 }
 aside a{
   @apply p-2 
@@ -63,11 +62,12 @@ aside a{
   }
  
  
-  .btn { @apply font-semibold col-span-2  p-2  center  disabled:opacity-25  select-none rounded-md select-none}
+  .btn { @apply font-semibold col-span-2  p-2  center  disabled:opacity-25 
+     gap-2 rounded-md select-none }
    
 
   .bg1 {
-    @apply flex   dark:bg-slate-900      select-none
+    @apply flex   dark:bg-slate-900  select-none
     
   }
    
@@ -89,6 +89,6 @@ aside a{
     @apply bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary  outline-none
     focus:border-blue-500 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
      dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:dark:bg-gray-600 hover:border-primary shadow hover:shadow-lg
-
+     p-1.5 
   }
 } 

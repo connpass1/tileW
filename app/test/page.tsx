@@ -1,4 +1,4 @@
-import { LoaderButton,  PrimaryButton, SecondaryButton, SignButton } from "@/components/elements/buttons";
+import { PrimaryButton, SecondaryButton, SignButton } from "@/components/elements/buttons";
  
  
 export default function Page() { 
@@ -15,7 +15,7 @@ export default function Page() {
       <PrimaryButton />
         <SecondaryButton />
         <SignButton />
-        <LoaderButton/> 
+        
      </div>    
  
  

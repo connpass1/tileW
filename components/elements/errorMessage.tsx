@@ -1,14 +1,27 @@
-import { FaSpinner } from "react-icons/fa6";
- 
+import { CgSpinner } from "react-icons/cg";
+import { FaExclamationCircle } from "react-icons/fa";
 interface IForm {
     errors: any;
     loading?: boolean | undefined 
-    text?:string| undefined 
-    
+    text?:string| undefined  
   }
+  interface IButton {
+    text?: string;
+    disabled?: boolean; 
+    loading?: boolean;
+    onClick?:()=>void|  undefined
+}
+  export   function  SubmitButton  ({  text , disabled ,loading}:IButton) { 
+    return <button type="submit" disabled={disabled}  className="btn bg-primary gap-2 text-white enabled:hover:bg-primary_light"> 
+        {loading&&<  CgSpinner className="w-4 h-4 animate-spin"/>}
+        {text}
+    </button>
+}
+export   function  ErrorText   ({  text  }:{text:string|undefined}) {
 
- 
-
+  if(text===undefined)return null;
+   return  <span className="col-span-2 text-error text-sm"> {text} </span>
+}
 export default function ErrorMessage({ errors, loading = undefined, text = "применить" }: IForm) {
     
     let errorMessage = Object.keys(errors).length ? "не корректные дынные" : null
@@ -18,28 +31,22 @@ export default function ErrorMessage({ errors, loading = undefined, text = "пр
 }
      
     return <>
-        {errorMessage && <i className="col-span-2 text-white bg-error  dark:text-error dark:bg-black/30  px-4  py-2 font-thin rounded-sm text-sm ">
-        {errorMessage} </i>}  
-        <button type="submit" disabled={errorMessage !== null} className={`btn   bg-primary  enabled:hover:bg-primary_light 
-        text-gray-400 enabled:hover:text-gray-200   
-     ` } 
-  >  
-      {loading&& <FaSpinner className="animate-spin h-5 w-5 mr-3" />} 
-       {text}
-      </button>  
+ {errorMessage &&<div className="col-span-2 items-center flex gap-2 p-4  text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+<FaExclamationCircle/>
+  <span className="sr-only">Info</span>
+  
+    <span className="font-medium px-2"> {errorMessage} </span>  
+    
+</div>} 
+<SubmitButton  />
  </>
  
 }
-interface IButton {
-    text?: string | undefined;
-    disabled?: boolean;
-    onClick?:()=>void | undefined 
-}
+ 
    
-export   function ResetButton({  text = "отмена", disabled = false,onClick=undefined  }:IButton) { 
-    
+export   function ResetButton({  text = "отмена", disabled = false,onClick   }:IButton) { 
  
     return <button type={onClick ? "reset" : "button"} disabled={disabled} onClick={onClick}
-        className={`btn bg-transparent   border border-solid border-gray-400  text-gray-700 
-          dark:text-gray-400      enabled:hover:bg-gray-700/20`}   >{text}</button>  
+        className= "text-gray-900 enabled:hover:text-white border border-gray-800 btn enabled:hover:bg-gray-900  dark:border-gray-600 dark:text-gray-400 enabled:dark:hover:text-white enabled:dark:hover:bg-gray-600" 
+          >{text}</button>  
 } 

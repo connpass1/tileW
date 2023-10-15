@@ -1,12 +1,11 @@
+import Link from "next/link";
 import { Metadata } from "next/types";
 import React from "react";
-import { Bs0SquareFill, Bs4SquareFill, BsFillPlugFill } from "react-icons/bs";
-import Link from "next/link";
 export const metadata: Metadata = {
   title: `${process.env.NEXT_PUBLIC_SITE_NAME} -404`,
 };
 
-const Error404: React.FC = () =>  <main className= "center" > 
+const Error404: React.FC = () =>  <div className= "center" > 
   
  
         <div className="mx-auto max-w-screen-sm text-center">
@@ -18,6 +17,6 @@ const Error404: React.FC = () =>  <main className= "center" >
         </div>   
  
  
- </main>
+ </div>
 
 export default Error404;

@@ -1,7 +1,7 @@
-import { Breadcrumbs } from "@/components/elements/breadcrumbs";
-import { LoaderButton, PrimaryButton, SecondaryButton, SignButton } from "@/components/elements/buttons";
-import Others from "@/components/elements/others";
 import Alert from "@/components/elements/alert";
+import { Breadcrumbs } from "@/components/elements/breadcrumbs";
+import { PrimaryButton, SecondaryButton, SignButton } from "@/components/elements/buttons";
+import Others from "@/components/elements/others";
 
  
 export default function Page() {
@@ -10,7 +10,7 @@ export default function Page() {
         <PrimaryButton/>
         <SecondaryButton/>
         <SignButton/> 
-        <LoaderButton/> 
+       
         <Breadcrumbs/>
        <hr/>
        <Alert/>
