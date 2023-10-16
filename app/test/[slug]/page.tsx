@@ -11,9 +11,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         if (res.ok)  res.json().then(json => { return setData(json) })
         return  setData({time:-100})
       }).catch(() => {return setData({ time: 0 }) })
-  
   }, [params]);
-
   return (
     <div>slug -{params.slug}- {process.env.NEXT_PUBLIC_API_URL} - { data?.time } </div>
   );

@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation';
 export const revalidate = 3600 // revalidate at most every hour
 async function getData(col: string  ) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${col}` ) 
-  if (!res.ok) return false  
+  if (!res.ok) return false 
+  
   return res.json()
 }
  

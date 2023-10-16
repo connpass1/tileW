@@ -1,7 +1,7 @@
 
 
 
-export function Breadcrumbs() {
+export default function Breadcrumb() {
     return  <div className="flex flex-col gap-6">
 
 

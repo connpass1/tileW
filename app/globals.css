@@ -64,11 +64,10 @@ aside a{
  
   .btn { @apply font-semibold col-span-2  p-2  center  disabled:opacity-25 
      gap-2 rounded-md select-none }
-   
+  .btn-primary{@apply btn  bg-primary gap-2 text-white enabled:hover:bg-primary_light}
 
   .bg1 {
-    @apply flex   dark:bg-slate-900  select-none
-    
+      @apply flex   dark:bg-slate-900  select-none 
   }
    
   .menu  {

@@ -6,7 +6,7 @@ export default function Layout({ children,}: {children: React.ReactNode;}) {
 
 
   
-    <ul className="text-lime-800  p-8 text-lg">
+<ul className="text-lime-800  p-8 text-lg">
 <Link href="/test/loading"><li>loading</li></Link>
 <Link href="/test/ssr"><li>ssr</li></Link>
 <Link href="/test/tilewind"><li>tilewind</li></Link>

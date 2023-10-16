@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: `${process.env.NEXT_PUBLIC_SITE_NAME} -404`,
 };
 
-const Error404: React.FC = () =>  <div className= "center" > 
+const Error404: React.FC = () =>  <div className= "center h-full" > 
   
  
         <div className="mx-auto max-w-screen-sm text-center">

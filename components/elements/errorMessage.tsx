@@ -11,7 +11,7 @@ interface IForm {
     loading?: boolean;
     onClick?:()=>void|  undefined
 }
-  export   function  SubmitButton  ({  text , disabled ,loading}:IButton) { 
+  export   function  SubmitButton  ({  text="применить" , disabled ,loading}:IButton) { 
     return <button type="submit" disabled={disabled}  className="btn bg-primary gap-2 text-white enabled:hover:bg-primary_light"> 
         {loading&&<  CgSpinner className="w-4 h-4 animate-spin"/>}
         {text}

@@ -1,6 +1,7 @@
 import Preview from '@/components/elements/preview';
 import { notFound } from 'next/navigation';
 import { BiSolidStar } from 'react-icons/bi';
+import Images from './images';
 export const revalidate = 3600 // revalidate at most every hour
 async function getData(col: string ,uid: string) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${col}/${uid}`,  { cache: 'no-store' } )
@@ -16,6 +17,7 @@ export default async function Page({ params }: { params: { col: string ,uid: str
   const {preview,quantity,rate,price,created,description,title,updated} = data       ;
   data
   return <div className='grid grid-cols-2'>
+    <Images col={params.col} uid={ params.uid}/>
     <Preview url={preview} />
     <div >
     title {title} 
@@ -34,12 +36,7 @@ export default async function Page({ params }: { params: { col: string ,uid: str
     </div >
    
     <div>{created?.seconds}</div>
-    <div>{updated.seconds}</div>
-
-
-
-    
-  
+    <div>{updated?.seconds}</div>  
   </div>
  
 }

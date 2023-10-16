@@ -3,12 +3,10 @@ import Link from "next/link";
  
  
 export default function Menu() {
-  return   <> 
-     <Link  href="/ups" > ups  </Link>
-     <Link  href="/exit" > exit test  </Link>  
-     <Link   href="/test/client" >/test/client</Link>
-      <Link  href="/test/slug" >/test/[slug]</Link>
-      <Link  href="/test/loading" >/test/loading</Link>   
+   return <> 
+      <Link  href="/" >/  </Link>
+     <Link  href="/test" > test  </Link>
+     <Link  href="/login" > exit test  </Link>  
      <Link  href="/test/tilewind" >/test/tilewind</Link> 
      <Link href="/items/items" > items </Link>
      <Link  href="/items/items/test" > /items/test</Link>
