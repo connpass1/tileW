@@ -1,6 +1,6 @@
 export default function Search() {
-  return (
-    <form className="m-3   w-32 sm:w-48 row-start-1 col-start-2">
+  return (<div className="center col-start-2">
+    <form className="w-32 sm:w-48 ">
       <label
         htmlFor="default-search" 
         className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -32,6 +32,6 @@ export default function Search() {
           style={{ paddingLeft: "2.5rem" }}
         />
       </div>
-    </form>
+    </form></div>
   );
 }

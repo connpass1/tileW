@@ -3,7 +3,7 @@ import Link from "next/link";
  
  
 export default function Menu() {
-   return <> 
+   return <nav> 
       <Link  href="/" >/  </Link>
      <Link  href="/test" > test  </Link>
      <Link  href="/login" > exit test  </Link>  
@@ -14,5 +14,5 @@ export default function Menu() {
      <Link  href="/edit/items/test" >/edit/items/test</Link>
     <Link href="/edit/items" >/edit/itemst</Link>
     
- </> 
+ </nav> 
 }

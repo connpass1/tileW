@@ -1,35 +1,34 @@
 "use client";
- 
+
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
   BsFillBellFill,
   BsFillDoorOpenFill,
-  BsFillPersonFill
+  BsFillPersonFill,
 } from "react-icons/bs";
 export default function ThemeHandler() {
   const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
     setUser(localStorage.getItem("user") ?? "");
- console.log("user ", user);
-  }, []);
+    console.log("user ", user);
+  }, [user]);
 
   return (
     <>
       {user ? (
         <>
-          
-          <Link className="col-start-4  row-start-1" href="/login">
-            <BsFillPersonFill className=" icon  " /> 
+          <Link className="col-start-4 icon" href="/login">
+            <BsFillPersonFill/>
           </Link>
-          <Link className="col-start-3 row-start-1" href="/login">
-            <BsFillBellFill className=" icon  " /> 
+          <Link className="col-start-3 icon" href="/login">
+            <BsFillBellFill/>
           </Link>
         </>
       ) : (
-        <Link className="col-start-4 row-start-1" href="/login">
-          <BsFillDoorOpenFill className=" icon  " /> 
+        <Link className="col-start-4 icon" href="/login">
+          <BsFillDoorOpenFill/>
         </Link>
       )}
     </>

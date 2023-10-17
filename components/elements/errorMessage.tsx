@@ -12,8 +12,8 @@ interface IForm {
     onClick?:()=>void|  undefined
 }
   export   function  SubmitButton  ({  text="применить" , disabled ,loading}:IButton) { 
-    return <button type="submit" disabled={disabled}  className="btn bg-primary gap-2 text-white enabled:hover:bg-primary_light"> 
-        {loading&&<  CgSpinner className="w-4 h-4 animate-spin"/>}
+    return <button type="submit" disabled={disabled} > 
+        {loading&&<CgSpinner className="w-4 h-4 animate-spin"/>}
         {text}
     </button>
 }
@@ -46,7 +46,7 @@ export default function ErrorMessage({ errors, loading = undefined, text = "пр
    
 export   function ResetButton({  text = "отмена", disabled = false,onClick   }:IButton) { 
  
-    return <button type={onClick ? "reset" : "button"} disabled={disabled} onClick={onClick}
-        className= "text-gray-900 enabled:hover:text-white border border-gray-800 btn enabled:hover:bg-gray-900  dark:border-gray-600 dark:text-gray-400 enabled:dark:hover:text-white enabled:dark:hover:bg-gray-600" 
+    return <button type={ "reset" } disabled={disabled} onClick={onClick}
+         
           >{text}</button>  
 } 

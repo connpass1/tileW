@@ -1,9 +1,9 @@
 
 "use client";
 import "@/app/globals.css";
-import { ErrorText, ResetButton, SubmitButton } from "@/components/elements/errorMessage";
+import { ErrorText, SubmitButton } from "@/components/elements/errorMessage";
 import Label from "@/components/elements/label";
-import ThemeHandler from "@/components/themeHandler";
+import ThemeHandler from "@/components/header/themeHandler";
 import { signIn } from "@/utils/db/firebaseAuth";
 import { minLength } from "@/utils/messages";
 import { UserCredential } from "firebase/auth";
@@ -47,12 +47,12 @@ export default function Login() {
 
  
 
-    return <section className="bg-slate-500 dark:bg-primary_bg_dark col-span-5 absolute top-0 left-0 h-screen w-screen center  select-none" > 
+    return <section className="bg-slate-500 dark:bg-slate-950 col-span-5 absolute top-0 left-0 h-screen w-screen center  select-none" > 
     <div className="absolute top-3 right-3">
         <ThemeHandler/>
         </div>
 
-      <div  className="flex flex-col gap-4 bg-slate-200 dark:bg-slate-900  rounded-lg px-8 py-4">
+      <div  className="flex flex-col gap-4 bg-slate-200 dark:bg-primary_bg_dark  rounded-lg px-8 py-4">
   <form onSubmit={handleSubmit(onSubmit)} className="grid   grid-cols-[min-content_1fr] gap-4   ">
   <div className="flex col-span-2 gap-2 justify-end cursor-pointer mb-4  text-lg" >
     <input type="checkbox"  {...register("type")} id="type"  onChange={  ()=> setReg(!reg)}  className="peer hidden "/>
@@ -86,7 +86,7 @@ export default function Login() {
        loading={ loading} 
        text={reg?"создать аккаунт":"войти"}/> 
      
-      <ResetButton onClick={onReset}
+      <button type="reset" onClick={onReset}
           disabled={Object.keys(errors).length === 0}  />  
             </form > 
      

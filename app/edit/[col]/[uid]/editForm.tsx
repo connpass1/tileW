@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
  
-import ErrorMessage, { ResetButton } from "@/components/elements/errorMessage";
+import ErrorMessage  from "@/components/elements/errorMessage";
 import Label from "@/components/elements/label";
  
 import { firestore } from "@/utils/db/firebaseAuth";
@@ -75,7 +75,7 @@ export default function EditForm( initData:Item  ) {
         )}
       /> 
       <ErrorMessage errors={errors} loading={loading}  />  
-      <ResetButton    onClick={ onReset }  disabled={!isDirty} />
+      <button type="reset"    onClick={ onReset }  disabled={!isDirty} />
       
     </form>
   );
