@@ -17,7 +17,7 @@ export default function  Layout({ children,}: {children: React.ReactNode;}) {
    
   return (
     <> 
-      
+      <Loading/>
     <Suspense fallback={<Loading />}>
       {children}
   </Suspense></>

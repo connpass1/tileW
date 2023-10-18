@@ -24,20 +24,9 @@ export default function ThemeHandler() {
     localStorage.theme = dark ? "light" : "dark";
     setDark(!dark);
   };
-
   return (
-    <>
-      {dark ? (
-        <BsFillMoonStarsFill
-          onClick={changeDark}
-          className="icon col-start-[-2]"
-        />
-      ) : (
-        <BsFillBrightnessHighFill
-          onClick={changeDark}
-          className="icon col-start-[-2]"
-        />
-      )}
-    </>
+ <div onClick={changeDark}  className="icon col-start-[-2] ">
+     {dark ?   <BsFillMoonStarsFill />: <BsFillBrightnessHighFill/>}
+       </div>
   );
 }

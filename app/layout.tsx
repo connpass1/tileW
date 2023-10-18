@@ -1,11 +1,10 @@
-import Breadcrumb from "@/components/elements/breadcrumb";
 import Header from "@/components/header";
 import Menu from "@/components/menu";
 import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
-import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
+ 
  
 const roboto = Roboto({
   weight: "300",
@@ -21,33 +20,30 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  children,  breadcrumb 
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode,
+    breadcrumb :React.ReactNode,
 }) {
   return (
     <html lang="ru" className="dark">
-      <body className={inter.className}>
+      <body className={inter.className}> 
         <main>
-          <Breadcrumb />
+          {breadcrumb}
           {children}
-        </main>
-        <Header/>
-         
+        </main>  
         <aside className={roboto.className}>
           <Menu />
         </aside>
-
+        <Header/>
         <footer className={roboto.className}>
         <ul className="flex gap-8">
             <li><Link  href="/" > home</Link></li>
             <li><Link  href="/test" > test</Link></li>
         </ul>
             <span className="block text-sm">
-              © 2023. All Rights Reserved. </span>
-         
-        </footer>
-
+              © 2023. All Rights Reserved. </span> 
+        </footer> 
       </body>
     </html>
   );

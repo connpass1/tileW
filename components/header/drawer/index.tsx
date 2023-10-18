@@ -6,7 +6,8 @@ export default function Drawer() {
   return (  
       <div className="flex lg:hidden justify-self-start">
          <label htmlFor="drawer-toggle">
-              <BiMenu  className='icon'/>
+          <span className='icon'>
+              <BiMenu  /></span>
             </label>
         <Checkbox/> 
         <div

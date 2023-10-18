@@ -28,7 +28,7 @@ export default function ThemeHandler() {
         </>
       ) : (
         <Link className="col-start-4 icon" href="/login">
-          <BsFillDoorOpenFill/>
+          <BsFillDoorOpenFill />
         </Link>
       )}
     </>

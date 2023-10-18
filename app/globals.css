@@ -8,16 +8,16 @@
   }
   
   body {
-    @apply grid min-h-screen    grid-cols-[60px_1fr]   grid-rows-[min-content_max-content_min-content]    
+    @apply grid min-h-screen    grid-cols-[60px_1fr]   grid-rows-[60px_max-content_min-content]    
       lg:container dark:bg-slate-950 lg:mx-auto lg:grid-cols-[280px_1fr] lg:gap-y-2  
-      text-gray-900 dark:text-gray-500
+      text-gray-900 dark:text-gray-500 
   }
 
   a{ @apply hover:text-primary  hover:dark:text-white}
 
   header {
     @apply text-gray-100 col-start-1  col-end-[-1] row-start-1 grid select-none   grid-cols-[48px_1fr_48px_48px_48px] 
-     bg-blue-700  p-2  pe-4   child:row-start-1 dark:bg-slate-900;
+     bg-blue-700  child:row-start-1 dark:bg-slate-900 h-full  px-1 items-center
   } 
 
   menu {
@@ -62,9 +62,10 @@
   }
 }
 @layer components {
-  .icon {
-    @apply center dark:text-gray-500  text-white hover:text-gray-100 m-3 h-10    w-10 cursor-pointer rounded-xl  p-2    hover:bg-gray-50/10  
-     dark:hover:bg-gray-500/10  dark:hover:text-white;
+  .icon { 
+    @apply center dark:text-gray-500  text-white hover:text-gray-100 m-1 h-10  
+    w-10 cursor-pointer rounded-xl       hover:bg-gray-50/10  
+     dark:hover:bg-gray-500/10  dark:hover:text-white child:w-6 child:h-6; 
   }
 
   .btn {
