@@ -1,32 +1,7 @@
-import Link from "next/link";
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="grid-col-1  ">
-      <ul className="p-8  text-lg text-lime-800">
-        <Link href="/test/loading">
-          <li>loading</li>
-        </Link>
-        <Link href="/test/ssr">
-          <li>ssr</li>
-        </Link>
-        <Link href="/test/tilewind">
-          <li>tilewind</li>
-        </Link>
-        <Link href="/test/client">
-          <li>client</li>
-        </Link>
-
-        <Link href="/test/firebase">
-          <li>firebase</li>
-        </Link>
-        <Link href="/test/firebase/upload">
-          <li>/test/upload</li>
-        </Link>
-        <Link href="/api">
-          <li> api test</li>
-        </Link>
-      </ul>
-      {children}
+export default function TestLayout({ children,breadcrumb }: { children: React.ReactNode ,breadcrumb: React.ReactNode}) {
+    return <div>
+      TestLayout
+     {breadcrumb}
+        {children}
     </div>
-  );
-}
+  }

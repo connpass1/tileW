@@ -8,7 +8,7 @@
   }
   
   body {
-    @apply grid min-h-screen    grid-cols-[60px_1fr]   grid-rows-[60px_max-content_min-content]    
+    @apply grid min-h-screen    grid-cols-[60px_1fr_min-content]   grid-rows-[60px_max-content_min-content]    
       lg:container dark:bg-slate-950 lg:mx-auto lg:grid-cols-[280px_1fr] lg:gap-y-2  
       text-gray-900 dark:text-gray-500 
   }
@@ -20,19 +20,14 @@
      bg-blue-700  child:row-start-1 dark:bg-slate-900 h-full  px-1 items-center
   } 
 
-  menu {
-    @apply center justify-end  child:p-[4px] hover:dark:child:text-white;
-  }
-  menu a {
-    @apply inline-flex items-center hover:text-primary;
-  }
+ 
   footer {
     @apply center  flex-col col-span-3  row-start-[-1]   border-t-2 border-slate-500/50 p-4  
     font-light shadow dark:border-slate-500/10  lg:flex-row  lg:child:m-0 lg:justify-between lg:my-4  child:m-2 p-4
   }
   
   aside {
-    @apply col-span-1 row-start-2 me-4 hidden select-none  flex-col dark:bg-slate-900   lg:flex;
+    @apply col-span-1 row-start-2 row-end-[-2] me-4 hidden select-none  flex-col dark:bg-slate-900   lg:flex;
   }
 
   nav {
@@ -41,9 +36,7 @@
  
   nav a{ @apply hover:text-white}
 
-  main {
-    @apply col-end-[-1] row-start-2 h-full min-h-screen   rounded   p-2   lg:col-start-2 lg:dark:bg-slate-900;
-  }
+
  
   input[type="text"],
   [type="email"],
@@ -61,7 +54,12 @@
    dark:text-gray-400 enabled:dark:hover:bg-gray-600 enabled:dark:hover:text-white;
   }
 }
-@layer components {
+@layer components { 
+
+  .wrapper {
+    @apply col-end-[-1] row-end-[-2] grid  grid-cols-[1fr]   grid-rows-[min-content_1fr_min-content]
+    justify-start   h-full min-h-screen   rounded   p-2 col-start-1  lg:col-start-2 lg:dark:bg-slate-900;
+  }
   .icon { 
     @apply center dark:text-gray-500  text-white hover:text-gray-100 m-1 h-10  
     w-10 cursor-pointer rounded-xl       hover:bg-gray-50/10  

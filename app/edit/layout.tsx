@@ -12,10 +12,10 @@ return<div role="status" className="max-w-sm animate-pulse">
 
 export default function  Layout({ children,}: {children: React.ReactNode;}) {
   return (
-     
+     <main>
     <Suspense fallback={<Loading />}>
       {children}
-  </Suspense> 
+  </Suspense>  </main>
  
   );
 }

@@ -20,22 +20,25 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,  breadcrumb 
+  children 
 }: {
+  
     children: React.ReactNode,
-    breadcrumb :React.ReactNode,
+   
+    
 }) {
   return (
     <html lang="ru" className="dark">
       <body className={inter.className}> 
-        <main>
-          {breadcrumb}
-          {children}
-        </main>  
+          <div className="wrapper">    
+          <main className="row-start-2">{children} </main> 
+          
+           
+       </div>
         <aside className={roboto.className}>
           <Menu />
         </aside>
-        <Header/>
+        <Header />  
         <footer className={roboto.className}>
         <ul className="flex gap-8">
             <li><Link  href="/" > home</Link></li>
