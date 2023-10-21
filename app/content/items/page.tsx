@@ -1,3 +1,4 @@
+import Breadcrumb from '@/app/_components/breadcrumb';
 import { Item } from '@/utils/models/item';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -14,5 +15,11 @@ export default async function Page( ) {
   if (!Array.isArray(data)) notFound();
   
   const items = data as Item []
-  return<> ddd  <ul>  {items.map(it => <li key={it.uid}><Link href={`items/${it.uid}`}>{it.title}</Link> </li>)}  </ul></> 
+  return <>
+    
+    <Breadcrumb paths={[{   text: "items" } ]}/>
+
+      <ul>  {items.map(it => <li key={it.uid}><Link href={`items/${it.uid}`}>{it.title}</Link> </li>)}  </ul>
+   
+  </> 
    }

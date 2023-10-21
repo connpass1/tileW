@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Inter, Roboto } from "next/font/google";
 import Link from "next/link";
-import { AiOutlineHome } from "react-icons/ai";
-import { BiChevronRight, BiHome } from "react-icons/bi";
+import { BiHome } from "react-icons/bi";
  
 const Drawer = dynamic(() => import("../_components/drawer"));
 const Menu = dynamic(() => import("../_components/menu"));
@@ -24,34 +23,20 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-  breadcrumb,
+  children 
+  
 }: {
   children: React.ReactNode;
-  breadcrumb: React.ReactNode;
+  
 }) {
   return (
     <>
       <div
-        className="col-start-1 col-end-[-1] row-end-[-2] flex
-    h-full   min-h-screen flex-col   justify-start   rounded p-2  lg:col-start-2 lg:dark:bg-slate-900"
+        className="col-start-1 col-end-[-1] row-end-[-2]  grid grid-cols-1 grid-rows-[40px_min-content_min-content_1fr]
+         h-full  min-h-screen   rounded p-2  lg:col-start-2 lg:dark:bg-slate-900 gap-8"
       >
-        <ol className="font-extralights inline-flex items-center justify-end gap-2 text-center text-sm">
-          <li>
-            <Link
-              href="/" className="inline-flex items-baseline gap-1 text-center" > 
-              <AiOutlineHome className="self-center" />
-              <span>Home </span>
-            </Link>
-          </li> 
-          <li>
-            <BiChevronRight />
-          </li>
-          
-             {breadcrumb} 
-          
-        </ol>
-        <main className={inter.className}>{children}</main>
+         
+         {children} 
       </div>
       <header>
         <Link className="icon max-lg:!hidden" href="/">

@@ -1,4 +1,5 @@
  
+import Breadcrumb from '@/app/_components/breadcrumb';
 import { notFound } from 'next/navigation';
 import { BiSolidStar } from 'react-icons/bi';
  
@@ -15,8 +16,11 @@ export default async function Page(  { params: { slug } }: { params: { slug: str
   
   if (!data) return notFound();
   const {preview,quantity,rate,price,created,description,title,updated} = data       ;
-  data
-  return <div className='grid grid-cols-2'> 
+  
+  return<><Breadcrumb paths={[{ href: "/content/items/", text: "items" }, { text:   title  }]}/>
+  
+  
+  <div className='grid grid-cols-2'> 
     <div >
     title {title} 
     </div >
@@ -36,5 +40,5 @@ export default async function Page(  { params: { slug } }: { params: { slug: str
     <div>{created?.seconds}</div>
     <div>{updated?.seconds}</div>  
   </div>
- 
+  </>
 }
