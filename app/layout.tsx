@@ -1,9 +1,10 @@
-import Header from "@/components/header";
-import Menu from "@/components/menu";
+ 
 import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
-import Link from "next/link";
+ 
+import DarkModeHandler from "./_components/darkModeHandler";
 import "./globals.css";
+ 
  
  
 const roboto = Roboto({
@@ -30,23 +31,9 @@ export default function RootLayout({
   return (
     <html lang="ru" className="dark">
       <body className={inter.className}> 
-          <div className="wrapper">    
-          <main className="row-start-2">{children} </main> 
-          
-           
-       </div>
-        <aside className={roboto.className}>
-          <Menu />
-        </aside>
-        <Header />  
-        <footer className={roboto.className}>
-        <ul className="flex gap-8">
-            <li><Link  href="/" > home</Link></li>
-            <li><Link  href="/test" > test</Link></li>
-        </ul>
-            <span className="block text-sm">
-              © 2023. All Rights Reserved. </span> 
-        </footer> 
+        <DarkModeHandler/>
+        {children}
+        
       </body>
     </html>
   );
