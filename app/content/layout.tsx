@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { Inter, Roboto } from "next/font/google";
 import Link from "next/link";
 import { AiOutlineHome } from "react-icons/ai";
 import { BiChevronRight, BiHome } from "react-icons/bi";
-import Drawer from "../_components/drawer";
-import Menu from "../_components/menu";
-import Search from "../_components/search";
-import ThemeHandler from "../_components/themeHandler";
-import UserHandler from "../_components/userHandler";
  
+const Drawer = dynamic(() => import("../_components/drawer"));
+const Menu = dynamic(() => import("../_components/menu"));
+const Search = dynamic(() => import("../_components/search"));
+const ThemeHandler = dynamic(() => import("../_components/themeHandler"));
+const UserHandler = dynamic(() => import("../_components/userHandler"));
 const roboto = Roboto({
   weight: "300",
   subsets: ["latin", "cyrillic"],
