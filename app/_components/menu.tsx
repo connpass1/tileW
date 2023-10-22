@@ -10,8 +10,6 @@ export default function Menu() {
      <Link  href="/login" > exit test  </Link>  
      <Link href="/content/items" > items </Link>
      <Link href="/content/items/lay" > items/lay </Link>
-   
-     <Link  href="/edit/items/test" >/edit/items/test</Link>
-    <Link href="/edit/items" >/edit/itemst</Link> 
+    
  </nav> 
 }

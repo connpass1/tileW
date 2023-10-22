@@ -3,8 +3,8 @@ import Image from "next/image";
 import { useState } from "react";
 export default function Gallery({ urls }: { urls: string[] }) {
   const [state, setState] = useState(0); 
-  if (urls?.length > 0) return <p>gggk</p>
-  if (urls.length ===0) return <p>gggh</p>
+  if (urls?.length === 0) return <p>no images</p>
+  if (urls.includes("")) return <p>have empty</p>
   return (
     <div className="center flex-col gap-8">
       <Image
