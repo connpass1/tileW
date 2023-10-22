@@ -70,7 +70,10 @@ export default function RootLayout({
             <Link href="/"> home</Link>
           </li>
           <li>
-            <Link href="/test"> test</Link>
+            <Link href="/items"> items</Link>
+          </li>
+          <li>
+            <Link href="/uuuuuu"> uuuuu</Link>
           </li>
         </ul>
         <span className="block text-sm">© 2023. All Rights Reserved. </span>
