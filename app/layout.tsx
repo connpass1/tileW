@@ -1,16 +1,8 @@
- 
 import type { Metadata } from "next";
-import { Inter, Roboto } from "next/font/google";
- 
+import { Inter } from "next/font/google";
+
 import DarkModeHandler from "./_components/darkModeHandler";
 import "./globals.css";
- 
- 
- 
-const roboto = Roboto({
-  weight: "300",
-  subsets: ["latin", "cyrillic"],
-});
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
 });
@@ -21,19 +13,15 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children 
+  children,
 }: {
-  
-    children: React.ReactNode,
-   
-    
+  children: React.ReactNode;
 }) {
   return (
     <html lang="ru" className="dark">
-      <body className={inter.className}> 
-        <DarkModeHandler/>
+      <body className={inter.className}>
+        <DarkModeHandler />
         {children}
-        
       </body>
     </html>
   );
