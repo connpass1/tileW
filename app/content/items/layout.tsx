@@ -5,7 +5,7 @@ export default function ItemLayout({
 }) {
   return (
     < >
-        {preview}   
+      
         {children}       
     </>
   );
