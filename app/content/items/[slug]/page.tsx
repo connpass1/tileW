@@ -7,6 +7,7 @@ async function getData(slug: string) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}items/${slug}`, {
     cache: "no-store",
   }); 
+ 
   if (!res.ok) return false;
   return res.json();
 }
@@ -27,7 +28,7 @@ export default async function Page({
     title,
     updated,
   } = data;
-
+ 
   return (
     <div className="grid grid-cols-2">
       <ContextHandler text={title}/> 

@@ -3,6 +3,8 @@ import Image from "next/image";
 import { useState } from "react";
 export default function Gallery({ urls }: { urls: string[] }) {
   const [state, setState] = useState(0); 
+  if (urls?.length > 0) return <p>gggk</p>
+  if (urls.length ===0) return <p>gggh</p>
   return (
     <div className="center flex-col gap-8">
       <Image
@@ -14,7 +16,7 @@ export default function Gallery({ urls }: { urls: string[] }) {
       />
 
       <div className="center gap-4 py-2 ">
-        {urls.map((url, key) => (
+        {urls.map((url, key) => (url  &&
           <div
             className="cursor-pointer duration-700 ease-in-out"
             data-carousel-item
