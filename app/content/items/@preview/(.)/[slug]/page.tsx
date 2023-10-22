@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Gallery from "@/app/_components/gallery"
+import { notFound } from "next/navigation"
  
 export const revalidate = 3600 // revalidate at most every hour
 async function getData(slug: string  ) {
@@ -10,6 +11,7 @@ async function getData(slug: string  ) {
  
 export default async function PreviewPage(  { params: { slug } }: { params: { slug: string } }  ) {
   const data = await getData(slug)
+  if (!data) notFound();
   const urls = data as string[]; 
   return <Gallery urls={urls}></Gallery> 
        

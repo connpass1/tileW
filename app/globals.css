@@ -12,9 +12,7 @@
       lg:container dark:bg-slate-950 lg:mx-auto lg:grid-cols-[280px_1fr] lg:gap-y-2  
       text-gray-900 dark:text-gray-500 
   }
-
-  a{ @apply hover:text-primary  hover:dark:text-white}
-
+ 
   header {
     @apply text-gray-100 col-start-1  col-end-[-1] row-start-1 grid select-none   grid-cols-[48px_1fr_48px_48px_48px] 
      bg-blue-700  child:row-start-1 dark:bg-slate-900 h-full  px-1 items-center
@@ -29,15 +27,13 @@
   aside {
     @apply col-span-1 row-start-2 row-end-[-2] me-4 hidden select-none  flex-col dark:bg-slate-900   lg:flex;
   }
-
+  a  { @apply hover:text-primary  hover:dark:text-white}
   nav {
     @apply   flex flex-col child:m-1 child:w-full  child:border-b child:border-gray-500/10 child:px-2 child:py-2;
   }
- 
-  nav a{ @apply hover:text-white}
+  nav a{  @apply  hover:text-white  } 
+  aside a{@apply hover:text-primary}
 
-
- 
   input[type="text"],
   [type="email"],
   [type="number"],
