@@ -6,6 +6,6 @@ const DynamicBreadcrumb = dynamic(() => import("../../../_components/breadcrumb"
   loading: () => <>...</>,
 })
 
-export default async function BreadcrumbPage(  { params: { slug } }: { params: { slug: string } }  ) {  
+export default function BreadcrumbPage(  { params: { slug } }: { params: { slug: string } }  ) {  
   return   <><BiChevronRight /> <span><Breadcrumb slug={slug }/></span> </>
 }

@@ -10,12 +10,12 @@ export default function Gallery({ urls }: { urls: string[] }) {
       <Image
         width={400}
         height={400}
-        className="max-h-80 w-full transform rounded-2xl object-cover transition-transform duration-300 group-hover:scale-105"
+        className="w-full transform rounded-2xl object-cover transition-transform duration-300 group-hover:scale-105"
         src={urls[state]}
         alt=""
       />
 
-      <div className="center gap-4 py-2 ">
+      <div className="center gap-4 py-4 bor ">
         {urls.map((url, key) => (url  &&
           <div
             className="cursor-pointer duration-700 ease-in-out"
@@ -26,7 +26,7 @@ export default function Gallery({ urls }: { urls: string[] }) {
             <Image
               width={120}
               height={120}
-              className="max-h-20  w-full transform object-cover transition-transform duration-300 "
+              className="max-h-20  w-full    filter    hover:contrast-200"
               src={url}
               alt=""
             />
