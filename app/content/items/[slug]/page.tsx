@@ -1,17 +1,17 @@
 import { notFound } from "next/navigation";
 import { BiChevronRight, BiSolidStar } from "react-icons/bi";
 
-export const revalidate = 3600; // revalidate at most every hour
+//export const revalidate = 3600; // revalidate at most every hour
 async function getData(slug: string) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}items/${slug}`, {
-    cache: "no-store",
+     next: { revalidate: 3600 }  
   });
 
   if (!res.ok) return false;
   return res.json();
 }
 
-export default async function Page({
+async function Page({
   params: { slug },
 }: {
   params: { slug: string };
@@ -42,3 +42,4 @@ export default async function Page({
     </div></>
   );
 }
+export default Page;
