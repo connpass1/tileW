@@ -7,8 +7,8 @@ export default function IndexPage(){
  
       <h1>IndexPage</h1> 
       <div className="flex gap flex-col">
-      <Link href="/content/articles">articles</Link>
-      <Link href="/content/items">items</Link>
+      <Link href="/articles">articles</Link>
+      <Link href="/items">items</Link>
       <Link href="/login">login</Link></div>
 </div> 
  

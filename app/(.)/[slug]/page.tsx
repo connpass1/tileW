@@ -5,8 +5,8 @@ export default function DefaultContentPage(){
    
       <h1> Page slug</h1> 
      
-      <Link href="/content/articles">articles</Link>
-      <Link href="/content/items">items</Link>
+      <Link href="/articles">articles</Link>
+      <Link href="/items">items</Link>
       
 </div> 
  

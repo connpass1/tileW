@@ -51,7 +51,6 @@
   }
 }
 @layer components { 
-
  
   .icon { 
     @apply center dark:text-gray-500  text-white hover:text-gray-100 m-1 h-10  
