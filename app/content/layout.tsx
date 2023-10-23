@@ -22,11 +22,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,breadcrumb ,   gallery  
+  children  
 }: {
-    children: React.ReactNode,
-    breadcrumb: React.ReactNode,
-    gallery:React.ReactNode, 
+    children: React.ReactNode 
+ 
      
 }) {
   return (
@@ -42,9 +41,9 @@ export default function RootLayout({
          Home 
           </Link>
           <BiChevronRight className="self-center"/>
-          {breadcrumb}  
+         
         </div> 
-        {gallery}  
+      
         {children} 
       </div>
       <header>
@@ -68,6 +67,9 @@ export default function RootLayout({
           </li>
           <li>
             <Link href="/content/items"> items</Link>
+          </li>
+          <li>
+            <Link href="/content/items/first"> first</Link>
           </li>
           <li>
             <Link href="/content/articles">articles</Link>

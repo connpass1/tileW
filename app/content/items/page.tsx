@@ -1,19 +1,12 @@
-import { Item } from "@/utils/models/item"
-import Link from "next/link"
-import { notFound } from "next/navigation"
+import Link from "next/link";
 
-export const revalidate = 3600 // revalidate at most every hour
-async function getData(  ) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}items` ) 
-  if (!res.ok) return false  
-  return res.json()
-} 
-export default async function Page( ) {
-  const data = await getData()
-  if (!Array.isArray(data)) notFound(); 
-  const items = data as Item []
-  return  <main className="row-start-3  col-start-1 col-span-2 flex flex-col"> 
-      <ul>  {items.map(it => <li key={it.uid}><Link href={`/content/items/${it.uid}`}>{it.title}</Link> </li>)} </ul>
-   
-    </main> 
- }  
+export default function DefaultContentPage(){ 
+    return <div className="col-start-1 col-end-[-1]row-start-1 row-end-[-1] min-h-screen bg-amber-900 flex flex-col"> 
+      <h1> Page items</h1>  
+      <Link href="/content/articles">articles</Link>
+      <Link href="/content/items">items</Link>
+      <Link href="/content/items/first">items first</Link>
+      <Link href="/content/items/second">items second</Link>
+</div> 
+ 
+}  
