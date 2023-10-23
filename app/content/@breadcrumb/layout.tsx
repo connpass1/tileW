@@ -10,8 +10,8 @@ const neucha = Neucha  ({
 }); 
  
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return (  
-        <Link href="/" className="inline-flex  gap-1 text-center">
+  return (   <div> 
+      <Link href="/" className="inline-flex  gap-1 text-center">
           <AiOutlineHome  />
           Home
         </Link>
