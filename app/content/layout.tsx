@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <> 
       <div
-        className="col-start-1 col-end-[-1] row-end-[-2]  grid grid-cols-[1fr_min-content] grid-rows-[min-content_1fr_1fr]
+        className="col-start-1 col-end-[-1] row-end-[-2]  grid grid-cols-[1fr_min-content] grid-rows-[min-content_min-content_1fr]
          h-full  min-h-screen   rounded p-2  lg:col-start-2 lg:dark:bg-slate-900 gap-x-2 gap-y-4"
       > 
         <div className="font-extralights  flex  justify-end gap-2 h-full align-bottom text-sm ">
@@ -44,7 +44,7 @@ export default function RootLayout({
           <BiChevronRight className="self-center"/>
           {breadcrumb}  
         </div> 
-      {gallery}  
+        {gallery}  
         {children} 
       </div>
       <header>

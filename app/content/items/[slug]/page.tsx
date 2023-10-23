@@ -23,7 +23,9 @@ async function Page({
   return (
 <> <div
           className="col-start-2 row-start-1  align-middle inline-flex items-baseline gap-2  font-extralights text-center text-sm whitespace-nowrap">
-        <BiChevronRight className="self-center"/>  {title}</div> 
+      <BiChevronRight className="self-center" />  {title}</div> 
+      
+      
     <div className="flex flex-col row-start-3  col-span-2 col-start-1 bg-amber-800">  
       <div>title {title}</div> 
       <div>quantity {quantity}</div>

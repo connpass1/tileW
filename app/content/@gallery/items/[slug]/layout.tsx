@@ -5,7 +5,7 @@ export default function ItemGalleryLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="v-96 h-48 bg-red-800">
+    <div className="bg-red-800">
        
        ItemGalleryLayout  {children} 
     </div>
