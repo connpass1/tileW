@@ -8,7 +8,7 @@ export async function GET(
 ) {
     const path =
         params.col === params.id ? params.col : `${params.col}/${params.id}`;
-    const arr:string []=[]
+    const arr:string []=[] 
    
    const response= await listAll(ref(storage, path))
    const urls = await Promise.all(

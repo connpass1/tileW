@@ -5,6 +5,6 @@ export default function  Page({
   }: {
       params: {  uid    : string };
   }){ 
-    return <>={uid}</>
+    return <>{uid}</>
     
  }

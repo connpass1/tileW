@@ -1,4 +1,6 @@
+
+ 
 export default function  Page( ) { 
-  return <>=ggg</>
-  
-}
+    return <>=article</>
+    
+ }
