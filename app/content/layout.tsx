@@ -10,7 +10,7 @@ const Search = dynamic(() => import("../_components/search"));
 const ThemeHandler = dynamic(() => import("../_components/themeHandler"));
 const UserHandler = dynamic(() => import("../_components/userHandler"));
 const roboto = Roboto({
-  weight: "300",
+  weight: "400",
   subsets: ["latin", "cyrillic"],
   
 });
@@ -22,17 +22,17 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children  
+  children,breadcrumb
 }: {
-    children: React.ReactNode 
- 
+    children: React.ReactNode ,
+    breadcrumb: React.ReactNode
      
 }) {
   return (
     <> 
       <div
-        className="col-start-1 col-end-[-1] row-end-[-2]  grid grid-cols-[1fr_min-content] grid-rows-[min-content_min-content_1fr]
-         h-full  min-h-screen   rounded p-2  lg:col-start-2 lg:dark:bg-slate-900 gap-x-2 gap-y-4"
+        className="col-start-1 col-end-[-1] row-end-[-2] flex flex-col  
+                rounded p-2  lg:col-start-2 lg:dark:bg-slate-900 gap-x-2 gap-y-4"
       > 
         <div className="font-extralights  flex  justify-end gap-2 h-full align-bottom text-sm ">
         <Link
@@ -41,7 +41,7 @@ export default function RootLayout({
          Home 
           </Link>
           <BiChevronRight className="self-center"/>
-         
+         {breadcrumb} breadcrumb
         </div> 
       
         {children} 

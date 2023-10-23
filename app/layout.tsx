@@ -13,15 +13,17 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  children,breadcrumb
 }: {
-  children: React.ReactNode;
+  breadcrumb: React.ReactNode,
+  children: React.ReactNode,
 }) {
   return (
     <html lang="ru" className="dark">
       <body className={inter.className}>
         <DarkModeHandler />
         {children}
+        {breadcrumb}   
       </body>
     </html>
   );
