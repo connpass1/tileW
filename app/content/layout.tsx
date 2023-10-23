@@ -44,7 +44,7 @@ export default function RootLayout({
           <BiChevronRight className="self-center"/>
           {breadcrumb}  
         </div> 
-        {gallery}  
+        
         {children} 
       </div>
       <header>
