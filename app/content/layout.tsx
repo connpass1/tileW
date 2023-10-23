@@ -44,8 +44,8 @@ export default function RootLayout({
           <BiChevronRight className="self-center"/>
           {breadcrumb}  
         </div> 
+        {gallery}  
         
-        {children} 
       </div>
       <header>
         <Link className="icon max-lg:!hidden" href="/">
