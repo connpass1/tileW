@@ -13,7 +13,7 @@ export default async function Page( ) {
   if (!Array.isArray(data)) notFound(); 
   const items = data as Item []
   return  <main className="row-start-3  col-start-1 col-span-2 flex flex-col"> 
-      <ul>  {items.map(it => <li key={it.uid}><Link href={`items/${it.uid}`}>{it.title}</Link> </li>)} </ul>
+      <ul>  {items.map(it => <li key={it.uid}><Link href={`/content/items/${it.uid}`}>{it.title}</Link> </li>)} </ul>
    
     </main> 
  }  

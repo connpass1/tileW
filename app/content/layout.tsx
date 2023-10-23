@@ -45,7 +45,7 @@ export default function RootLayout({
           {breadcrumb}  
         </div> 
         {gallery}  
-        
+        {children} 
       </div>
       <header>
         <Link className="icon max-lg:!hidden" href="/">
