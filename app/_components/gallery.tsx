@@ -9,14 +9,23 @@ export default function Gallery({ urls }: { urls: string[] }) {
 </svg>
     </div>
   return (
-    <div className="center flex-col gap-8">
+
+ 
+    <div className="center flex-col gap-8 ">
+      <div className=" relative mb-4 rounded-2xl">
       <Image
-        width={400}
-        height={400}
-        className="w-full transform rounded-2xl object-cover transition-transform duration-300 group-hover:scale-105"
+      placeholder="blur"
+      blurDataURL="/blur.png"
+      quality={100}
+      width={500}
+      height={500}
+      style={{
+        objectFit: 'cover',
+      }}
+        className="max-h-80 rounded-2xl w-full object-cover transition-transform duration-300 transform group-hover:scale-105"
         src={urls[state]}
         alt=""
-      />
+      /></div>
 
       <div className="center gap-4 py-4 bor ">
         {urls.map((url, key) => (url  &&
@@ -32,6 +41,9 @@ export default function Gallery({ urls }: { urls: string[] }) {
               className="max-h-20  w-full    filter    hover:contrast-200"
               src={url}
               alt=""
+              quality={70}
+              placeholder="blur"
+              blurDataURL="/blur.png"
             />
           </div>
         ))} 
