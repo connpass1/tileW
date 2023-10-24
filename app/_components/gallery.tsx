@@ -28,6 +28,7 @@ export default function Gallery({ urls }: { urls: string[] }) {
           layout="fill" // required
           objectFit="cover" // change to suit your needs
           //className="rounded"
+          loading="lazy"
         />
       </div>
       <div className="center h-12 gap-2">
@@ -44,6 +45,7 @@ export default function Gallery({ urls }: { urls: string[] }) {
               objectFit="cover" // change to suit your needs
               className="contrast-74  filter hover:contrast-150"
               quality={50}
+              loading="lazy"
             />
           </div>
         ))}
