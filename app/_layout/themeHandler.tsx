@@ -6,7 +6,7 @@ import {
 } from "react-icons/bs";
 export default function ThemeHandler() {
   const [dark, setDark] = useState(true);
-  const [isUser, setIsUser] = useState("");
+  
   useEffect(() => {
     if (localStorage.theme === "light") {
       document.documentElement.classList.remove("dark");

@@ -1,8 +1,7 @@
 
 "use client";
 import "@/app/globals.css";
-import { signIn } from "@/utils/db/firebaseAuth";
-import { minLength } from "@/utils/messages";
+ 
  
  
 import { UserCredential } from "firebase/auth";
@@ -10,9 +9,12 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
  
 import { useRouter } from "next/navigation";
-import { ErrorText, SubmitButton } from "../_components/elements/errorMessage";
-import Label from "../_components/elements/label";
-import ThemeHandler from "../_components/loginHandler";
+import { ErrorText, SubmitButton } from "../_components/errorMessage";
+import Label from "../_components/label"; 
+import ThemeHandler from "../_layout/themeHandler";
+import { signIn } from "../_utils/firebaseAuth";
+import { minLength } from "../_utils/messages";
+ 
  interface IFormInput {
     email: string;
     password: string;
@@ -45,9 +47,7 @@ export default function LoginPage() {
           console.log( err) 
           setError("email",{ type: 'custom', message: err?.message??"ошибка"});
         }) 
-      };
-
- 
+      }; 
 
     return <section className="bg-slate-500 dark:bg-slate-950 col-span-5 absolute top-0 left-0 h-screen w-screen center  select-none" > 
     <div className="absolute top-3 right-3">
@@ -101,3 +101,6 @@ export default function LoginPage() {
     </button>  </div>
  </section> 
 }
+
+ 
+ 

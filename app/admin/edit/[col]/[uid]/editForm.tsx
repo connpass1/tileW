@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
-import { firestore } from "@/utils/db/firebaseAuth";
-import { minLength } from "@/utils/messages";
-import { Item } from "@/utils/models/item";
  
-import ErrorMessage from "@/app/_components/elements/errorMessage";
-import Label from "@/app/_components/elements/label";
+import ErrorMessage from "@/app/_components/errorMessage";
+import Label from "@/app/_components/label";
+import { firestore } from "@/app/_utils/firebaseAuth";
+import { minLength } from "@/app/_utils/messages";
+import { Item } from "@/app/_utils/models/item";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore/lite";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";

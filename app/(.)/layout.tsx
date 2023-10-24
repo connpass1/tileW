@@ -3,11 +3,11 @@ import dynamic from "next/dynamic";
 import { Neucha, Roboto } from "next/font/google";
 import Link from "next/link";
 import { BiHome } from "react-icons/bi";
-const Drawer = dynamic(() => import("../_components/drawer"));
-const Menu = dynamic(() => import("../_components/menu"));
-const Search = dynamic(() => import("../_components/search"));
-const ThemeHandler = dynamic(() => import("../_components/themeHandler"));
-const UserHandler = dynamic(() => import("../_components/userHandler"));
+const Drawer = dynamic(() => import("../_layout/drawer"));
+const Menu = dynamic(() => import("../_layout/menu"));
+const Search = dynamic(() => import("../_layout/search"));
+const ThemeHandler = dynamic(() => import("../_layout/themeHandler"));
+const UserHandler = dynamic(() => import("../_layout/userHandler"));
 const roboto = Roboto({
   weight: "400",
   subsets: ["latin", "cyrillic"],

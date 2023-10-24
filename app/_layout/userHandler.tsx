@@ -8,11 +8,9 @@ import {
   BsFillPersonFill,
 } from "react-icons/bs";
 export default function UserHandler() {
-  const [user, setUser] = useState<any>(null);
-
+  const [user, setUser] = useState<any>(null); 
   useEffect(() => {
-    setUser(localStorage.getItem("user") ?? "");
-    console.log("user ", user);
+    setUser(localStorage.getItem("user") ?? "");  
   }, [user]);
 
   return (

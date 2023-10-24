@@ -1,4 +1,5 @@
-import { Item } from '@/utils/models/item';
+ 
+import { Item } from '@/app/_utils/models/item';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
