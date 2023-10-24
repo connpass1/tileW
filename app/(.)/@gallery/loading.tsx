@@ -1,9 +1,7 @@
+import { SkeletonFull } from "@/app/_components/skeleton";
 
-export default function Loading({ children }: { children: React.ReactNode }) {
-    return ( 
-        < >    {children}   </ >
+export default function Loading( ) {
+    return   <SkeletonFull /> 
        
-        
-    );
   }
   
