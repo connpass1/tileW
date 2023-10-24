@@ -1,5 +1,7 @@
-import { SkeletonFull } from "../_components/skeleton";
+ 
+import { SkeletonFull } from "@/app/_components/skeleton";
 
+ 
 export default function Loading( ) {
   return   <SkeletonFull /> 
      

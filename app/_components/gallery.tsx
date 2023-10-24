@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function Gallery({ urls }: { urls: string[] }) {
   const [state, setState] = useState(0);
  
-  return  < >  <div className="relative "> 
+  return  <>  <div className="relative "> 
         <Image
           quality={75}
           src={urls[state]}
@@ -35,6 +35,6 @@ export default function Gallery({ urls }: { urls: string[] }) {
             />
           </div>
         ))}
-      </div>< />
+      </div></>
    
 }
