@@ -1,15 +1,36 @@
-import Link from "next/link";
 
-export default function IndexPage(){ 
-    return <div className="col-start-1 col-end-[-1]
-  row-start-1 row-end-[-1] min-h-screen
-   bg-amber-900  dark:bg-zinc-900">
+import { notFound } from "next/navigation";
+//export const revalidate = 3600 // ra lidate a t most every hour
+import NextImage from "next/image";
+
+async function getData() {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}items/items/images`,
+  );
+  if (!res.ok) return [];
+  return res.json();
+}
+
+export default async function GalleryItemPage() {
+  const data: string[] = await getData();
+
+  if (data.length === 0) notFound();
+
+  return (
+    <div className="flex flex-col gap-2">
+     
+      {data.map((url, k) => (
+        <div className="bg-black/10 p-4" key={k}>
+          <NextImage
+            width={120}
+            height={120}
+            className=" filter    hover:contrast-200"
+            src={url}
+            alt=""
+          />
+        </div>
+      ))} 
+    </div>
+  );
+}
  
-      <h1>IndexPage</h1> 
-      <div className="flex gap flex-col">
-      <Link href="/articles">articles</Link>
-      <Link href="/items">items</Link>
-      <Link href="/login">login</Link></div>
-</div> 
- 
-}  

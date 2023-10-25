@@ -1,6 +1,6 @@
  
 import { NotFoundImage } from "@/app/_components/skeleton";
 
-export default function NotFound ( ) {
+export default function Page( ) {
     return   <NotFoundImage />  
   }

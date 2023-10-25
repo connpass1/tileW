@@ -81,5 +81,8 @@
       hover:dark:bg-gray-600 dark:focus:border-primary_dark
      dark:focus:ring-primary_light;
   } 
+  .skeleton{ @apply rounded-xl bg-gray-400 text-gray-600 dark:bg-gray-700   dark:text-gray-400 center  animate-pulse 
+   
+  }
 }
  

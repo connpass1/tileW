@@ -1,5 +1,5 @@
 import { ChildrenType } from "@/app/_utils/models/types";
 
 export default function Layout({ children }:   ChildrenType ) {
-  return <>{children} Layout3</>;
-}
+  return <>  Layout2{children}</>;
+}  

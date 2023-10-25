@@ -1,19 +1,34 @@
-import Link from "next/link";
-type Props = {
-  searchParams: { [key: string]: string | string[] | undefined },
-  params: { uid : string}
-}; 
-export default function DefaultContentPage({ params: { uid }, searchParams:  {key}   }:Props){  
-    return <div className="col-start-1 col-end-[-1]row-start-1 row-end-[-1] min-h-screen bg-amber-400 flex flex-col"> 
-      <h1 className="before:content-['_↗']"> Page uid {uid  }</h1>  
-      <Link href="/articles">articles</Link>
-      <Link href="/items">items</Link>
-      <Link href="/articles">articles</Link>
-      <Link href="/items/first">first</Link>
-      <Link href="/items/second">second</Link>
-        
-      {key}
-</div> 
- 
-}  
-  
+import { notFound } from "next/navigation";
+//export const revalidate = 3600 // ra lidate a t most every hour
+import NextImage from "next/image";
+
+async function getData() {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}items/items/images`,
+  );
+  if (!res.ok) return [];
+  return res.json();
+}
+
+export default async function GalleryItemPage() {
+  const data: string[] = await getData();
+
+  if (data.length === 0) notFound();
+
+  return (
+    <div className="flex flex-col gap-2">
+     
+      {data.map((url, k) => (
+        <div className="bg-black/10 p-4" key={k}>
+          <NextImage
+            width={120}
+            height={120}
+            className=" filter    hover:contrast-200"
+            src={url}
+            alt=""
+          />
+        </div>
+      ))} 
+    </div>
+  );
+}

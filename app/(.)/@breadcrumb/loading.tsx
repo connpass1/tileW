@@ -1,7 +1,7 @@
 
 export default function Loading( ) {
     return ( 
-        <div className="h-full bg-gray-200 rounded-full dark:bg-gray-700 w-48"/>  
+        <div className="h-full skeleton w-1/12"/>  
     );
   }
   
