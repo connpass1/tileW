@@ -17,7 +17,7 @@ export default async function EditItems({ params }: { params: { col: string  } }
  const items = data as Item []
  return <div className='grid grid-cols-2'> {items.map(it => <React.Fragment key={it.uid}>
    {it.preview ? <Image src={it.preview} alt={it.title} width={80} height={80}/> : "?"} 
-   <Link href={`/edit/items/${it.uid}`}>   {it.title}   </Link>
+   <Link href={`/edit/item/${it.uid}`}>   {it.title}   </Link>
 
  </React.Fragment> 
 ) }

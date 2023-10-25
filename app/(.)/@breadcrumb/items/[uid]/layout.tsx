@@ -4,7 +4,7 @@ import { BiChevronRight } from "react-icons/bi";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return ( 
       <>
-        <Link href="/items" className="inline-flex items-baseline gap-1 text-center"> 
+        <Link href="/item" className="inline-flex items-baseline gap-1 text-center"> 
           items
         </Link>
         <BiChevronRight className="self-center" />

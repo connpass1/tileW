@@ -7,12 +7,20 @@ export async function GET(
   request: NextRequest,
   { params: { col, uid } }: ColUidParamsType,
 ) { 
-  const response = await listAll(
-   
+  const response = await listAll( 
     ref(storage, col === uid ? col : `${col}/${uid}`)
   );
+  try{ 
   const urls = await Promise.all(
     response.items.map((item) => getDownloadURL(item)),
-  );
+    );
+  console.log('jj',urls);
   return NextResponse.json(urls);
+  } catch (e) {
+    console.log('e',e);
+    return NextResponse.json([  ]);
+
+  }
+ 
+ 
 }

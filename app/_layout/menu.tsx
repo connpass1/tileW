@@ -9,8 +9,8 @@ export default function Menu() {
      <Link  href="/articles/first" > articles /first  </Link>
      <Link href="/articles/second" > articles/second </Link>
      <Link  href="/login" > exit test  </Link>  
-     <Link href="/items" > items </Link>
-     <Link href="/items/first" > items/first </Link>
-     <Link href="/items/second" > items/second </Link>
+     <Link href="/item" > items </Link>
+     <Link href="/item/first" > items/first </Link>
+     <Link href="/item/second" > items/second </Link>
  </nav> 
 }

@@ -10,7 +10,7 @@ export default function Default() {
       <h1>Default tsx</h1>
       <div className="gap flex flex-col">
         <Link href="/articles">articles</Link>
-        <Link href="/items">items</Link>
+        <Link href="/item">item</Link>
         <Link href="/login">login</Link>
       </div>
     </div>

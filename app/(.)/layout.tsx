@@ -61,10 +61,10 @@ export default function RootLayout({
             <Link href="/"> home</Link>
           </li>
           <li>
-            <Link href="/items"> items</Link>
+            <Link href="/item"> items</Link>
           </li>
           <li>
-            <Link href="/items/first"> first</Link>
+            <Link href="/item/first"> first</Link>
           </li>
           <li>
             <Link href="/articles">articles</Link>
