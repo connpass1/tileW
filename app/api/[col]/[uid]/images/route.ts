@@ -8,7 +8,8 @@ export async function GET(
   { params: { col, uid } }: ColUidParamsType,
 ) { 
   const response = await listAll(
-    ref(storage, col === uid ? col : `${col}/${uid}`),
+   
+    ref(storage, col === uid ? col : `${col}/${uid}`)
   );
   const urls = await Promise.all(
     response.items.map((item) => getDownloadURL(item)),

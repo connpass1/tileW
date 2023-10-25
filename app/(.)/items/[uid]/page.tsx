@@ -10,17 +10,10 @@ export default function DefaultContentPage({ params: { uid }, searchParams:  {ke
       <Link href="/items">items</Link>
       <Link href="/articles">articles</Link>
       <Link href="/items/first">first</Link>
-      <Link href="/items/second?key=hgh">second</Link>
+      <Link href="/items/second">second</Link>
         
       {key}
 </div> 
  
 }  
- 
-
-
-
-const MyServerComponent = (props: Props) => {
-  const searchParams = props.searchParams;
-  return <div></div>;
-};
+  
