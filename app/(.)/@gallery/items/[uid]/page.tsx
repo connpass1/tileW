@@ -1,4 +1,5 @@
  
+import { ColUidParamsType } from "@/app/_utils/models/types";
 import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 const Gallery = dynamic(() => import("@/app/_components/gallery"));
@@ -8,8 +9,8 @@ async function getData(uid: string  ) {
   if (!res.ok)    return [ ] 
   return res.json()
 } 
-export default async function GalleryItemPage(  { params: { uid} }: { params: {uid: string } }  ) {
-  console.log("uuuu1")
+export default async function GalleryItemPage(  { params: { uid} }: ColUidParamsType ) {
+ 
   const data:string[] = await getData(uid)
   if (data.length === 0) notFound();  
   

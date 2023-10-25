@@ -1,3 +1,5 @@
-export default function Layout({ children }: { children: React.ReactNode }) {
+import { ChildrenType } from "@/app/_utils/models/types";
+
+export default function Layout({ children }:   ChildrenType ) {
   return <>{children}</>;
 }
