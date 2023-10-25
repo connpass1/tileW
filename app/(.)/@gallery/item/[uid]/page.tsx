@@ -9,10 +9,7 @@ async function getData(uid: string  ) {
   return res.json()
 } 
 export default   function GalleryItemPage(  { params: { uid} }: ColUidParamsType ) {
- 
- 
   
- 
   return    <div> bbb </div>
       
 } 

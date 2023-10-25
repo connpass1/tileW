@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 
-import NextImage from "next/image";
+ 
 import { notFound } from "next/navigation";
  export const revalidate = 36//00 // ra lidate a t most every hour
 
@@ -20,7 +21,7 @@ export default async function GalleryItemPage() {
     <div className="flex flex-col gap-2"> 
       {images.map((url, k) => (
         <div className="bg-black/10 p-4" key={k}>
-          <NextImage
+          <img
             width={120}
             height={120}
             className=" filter    hover:contrast-200"

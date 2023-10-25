@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
  
 import { Item } from '@/app/_utils/models/item';
-import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import React from 'react';
@@ -16,7 +16,7 @@ export default async function ImagesPage({ params }: { params: { col: string  } 
  if(!data ) notFound();
  const items = data as Item []
  return <div className='grid grid-cols-2'> {items.map(it => <React.Fragment key={it.uid}>
-   {it.preview ? <Image src={it.preview} alt={it.title} width={80} height={80}/> : "?"} 
+   {it.preview ? <img src={it.preview} alt={it.title} width={80} height={80}/> : "?"} 
    <Link href={`/edit/item/${it.uid}`}>   {it.title}   </Link>
 
  </React.Fragment> 

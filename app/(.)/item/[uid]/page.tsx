@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 //export const revalidate = 3600 // ra lidate a t most every hour
-import NextImage from "next/image";
+ 
 
 async function getData() {
   const res = await fetch(

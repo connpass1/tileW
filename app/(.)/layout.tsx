@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+ 
 import dynamic from "next/dynamic";
-import { Neucha, Roboto } from "next/font/google";
+import { Neucha } from "next/font/google";
 import Link from "next/link";
 import { BiHome } from "react-icons/bi";
 const Drawer = dynamic(() => import("../_layout/drawer"));
@@ -8,10 +9,7 @@ const Menu = dynamic(() => import("../_layout/menu"));
 const Search = dynamic(() => import("../_layout/search"));
 const ThemeHandler = dynamic(() => import("../_layout/themeHandler"));
 const UserHandler = dynamic(() => import("../_layout/userHandler"));
-const roboto = Roboto({
-  weight: "400",
-  subsets: ["latin", "cyrillic"],
-});
+ 
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -52,7 +50,7 @@ export default function RootLayout({
         <ThemeHandler />
         <UserHandler />
       </header>
-      <aside className={roboto.className}>
+      <aside  >
         <Menu />
       </aside>
       <footer className={neucha.className}>
