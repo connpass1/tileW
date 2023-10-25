@@ -36,7 +36,7 @@ export default function RootLayout({
                 gap-x-2 gap-y-4  rounded p-2 lg:col-start-2 lg:dark:bg-slate-900"
       >
         {breadcrumb}
-        {gallery}
+        
         {children}
       </div>
       <header>
