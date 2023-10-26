@@ -7,8 +7,8 @@ export default async function  BreadcrumbPageItem({
     params: { uid},
 }: ColUidParamsType) { 
   const data = await getData(uid)  
-  await timeout(3000)
-  return < > 
-    <> это  _ {uid}{ data?.title} </> 
-      </ > 
+ 
+  return <BreadCrumbLoader > 
+      это  _ {uid}{ data?.title} 
+      </BreadCrumbLoader> 
  }

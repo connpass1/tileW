@@ -1,5 +1,5 @@
 import { ChildrenType } from "@/app/_utils/models/types";
 
-export default function ItemLayout({ children }: ChildrenType) {
-  return <div> item {children} </div>;
+export default function ColLayout({ children }: ChildrenType) {
+  return <> {children} </>;
 }

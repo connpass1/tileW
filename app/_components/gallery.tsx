@@ -4,17 +4,10 @@ import { useState } from "react";
 export default function Gallery({ urls }: { urls: string[] }) {
   const [state, setState] = useState(0);
  
-  return  <>  <div className="relative "> 
-      
-        <img
-         
+  return  <>  <div className="relative ">  
+        <img 
           src={urls[state]}
-          alt="Picture of the author"
-         
-       
-          
-       
-      
+          alt="Picture of the author" 
         />
       </div>
       <div className="center   gap-2">
@@ -26,11 +19,8 @@ export default function Gallery({ urls }: { urls: string[] }) {
           >
             <img
               src={url}
-              alt=" "
-              
-     
-              className="contrast-74  filter hover:contrast-150"
-         
+              alt=" " 
+              className="contrast-74  filter hover:contrast-150" 
             />
           </div>
         ))}

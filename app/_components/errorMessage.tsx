@@ -47,8 +47,7 @@ export default function ErrorMessage({
           role="alert"
         >
           <FaExclamationCircle />
-          <span className="sr-only">Info</span>
-
+          <span className="sr-only">Info</span> 
           <span className="px-2 font-medium"> {errorMessage} </span>
         </div>
       )}

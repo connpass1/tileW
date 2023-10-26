@@ -1,5 +1,5 @@
  
 export default function  Page( ) { 
-    return <p>col page</p>
+    return <>col page</>
     
  }

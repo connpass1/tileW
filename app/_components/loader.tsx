@@ -8,3 +8,10 @@ export function BreadCrumbLoader({ children }: ChildrenType) {
     </Suspense>
   );
 }
+export function ImageLoader({ children }: ChildrenType) {
+  return (
+    <Suspense fallback={<div className="animate-pulse">loading</div>}>
+      {children}
+    </Suspense>
+  );
+}

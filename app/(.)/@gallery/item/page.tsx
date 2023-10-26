@@ -1,5 +1,3 @@
  
 export default function  Page( ) { 
-    return null
-    
- }
+    return <p>item gallery  page</p>}
