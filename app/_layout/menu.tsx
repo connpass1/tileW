@@ -12,5 +12,6 @@ export default function Menu() {
      <Link href="/item" > item </Link>
      <Link href="/item/first" > item/first </Link>
      <Link href="/item/second" > item/second </Link>
+     <Link href="/test" > test </Link>
  </nav> 
 }

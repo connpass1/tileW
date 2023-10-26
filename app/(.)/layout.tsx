@@ -32,7 +32,7 @@ export default function RootLayout({
     <>
       <div
         className="col-start-1 col-end-[-1] row-end-[-2] grid  grid-cols-1 min-h-screen 
-        grid-rows-[1rem_min-content_1fr] child:col-start-1
+        grid-rows-[2rem_min-content_1fr] child:col-start-1
                 gap-x-2 gap-y-4  rounded p-2 lg:col-start-2 lg:dark:bg-slate-900"
       >
         {breadcrumb}

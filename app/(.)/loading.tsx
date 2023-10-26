@@ -1,4 +1,6 @@
-import { SkeletonFull } from "../_components/skeleton";
-export default function Loading( ) {
-  return   <SkeletonFull />  
-} 
+import Loading from "../loading";
+
+export default function LoadingContent( ) { 
+    return  < Loading/>
+  }  
+ 

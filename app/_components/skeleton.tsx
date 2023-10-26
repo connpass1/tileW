@@ -19,3 +19,5 @@ export function NotFoundImage () {return <div className=" w-full  h-full center"
  
     className=" w-1/2  h-1/2"  /> </div> </div> 
   }
+   
+  
