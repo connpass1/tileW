@@ -1,12 +1,16 @@
-import { storage } from "@/app/_utils/firebaseAuth";
+ 
+import { firebaseConfig } from "@/app/_utils/firebaseAuth";
 import { ColUidParamsType } from "@/app/_utils/models/types";
-import { getDownloadURL, listAll, ref } from "firebase/storage";
+import { initializeApp } from "firebase/app";
+import { getDownloadURL, getStorage, listAll, ref } from "firebase/storage";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function GET(
   request: NextRequest,
   { params: { col, uid } }: ColUidParamsType,
 ) { 
+  const app = initializeApp(firebaseConfig); 
+  const storage = getStorage(app);
   const response = await listAll( 
     ref(storage, col === uid ? col : `${col}/${uid}`)
   );
@@ -15,7 +19,6 @@ export async function GET(
     response.items.map((item) => getDownloadURL(item)),
     );
   console.log('jj',urls);
-  return NextResponse.json(urls);
-   
+  return NextResponse.json(urls); 
  
 }

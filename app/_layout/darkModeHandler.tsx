@@ -1,10 +1,9 @@
 "use client";
 import { useEffect } from "react";
 export default function DarkModeHandler() {
-  
   useEffect(() => {
     if (localStorage.theme === "light") {
-      document.documentElement.classList.remove("dark"); 
+      document.documentElement.classList.remove("dark");
     } else if (
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
@@ -14,6 +13,5 @@ export default function DarkModeHandler() {
     }
   }, []);
 
-   
-  return null
+  return null;
 }
