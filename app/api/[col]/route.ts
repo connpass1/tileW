@@ -1,12 +1,16 @@
-import { firestore } from "@/app/_utils/firebaseAuth";
+ 
+ 
 import { ColUidParamsType } from "@/app/_utils/models/types";
-import { DocumentData, collection, getDocs } from "firebase/firestore/lite";
+import { initializeApp } from "firebase/app";
+import { DocumentData, collection, getDocs, getFirestore } from "firebase/firestore/lite";
 import { NextResponse, type NextRequest } from "next/server";
+import { firebaseConfig } from "../_config/firebase";
 export async function GET(
   request: NextRequest,
   { params: { col } }: ColUidParamsType,
 ) {
-  const querySnapshot = await getDocs(collection(firestore, col));
+  const app = initializeApp(firebaseConfig); 
+  const querySnapshot = await getDocs(collection(getFirestore(app), col));
   if (querySnapshot.empty) return NextResponse.json([]);
   const items: DocumentData[] = [];
   querySnapshot.forEach((document) => {

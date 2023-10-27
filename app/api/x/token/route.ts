@@ -1,8 +1,8 @@
-import { firebaseConfig } from "@/app/_utils/firebaseAuth";
+ 
+import { firebaseConfig } from "@/app/api/_config/firebase";
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { NextResponse, type NextRequest } from "next/server";
-
 export async function GET(request: NextRequest) {
    const app = initializeApp(firebaseConfig); 
   const auth = getAuth(app);

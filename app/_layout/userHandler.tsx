@@ -10,7 +10,7 @@ import {
 export default function UserHandler() {
   const [user, setUser] = useState<any>(null); 
   useEffect(() => {
-    setUser(localStorage.getItem("user") ?? "");  
+    setUser(  "");  
   }, [user]);
 
   return (

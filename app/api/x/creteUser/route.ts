@@ -1,4 +1,5 @@
-import { firebaseConfig } from "@/app/_utils/firebaseAuth";
+ 
+import { firebaseConfig } from "@/app/api/_config/firebase";
 import { initializeApp } from "firebase/app";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { NextResponse, type NextRequest } from "next/server";

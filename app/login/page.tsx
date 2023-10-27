@@ -1,6 +1,6 @@
 "use client";
 import "@/app/globals.css";
-import { UserCredential } from "firebase/auth";
+
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -8,7 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 import { ErrorText, SubmitButton } from "../_components/errorMessage";
 import Label from "../_components/label";
 import ThemeHandler from "../_layout/themeHandler";
-import { signIn } from "../_utils/firebaseAuth";
+ 
 import { minLength } from "../_utils/messages";
 
 interface IFormInput {
@@ -34,22 +34,30 @@ export default function LoginPage() {
     setValue("email", "");
   };
 
-  const onSubmit = (data: IFormInput) => {
+  const onSubmit =   (output: IFormInput) => {
     setLoading(true);
-    signIn(data)
-      .then((res) => {
-        setLoading(false);
-        localStorage.user = res as UserCredential;
-        router.push("/");
-      })
-      .catch((err) => {
-        setLoading(false);
-        console.log(err);
-        setError("email", {
-          type: "custom",
-          message: err?.message ?? "ошибка",
-        });
-      });
+     fetch("/api/x/login", {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+       },  
+       body: JSON.stringify(output)
+     }).then(res => res.json().then((json) => {
+      setLoading(false);
+       console.log("json");
+     }))
+       .catch(e => {
+         setLoading(false);
+         setError("email", {
+      type: "custom",
+      message: e?.message ?? "ошибка",
+    });})
+    
+ 
   };
 
   return (
@@ -134,3 +142,5 @@ export default function LoginPage() {
     </section>
   );
 }
+ 
+

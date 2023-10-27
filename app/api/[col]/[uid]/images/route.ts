@@ -1,6 +1,5 @@
- 
-import { firebaseConfig } from "@/app/_utils/firebaseAuth";
-import { ColUidParamsType } from "@/app/_utils/models/types";
+ import { ColUidParamsType } from "@/app/_utils/models/types";
+import { firebaseConfig } from "@/app/api/_config/firebase";
 import { initializeApp } from "firebase/app";
 import { getDownloadURL, getStorage, listAll, ref } from "firebase/storage";
 import { NextResponse, type NextRequest } from "next/server";
