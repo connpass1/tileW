@@ -2,9 +2,8 @@
 "use client";
 import { useState } from "react";
 export default function Gallery({ urls }: { urls: string[] }) {
-  const [state, setState] = useState(0);
- 
-  return  <>  <div className="relative ">  
+  const [state, setState] = useState(0); 
+  return  <>  <div className="relative">  
         <img 
           src={urls[state]}
           alt="Picture of the author" 

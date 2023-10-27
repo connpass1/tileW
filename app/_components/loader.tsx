@@ -10,7 +10,7 @@ export function BreadCrumbLoader({ children }: ChildrenType) {
 }
 export function ImageLoader({ children }: ChildrenType) {
   return (
-    <Suspense fallback={<div className="animate-pulse">loading</div>}>
+    <Suspense fallback={<div className="animate-pulse">...</div>}>
       {children}
     </Suspense>
   );

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup, } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {
   getFirestore
 } from 'firebase/firestore/lite';
@@ -21,8 +21,7 @@ export const signIn = async (values: { type: boolean; email: string; password: s
   const f = values.type ? signInWithEmailAndPassword : createUserWithEmailAndPassword
   return await f(auth, values.email, values.password);
 }
-export const signInGoogle = async () => {
-  const provider = new GoogleAuthProvider();
-
-  return await signInWithPopup(auth, provider);
-} 
+// export const signInGoogle = async () => {
+//   const provider = new GoogleAuthProvider(); 
+//   return await signInWithPopup(auth, provider);
+// } 

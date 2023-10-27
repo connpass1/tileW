@@ -16,11 +16,10 @@
   header {
     @apply text-gray-100 col-start-1  col-end-[-1] row-start-1 grid select-none   grid-cols-[48px_1fr_48px_48px_48px] 
      bg-blue-700  child:row-start-1 dark:bg-slate-900 h-full  px-1 items-center
-  } 
-
+  }  
  
   footer {
-    @apply center  flex-col col-span-3  row-start-[-1]   border-t-2 border-slate-500/50 p-4  
+    @apply center  flex-col col-span-3  row-start-[-1]   border-t-2 border-slate-500/50 
     font-light shadow dark:border-slate-500/10  lg:flex-row  lg:child:m-0 lg:justify-between lg:my-4  child:m-2 p-4
   }
   
