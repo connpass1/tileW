@@ -18,22 +18,21 @@ export default async function GalleryPageItem({
   const mainUrl =  urls[index]?? urls[0] 
   
   return (
+  <div className="w-full h-[280px]   sm:col-span-2  sm:h-[340px]  row-start-3  md:h-[280px]  lg:h-[280px] 2xl:h-[340px] relative">
     <ImageLoader>  
    <NextImage  
         src={mainUrl}
         alt=""
         objectFit="cover" 
         quality="75" 
-        fill 
-        placeholder =  "blur"
+        fill  
         sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw,(max-width:1024px) 30vw,(max-width:1280px) 35vw,25vw " 
         priority 
       
       />
     <div className="w-full   center absolute bottom-[-100px] z-index:2 flex gap-2 child:border-2   child:block child:p-2" >
     {urls.map((url,i)=> <Link  href={{ pathname: `/item/${uid}`, query: {im: i } }} 
-     className={`${i===index?"border-white":"border-transparent"}`}  key={i}  >  
-   
+     className={`${i===index?"dark:border-white border-primary":"border-transparent"}`}  key={i}  >  
     <NextImage  
         src={urls[i]}
         alt=""
@@ -41,14 +40,14 @@ export default async function GalleryPageItem({
         quality="75"
         loading="lazy"
         width={120}
-        height={90} 
-        placeholder =  "blur"
+        height={90}  
+        blurDataURL=""
       /> 
         </Link>  
-       )}
-      
+       )} 
        </div>
     </ImageLoader>
+  </div>
   );
 }
  

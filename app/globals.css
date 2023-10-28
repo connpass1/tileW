@@ -83,6 +83,6 @@
   .skeleton{ @apply rounded-xl bg-gray-400 text-gray-600 dark:bg-gray-700   dark:text-gray-400 center  animate-pulse 
    
   }
-  .test{ @apply bg-green-800  md:bg-red-800  lg:bg-orange-800 xl:bg-slate-600 2xl:bg-slate-900 }
+  .test{ @apply bg-green-800  md:bg-red-800  lg:bg-orange-800 xl:bg-sky-600 2xl:bg-slate-900 }
 }
  

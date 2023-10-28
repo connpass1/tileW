@@ -6,7 +6,6 @@ export default async function  Title({
     params: {uid},
 }: ColUidParamsType) { 
   const data = await getData(uid)  
-  return <BreadCrumbLoader > 
-      { data?.title} jjj
-      </BreadCrumbLoader> 
+  return    data?.title  
+     
  }
