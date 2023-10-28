@@ -9,7 +9,7 @@ export default function Layout({ children }: ChildrenType) {
           <AiOutlineHome />
           Home
         </Link>
-        <BiChevronRight   />
+        <BiChevronRight/>
         {children} 
       </div> 
   );

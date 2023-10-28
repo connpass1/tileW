@@ -29,8 +29,6 @@ export function ErrorText({ text }: { text: string | undefined }) {
 }
 export default function ErrorMessage({
   errors,
-  loading = undefined,
-  text = "применить",
 }: IForm) {
   let errorMessage = Object.keys(errors).length ? "не корректные дынные" : null;
   if (errorMessage !== null) {
@@ -47,7 +45,7 @@ export default function ErrorMessage({
           role="alert"
         >
           <FaExclamationCircle />
-          <span className="sr-only">Info</span> 
+          <span className="sr-only">Info</span>
           <span className="px-2 font-medium"> {errorMessage} </span>
         </div>
       )}

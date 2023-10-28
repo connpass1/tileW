@@ -1,23 +1,25 @@
 import { MdImageNotSupported } from "react-icons/md";
 export function SkeletonText() {
-  return (
-    <div className="h-2.5 w-48 skeleton  "></div>
-  );
+  return <div className="skeleton h-2.5 w-48  "></div>;
 }
 export function SkeletonFull() {
+  return <div className="skeleton h-full w-full  "></div>;
+}
+
+export function SkeletonImage() {
   return (
-    <div className="h-full w-full skeleton  "></div>
+    <div className=" center  h-full w-full">
+      <div className="skeleton h-full w-full max-w-lg animate-pulse"></div>{" "}
+    </div>
   );
 }
 
-export function SkeletonImage () {return <div className=" w-full  h-full center" > <div className="animate-pulse w-full max-w-lg skeleton h-full" >   
- 
-    </div> </div> 
-  }
-
-export function NotFoundImage () {return <div className=" w-full  h-full center" > <div className=" w-full max-w-lg skeleton animate-none" >  < MdImageNotSupported
- 
-    className=" w-1/2  h-1/2"  /> </div> </div> 
-  }
-   
-  
+export function NotFoundImage() {
+  return (
+    <div className=" center  h-full w-full">
+      <div className=" skeleton w-full max-w-lg animate-none">
+        <MdImageNotSupported className=" h-1/2  w-1/2" />{" "}
+      </div>{" "}
+    </div>
+  );
+}

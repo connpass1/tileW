@@ -1,5 +1,10 @@
 import { ChildrenType } from "@/app/_utils/models/types";
 export default function ItemLayout(  {children}  :  ChildrenType  ) { 
-  return <div className="bg-sky-900 px-3 flex flex-col relative h-[600px] w-auto" ><p>item Layout gallery</p>{children} </div>
+
+
+  return <div className="w-full h-[280px] sm:h-[320px]   sm:h-[340px]  md:w-1/2  md:h-[280px]  lg:h-[280px] 2xl:h-[340px] test relative"> 
+      {children}  
+    </div>
+   
 } 
  

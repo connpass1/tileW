@@ -1,12 +1,10 @@
  
-import { firebaseConfig } from "@/app/api/_config/firebase";
-import { initializeApp } from "firebase/app";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { auth } from "@/app/api/_config/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {
-   const app = initializeApp(firebaseConfig); 
-  const auth = getAuth(app);
+ 
 try{
  const login=await createUserWithEmailAndPassword(auth,"connpass22@mailinator.com","ffffff")
 
