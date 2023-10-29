@@ -3,11 +3,11 @@ import { BreadCrumbLoader } from "@/app/_components/loader";
 import { getItem } from "@/app/_utils/data/getData";
 import { ColUidParamsType } from "@/app/_utils/models/types";
 export default async function  BreadcrumbPageItem({
-    params: { uid},
+    params: { col},
 }: ColUidParamsType) { 
-  const data = await getItem(uid)  
+  const data = await getItem( col)  
  
   return <BreadCrumbLoader > 
-      это  _ {uid}{ data?.title} 
+      это  _ { col}{ data?.title} 
       </BreadCrumbLoader> 
  }
