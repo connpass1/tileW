@@ -1,3 +1,5 @@
+import { ColUidParamsType } from "@/app/_utils/models/types";
+
 export default  async function Title({
   params: { uid,col},
 }: ColUidParamsType)  {
