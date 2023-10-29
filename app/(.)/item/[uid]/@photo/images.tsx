@@ -1,5 +1,5 @@
 "use client" 
-import NextImage from "next/image";
+import NextImage from "next/legacy/image";
 import { useState } from "react";
 export default function Ups({ urls }: { urls: string[] }) { 
     const [state, setState] = useState(0)
@@ -10,9 +10,9 @@ export default function Ups({ urls }: { urls: string[] }) {
        <NextImage  
    src={ urls[state]}
    alt=""
-   style={{objectFit:"cover"}}
+    objectFit="cover" 
    quality="75" 
-   fill  
+ 
    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw,(max-width:1024px) 30vw,(max-width:1280px) 35vw,25vw " 
    priority  
 />
@@ -23,12 +23,12 @@ className={`${i===state?"dark:border-white border-primary":"border-transparent c
 <NextImage  
    src={urls[i]}
    alt=""
-   style={{objectFit:"cover"}} 
+   objectFit="cover" 
    quality="75"
    loading="lazy"
    width={120}
    height={90}  
-   blurDataURL=""
+    
  /> 
    </div>  
   )} 

@@ -5,8 +5,8 @@ import { getItem } from "@/app/_utils/data/getData";
 import { ColUidParamsType } from "@/app/_utils/models/types";
  
 export default async function  Title({
-    params: {col},
+    params: {uid},
 }: ColUidParamsType) { 
-  const data = await getItem(col)  
+  const data = await getItem(uid)  
   return     <BreadCrumbLoader>{data?.short_name}  </BreadCrumbLoader>  
  }
