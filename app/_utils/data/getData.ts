@@ -9,3 +9,18 @@ export default async function getData(slug: string) {
 export function timeout(ms: number | undefined) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+export async function getUser(slug: string) {
+  await timeout(3000)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}faker/user`) 
+  if (!res.ok)    return false
+  return res.json()
+}
+ 
+export async function getItem(slug: string) {
+  await timeout(3000)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}faker/item`) 
+  if (!res.ok)    return false
+  return res.json()
+}
+ 

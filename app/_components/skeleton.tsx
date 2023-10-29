@@ -19,7 +19,7 @@ export function NotFoundImage() {
     <div className=" center  h-full w-full">
       <div className=" skeleton w-full max-w-lg animate-none">
         <MdImageNotSupported className=" h-1/2  w-1/2" /> 
-      </div>{" "}
+      </div>  
     </div>
   );
 }
