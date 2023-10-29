@@ -19,7 +19,7 @@ export async function getUser(slug: string) {
  
 export async function getItem(slug: string) {
   await timeout(3000)
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}faker/item`) 
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}faker/item`,{ next: { tags: ['getItem',slug] } })  
   if (!res.ok)    return false
   return res.json()
 }
