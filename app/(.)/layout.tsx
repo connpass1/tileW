@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { Open_Sans, Roboto_Mono } from 'next/font/google'; 
+import { Open_Sans, Roboto_Mono } from 'next/font/google';
 import Link from "next/link";
 import { BiHome } from "react-icons/bi";
 const Drawer = dynamic(() => import("../_layout/drawer"));
@@ -27,11 +27,11 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
   breadcrumb,
-  gallery,title
+   title
 }: {
   children: React.ReactNode;
   breadcrumb: React.ReactNode;
-  gallery: React.ReactNode;title: React.ReactNode
+   title: React.ReactNode
 }) {
   return (
     <> 
@@ -42,7 +42,7 @@ export default function RootLayout({
       >
         {breadcrumb}
         {title}
-        {gallery}
+        
         {children}
       </div>
       <header>

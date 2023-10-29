@@ -9,7 +9,7 @@ export function SkeletonFull() {
 export function SkeletonImage() {
   return (
     <div className=" center  h-full w-full">
-      <div className="skeleton h-full w-full max-w-lg animate-pulse"></div>{" "}
+      <div className="skeleton h-full w-full max-w-lg animate-pulse"></div> 
     </div>
   );
 }
@@ -18,7 +18,7 @@ export function NotFoundImage() {
   return (
     <div className=" center  h-full w-full">
       <div className=" skeleton w-full max-w-lg animate-none">
-        <MdImageNotSupported className=" h-1/2  w-1/2" />{" "}
+        <MdImageNotSupported className=" h-1/2  w-1/2" /> 
       </div>{" "}
     </div>
   );

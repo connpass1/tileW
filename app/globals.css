@@ -83,6 +83,12 @@
   .skeleton{ @apply rounded-xl bg-gray-400 text-gray-600 dark:bg-gray-700   dark:text-gray-400 center  animate-pulse 
    
   }
-  .test{ @apply bg-green-800  md:bg-red-800  lg:bg-orange-800 xl:bg-sky-600 2xl:bg-slate-900 }
+  .test{ @apply bg-green-800 sm:bg-gray-600 md:bg-red-800  lg:bg-orange-800 xl:bg-sky-600 2xl:bg-slate-900 
+    
+    
+    before:content-['min']
+    sm:before:content-['sm'] md:before:content-['md']   lg:before:content-['lg']
+     xl:before:content-['xl']     2xl:before:content-['2xl']  flex flex-col
+  }
 }
  

@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { ChildrenType } from "../_utils/models/types";
+import { SkeletonImage } from "./skeleton";
 
 export function BreadCrumbLoader({ children }: ChildrenType) {
   return (
@@ -10,7 +11,7 @@ export function BreadCrumbLoader({ children }: ChildrenType) {
 }
 export function ImageLoader({ children }: ChildrenType) {
   return (
-    <Suspense fallback={<div className="animate-pulse">...</div>}>
+    <Suspense fallback={<SkeletonImage/>}>
       {children}
     </Suspense>
   );

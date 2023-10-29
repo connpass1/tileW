@@ -1,8 +1,7 @@
  
 export interface IItem {
     title : string | undefined;
-    description: string | undefined;
-    preview:string | undefined;
+    description: string | undefined; 
     uid: string ; 
     quantity: number | undefined;
     rate: number | undefined;
@@ -14,8 +13,7 @@ export interface IItem {
  }
  export class Item implements IItem{
      title="";
-     description="";
-     preview="";
+     description=""; 
      uid: string ;
      quantity=0;
      rate=0;
@@ -25,8 +23,7 @@ export interface IItem {
      updated: any=null;
     constructor(item: IItem  ) {
         const { title,
-            description,
-            preview,
+            description ,
             uid ,
             quantity,
             rate,
@@ -34,8 +31,7 @@ export interface IItem {
             price,created }=item; 
    
     this.title =  title??""
-    this.description =  description??  ""
-    this.preview = preview?? ""
+    this.description =  description??  ""  
     this.uid =  uid 
     this.quantity =  quantity??0
     this.rate = rate??0
