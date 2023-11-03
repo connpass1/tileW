@@ -17,7 +17,7 @@
     @apply flex items-center justify-center  col-span-full row-start-[-1]  flex-col   border-t-2 border-slate-500/50 
     p-4 font-light shadow  child:m-2  dark:border-slate-500/10 lg:my-4 lg:flex-row  lg:justify-between lg:child:m-0;
   }
-  main {@apply grid  grid-cols-6 grid-flow-dense grid-rows-[min-content_min-content_min-content_min-content_min-content_1fr] p-2  gap-4} 
+  main {@apply grid  grid-cols-6 grid-flow-dense   p-2  gap-4} 
 
   nav  , aside {
     @apply flex flex-col child:m-1 child:w-full  child:border-b child:border-gray-500/10 child:px-2 child:py-2 select-none  
@@ -32,7 +32,7 @@
   textarea {
     @apply input  w-full;
   }
-
+  button{  @apply disabled:cursor-default  }
   button[type="submit"] {
     @apply btn-primary;
   }
@@ -71,5 +71,6 @@
     md:before:content-['md'] lg:bg-orange-800   lg:before:content-['lg']
      xl:bg-sky-600     xl:before:content-['xl']  2xl:bg-slate-900 2xl:before:content-['2xl'];
   }
-
+.slate{ @apply  rounded  shadow-md border border-current disabled:hover:text-slate-500 disabled:opacity-40
+    text-slate-500   hover:text-primary  px-4 dark:bg-slate-950 }
 }
