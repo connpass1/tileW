@@ -1,5 +1,9 @@
 {
-  "cSpell.words": ["Clise", "tailwindcss"],
+  "cSpell.words": [
+    "Clise",
+    "tailwindcss",
+    "Twotone"
+  ],
   "css.lint.unknownAtRules": "ignore",
   "editor.formatOnSave": false,
   "files.associations": {
