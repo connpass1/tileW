@@ -1,6 +1,6 @@
+import Gallery from "@/app/_components/gallery";
+import Rate from "@/app/_components/rate";
 import Breadcrumbs, { BreadcrumbsLink } from "@/app/_layout/content/breadcrumbs";
-import Gallery from "@/app/_layout/content/gallery";
-import Rate from "@/app/_layout/content/rate";
 import Title from "@/app/_layout/content/title";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
  

@@ -1,5 +1,5 @@
+import Gallery from '@/app/_components/gallery';
 import Breadcrumbs, { BreadcrumbsLink } from "@/app/_layout/content/breadcrumbs";
-import Gallery from '@/app/_layout/content/gallery';
 import Title from "@/app/_layout/content/title";
 import { Metadata } from "next/types";
 import React from "react";

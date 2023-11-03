@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Card from "./_components/card";
 
 export default function IndexPage(){ 
     return <  >
@@ -6,7 +7,10 @@ export default function IndexPage(){
       <div className="flex gap flex-col">
       <Link href="/articles">articles</Link>
       <Link href="/item">item </Link>
-      <Link href="/login">login</Link></div>
+      
+    
+        <Card/>
+        <Link href="/login">login</Link></div>
 </> 
  
 }  

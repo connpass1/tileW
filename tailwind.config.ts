@@ -21,6 +21,10 @@ const config: Config = {
         error: "#b91c1c",
  
       },
+      spacing: { 
+        '124': '32rem',
+        '144': '36rem',
+      }
     },
   },
   plugins: [
