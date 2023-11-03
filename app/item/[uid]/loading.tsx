@@ -1,14 +1,13 @@
 import Rate from "@/app/_components/rate";
 import Breadcrumbs, { BreadcrumbsLink } from "@/app/_layout/content/breadcrumbs";
 import Title from "@/app/_layout/content/title";
-import { BiDotsHorizontalRounded } from "react-icons/bi";
 import NextImage from "next/legacy/image";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { BiDotsHorizontalRounded } from "react-icons/bi";
  
 export default function LoadingUid() {
   
     return <> 
-   <Breadcrumbs ><BreadcrumbsLink link={["/items","catalog"] } /><BiDotsHorizontalRounded  className="animate-bounce"/> </Breadcrumbs>
+      <Breadcrumbs ><BreadcrumbsLink link={{  slug: "/items",name:"catalog"}} /><BiDotsHorizontalRounded  className="animate-bounce"/> </Breadcrumbs>
       <Title text="" /> 
       <main className="animate-pulse child:text-slate-500/25 ">
         <Rate rate={0}/> 

@@ -1,18 +1,18 @@
  
 import Breadcrumbs, { BreadcrumbsLink } from "@/app/_layout/content/breadcrumbs";
 import Title from "@/app/_layout/content/title";
+import NextImage from "next/legacy/image";
 import { Metadata } from "next/types";
 import React from "react";
-import NextImage from "next/legacy/image";
 export const metadata: Metadata = {
   title: `${process.env.NEXT_PUBLIC_SITE_NAME} -404`,
 };
 
 const Error404: React.FC = () => <>
-  <Breadcrumbs ><BreadcrumbsLink link={["/items", "catalog"]} />404 </Breadcrumbs>
+  <Breadcrumbs ><BreadcrumbsLink link={{ slug: "/items", name: "catalog" }} />404 </Breadcrumbs>
   <Title text="404" />
-  <main  className="text-center text-slate-800 dark:text-slate-500">
-  <div className="relative col-span-full h-[75vw]  border-r  border-slate-500/10  md:col-span-4 md:h-124 text-slate-100" >
+  <main  className="text-center text-slate-800 dark:text-slate-500 items-stretch">
+  <div className="relative col-span-full h-[75vw]    md:col-span-4 md:h-124 text-slate-100" >
   <NextImage
         src="/box.png"
         alt="404"
@@ -27,7 +27,7 @@ const Error404: React.FC = () => <>
         />
   </div>
     <h1 className="tracking-tight font-extrabold   text-center items-center justify-center 
-      text-9xl col-span-full lg:col-span-3 row-start-2 max-lg:row-start-4 m-8">404</h1> 
+      text-9xl col-span-full  md:col-span-2  row-span-4  m-8">404</h1> 
       <div className="mb-4 text-lg font-light col-span-full row-start-6 ">
       <p>К сожалению, мы не можем найти эту страницу.</p>
       <p> На главной странице вы найдете много интересного</p>

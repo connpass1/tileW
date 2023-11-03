@@ -30,11 +30,9 @@ export default async function X({ params: { uid } }: ColUidParamsType) {
   return (
     <>
       <Breadcrumbs>
-        {item.parents?.map((it) => (
-          <BreadcrumbsLink key={it.uid} link={[`/item/${it.uid}`, it.name]} />
-        ))}
-
-        <span>{item.name}</span>
+      <BreadcrumbsLink   link={{ slug:"/items"   , name:  "каталог"}} />
+          <BreadcrumbsLink   link={{ slug:"/item/"+ item.parent_uid   , name:  item.parent_name}} /> 
+        <span>{item.name} </span>
       </Breadcrumbs>
       <Title text={item.title} />
       <main>

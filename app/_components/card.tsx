@@ -13,8 +13,8 @@ const router = useRouter()
 const push=()=>{router.push(`/card/${item.uid}/${q}`) }
 
   return (
-    <div className="col-span-full row-start-2 grid   select-none  grid-cols-6  tracking-tight shadow-xl dark:bg-slate-900 xl:mx-20">
-    <div className="relative col-span-full h-[75vw]  border-r  border-slate-500/10  md:col-span-4 md:h-124 text-slate-100" >
+    <div className="col-span-full row-start-2 grid  select-none  grid-cols-6   tracking-tight shadow-xl  xl:mx-20 dark:bg-slate-900">
+    <div className="relative col-span-full h-[75vw]   md:col-span-4 md:h-124 text-slate-100" >
       <NextImage
         src={item.images[src]}
         alt={item.title}
@@ -37,14 +37,11 @@ const push=()=>{router.push(`/card/${item.uid}/${q}`) }
           className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 text-slate-400 disabled:text-slate-500/25 enabled:hover:text-slate-100"  >
              <BiChevronRight className="w-12 h-12 border-2 rounded-full bg-slate-100/20  border-current "/> 
             <span className="sr-only">Next</span> 
-    </button>
-
-
-
+    </button> 
     </div>
     <div className="col-span-full flex flex-col gap-8 self-center p-6 align-middle font-mono md:col-span-2 ">
       <div
-        className={`  inline-flex  items-end justify-center text-7xl font-extrabold text-primary_dark after:text-3xl after:content-['р.']  `}
+        className={`inline-flex  items-end justify-center text-7xl font-extrabold text-primary_dark after:text-3xl after:content-['р.']`}
       >
        {item.price}
       </div>

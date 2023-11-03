@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
   const item:IItem = {
     title: faker.lorem.word(),
     tags: faker.lorem.words(),
-    parents: [{name:faker.word.sample(),uid :faker.lorem.word()},{name:faker.word.sample(),uid :faker.lorem.word()} ], 
+    parent_name:faker.word.sample() ,parent_uid: faker.string.uuid(),
     meta_description: faker.lorem.paragraph(),
     description: faker.lorem.text(),
      name: faker.lorem.word(),
