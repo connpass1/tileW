@@ -32,8 +32,9 @@ export default function RootLayout({
       <body className={`${inter.variable} ${roboto_mono.variable}`}>
         <NavBar />
         <div
-          className="col-span-full col-start-2 row-start-2 grid h-full w-full grid-cols-1  grid-rows-[2rem_3rem_1fr] max-lg:col-start-1  
-         lg:gap-4"
+          className="col-span-full col-start-2 row-start-2 grid h-full w-full grid-cols-6 
+          grid-flow-row auto-rows-max max-lg:col-start-1  
+         gap-y-4"
         >
           {children}
         </div>

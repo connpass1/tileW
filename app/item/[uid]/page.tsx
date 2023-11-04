@@ -1,9 +1,4 @@
-import Card from "@/app/_components/card";
-import Rate from "@/app/_components/rate";
-import Breadcrumbs, {
-  BreadcrumbsLink,
-} from "@/app/_layout/content/breadcrumbs";
-import Title from "@/app/_layout/content/title";
+ 
 import { getItem } from "@/app/api/_data/fetch";
 import { ColUidParamsType } from "@/app/api/_data/types";
 import { Metadata, ResolvingMetadata } from "next";
@@ -29,7 +24,7 @@ export default async function X({ params: { uid } }: ColUidParamsType) {
   const item: IItem = data as IItem;
   return (
     <>
-      <Breadcrumbs>
+      {/* <Breadcrumbs>
       <BreadcrumbsLink   link={{ slug:"/items"   , name:  "каталог"}} />
           <BreadcrumbsLink   link={{ slug:"/item/"+ item.parent_uid   , name:  item.parent_name}} /> 
         <span>{item.name} </span>
@@ -45,8 +40,11 @@ export default async function X({ params: { uid } }: ColUidParamsType) {
         {  <div className="col-span-full row-start-6 flex flex-auto"> 
         
         {item.tags.split(" ").map((tag, key) => <span key="key" className="bg-pink-100 text-pink-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-pink-400 border border-pink-400">
-         {tag}</span>)}</div> }
-      </main>
+          {tag}</span>)}</div>}
+          {item.quantity>0 ?  <AddToCard item={item} />  :<div className="row-start-3 col-start-2">нет в наличии</div>} 
+      
+
+      </main>*/}
     </>
   );
 }
