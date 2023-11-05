@@ -46,20 +46,17 @@ export default function RootLayout({
           ))}
         </aside>
         <footer className={`font-sans`}>
-          <ul className="flex gap-8">
-            <li>
+          <nav className=" gap-8 ">
+             
               <Link href="/"> home</Link>
-            </li>
-            <li>
+           
               <Link href="/item"> items</Link>
-            </li>
-            <li>
+            
               <Link href="/item/first"> first</Link>
-            </li>
-            <li>
+            
               <Link href="/articles">articles</Link>
-            </li>
-          </ul>
+           
+          </nav>
           <span className="block text-sm">© 2023. All Rights Reserved. </span>
         </footer>
       </body>

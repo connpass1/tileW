@@ -1,6 +1,6 @@
 export default function X() {
   return ( 
-    <span className="text-gray-500/20 animate-pulse">...</span>
+    <div className="bd-gray-500/20 animate-pulse h-3/4 w-3/4"/> 
     
   );
 }
