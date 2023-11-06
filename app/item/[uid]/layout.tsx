@@ -26,7 +26,7 @@ export default function Layout({
         <Link href="/items">items </Link> <BiChevronRight />
         {breadcrumb}
       </nav>
-      <h1 className="col-span-full h-12  text-xl first-letter:uppercase max-xl:pl-4 ">
+      <h1 className="col-span-full h-12  text-xl first-letter:uppercase max-lg:pl-4 ">
          {title}
       </h1>
       <div className="col-span-full  flex h-12 items-center justify-between text-2xl  max-2xl:pr-4 max-lg:pl-4">
