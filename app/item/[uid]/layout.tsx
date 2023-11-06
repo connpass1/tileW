@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { BiChevronRight } from "react-icons/bi";
 
 export default function Layout({
   breadcrumb,
@@ -19,25 +18,24 @@ export default function Layout({
 }) {
   return (
     <> 
-      <nav className=" col-span-full 
-      items-center justify-end   text-sm font-thin  max-2xl:pr-4 ">
-    
-        <Link href="/"> home </Link> <BiChevronRight />
-        <Link href="/items">items </Link> <BiChevronRight />
+      <nav className="col-span-full gap-2
+      items-center justify-end  max-2xl:pr-4 "> 
+        <Link href="/"> home </Link> &gt;
+        <Link href="/items">items </Link> &gt;
         {breadcrumb}
       </nav>
-      <h1 className="col-span-full h-12  text-xl first-letter:uppercase max-lg:pl-4 ">
+      <h1 className="col-span-full h-12  text-xl first-letter:uppercase max-lg:pl-4 font-oswald">
          {title}
       </h1>
       <div className="col-span-full  flex h-12 items-center justify-between text-2xl  max-2xl:pr-4 max-lg:pl-4">
         {rate}
       </div> 
-      <div className="relative col-span-full   h-[75vw]  first-letter: md:col-span-4 bg-slate-100  md:h-124 2xl:h-144 dark:bg-slate-900">
+      <div className="col-span-full  aspect-gallery    md:col-span-4 bg-slate-100     dark:bg-slate-900 flex flex-col">
         {image}
       </div> 
       <div className="col-span-full  md:col-span-2 flex flex-col justify-center gap-8 child:inline-flex  bg-slate-100 h-full dark:bg-slate-900
-       child:rounded  child:justify-center   py-8"  >{card}</div> 
-      <span className="col-span-full max-2xl:pr-4 max-lg:pl-4 xl:py-4 ">{description}</span>
+       child:rounded  child:justify-center   py-8  font-mono"  >{card}</div> 
+      <span className="col-span-full max-2xl:pr-4 max-lg:pl-4 xl:py-4 font-sans">{description}</span>
      
     </> 
   );

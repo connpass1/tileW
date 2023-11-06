@@ -13,7 +13,7 @@ export default function NavBar() {
       </Link>
       <div className="col-start-2 col-end-[-2]">search</div>
 
-      <div className="col-end-[-1] grid grid-cols-3 gap-2 justify-self-end lg:grid-cols-2 child:cursor-pointer">
+      <div className="col-end-[-1] grid grid-cols-3 gap-2 justify-self-end lg:grid-cols-2 child:cursor-pointer ">
         <label className="relative inline-flex  items-center">
           <ThemeSwitcher />
           <BiSun className="peer h-8 w-8 peer-checked:hidden" />
@@ -30,14 +30,12 @@ export default function NavBar() {
          bg-primary/50 dark:bg-slate-950/80 transition-all peer-checked:-translate-x-full  dark:bg-primary_bg_dark/50"
           >
             <div className="col-start-1  col-end-[-2] flex flex-col h-full w-full bg-primary_dark text-gray-400 shadow-lg 
-             dark:bg-slate-900 sm:w-3/4 md:w-1/2 child:p-2">
-               
+             dark:bg-slate-900 sm:w-3/4 md:w-1/2 child:p-2 font-oswald text-lg"> 
                 {mainMenu.map((l, i) => (
                   <Link href={l[1]} key={i}>
                     {l[0]}
                   </Link>
-                ))}
-              
+                ))} 
             </div>
             <label
               htmlFor="drawer-toggle"

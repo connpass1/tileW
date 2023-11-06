@@ -1,13 +1,4 @@
- 
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-   
-        return   <>   { children}     </>  
-             
-          
- 
+import { ChildrenType } from "../layout";
+export default function RootLayout({ children }: ChildrenType) {
+  return <> {children} </>;
 }

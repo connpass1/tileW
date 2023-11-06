@@ -1,28 +1,26 @@
 import { getItem } from "@/app/api/_data/fetch";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+ 
+import { IItem } from "@/app/api/_data/types";
+ 
+import dynamic from "next/dynamic";
  
 export type IItemProps = {
-  params: {uid:string} 
-  
+  params: {uid:string}  
 } 
-  
-
+const  Add  = dynamic(() =>
+  import('./add'), {
+    loading: () => <div>Loading...</div>,
+  })
+ 
 export default async function X({ params: { uid }  }:IItemProps) { 
   const data = await getItem(uid);  
   const path = { pathname: `/item/${uid}`}
-  return<>     
-        <span className="items-end text-7xl font-extrabold text-primary_dark after:text-3xl after:content-['р.']" > 
-          {data.price}</span> 
-    
-   <div  className="text-5xl font-extrabold text-slate-500  gap-6  ">
-   <button type="button"  aria-label="-"
-          className="border p-2 rounded hover:ring-1 dark:bg-slate-950 ring-primary"><AiOutlineMinus /></button >  
-      <span >{1}</span> 
-        <button type="button" aria-label="+"
-        className="border p-2 rounded hover:ring-1 dark:bg-slate-950 ring-primary"><AiOutlinePlus /></button > 
-          
-       </div> 
-    <button type="button" className="border p-2 rounded hover:ring-1 dark:bg-slate-950 text-slate-500 m-8 ring-primary"> add to card </button> 
+  return<>    <span className="items-end  text-3xl  " > 
+   { data.quantity}</span>   
+        <span className="items-end text-7xl   text-primary_dark after:text-3xl after:content-['р.']" > 
+         {data.price} </span> 
+            { data.quantity!==0? <span className='text-4xl text-red-600'> нет в наличии</span>: <Add item={data as IItem}/>} 
+         
   </>
   }
  
