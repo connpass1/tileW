@@ -20,9 +20,5 @@ export default async function X({ params: { uid } }: ColUidParamsType) {
   const data = await getItem(uid);
   
   const item: IItem = data as IItem;
-  return (
-    <>
-     
-    </>
-  );
+  return null
 }

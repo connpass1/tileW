@@ -7,7 +7,7 @@ export default function Layout({
   image,
   card,
   description,
-  rate,children
+  rate 
 }: {
   breadcrumb: React.ReactNode;
   title: React.ReactNode;
@@ -15,10 +15,10 @@ export default function Layout({
   card: React.ReactNode;
   description: React.ReactNode;
     rate: React.ReactNode;
-  children:  React.ReactNode;
+   
 }) {
   return (
-    <>{children}
+    <> 
       <nav className=" col-span-full 
       items-center justify-end   text-sm font-thin  max-2xl:pr-4 ">
     
