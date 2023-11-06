@@ -1,42 +1,42 @@
-"use client"
-import { IItem } from '@/app/api/_data/types';
-import NextImage from "next/image";
-import { useRouter } from "next/navigation";
+"use client";
+ 
 import { useState } from "react";
-export default function Gallery({item }:{  item:IItem}) { 
-    const router = useRouter()
-     const [state,setState]=useState(1)
-    const handle = () => router.push(`/card/${item.uid}/${state}`)  
-    return<div className="w-full  h-full  flex flex-col">
-    <div className="relative w-full  aspect-video   shrink-0"> 
-    <NextImage
-     src={item.images[state]}
-      alt={item.title}
-     layout="fill"
-     sizes="(max-width: 768px) 100vw,
+import BlurImage from "./blurImage";
+export default function Gallery({images=["/box.png"],title="" }: { images?:string[],title? :string }) {
+ 
+  const [state, setState] = useState(1);
+  const [load, setLoad] = useState(false);
+ 
+  return (
+    <div className="flex  h-full  w-full flex-col">
+      <div className="relative aspect-video  w-full   shrink-0">
+        <BlurImage
+          src={ images[state]}
+          alt={ title}
+          sizes="(max-width: 768px) 100vw,
    (max-width: 1024px) 50vw,
     33vw"
-     priority
-     objectFit="cover"
-      placeholder="blur"
-      blurDataURL="/blur.png"
-      /> 
-        </div>
-        <div className='  w-full h-full flex gap-2 justify-center py-4  '>
-            {item.images.map((it, k)=><button key={k} className={`  relative h-full aspect-video   focus:ring-4`  } 
-             onClick={()=> setState( k)}>
-            <NextImage
-     src={it}
-      alt={item.title}
-     layout="fill" 
-     objectFit="cover"
-      placeholder="blur"
-      blurDataURL="/blur.png"
-      />   
-
-           </button>)}
+          priority
+          onLoading={()=>setLoad(true)}
+        />
+      </div>
+      <div className="flex h-full w-full justify-center gap-2 py-4 ">
+        { load&&images.length  &&images.map((it, k) => (
+          <button
+            key={k}
+            className={`relative aspect-video h-full   focus:ring-4`}
+            onClick={() => setState(k)}
+          >
+            <BlurImage
+              src={it}
+              alt={ title}
+              sizes="(max-width: 768px) 20vw,
+                (max-width: 1024px) 10vw,
+                 5vw"
+            />
+          </button>
+        ))}
+      </div>
     </div>
-    
-    </div>
-    }
-  
+  );
+}

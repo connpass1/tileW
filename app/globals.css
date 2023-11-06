@@ -8,7 +8,9 @@
   body {
     @apply grid  
       min-h-screen max-w-screen-2xl  
-      grid-cols-[280px_1fr] grid-rows-[60px_1fr_min-content] gap-4 text-gray-900 dark:bg-slate-950 dark:text-gray-100 2xl:mx-auto;
+      grid-cols-[280px_1fr] grid-rows-[60px_1fr_min-content] gap-4
+       text-gray-900 dark:bg-slate-950 dark:text-gray-200 2xl:mx-auto  
+
   } 
   footer {
     @apply flex items-center justify-center  col-span-full row-start-[-1]  flex-col   border-t-2 border-slate-500/50 
@@ -16,11 +18,9 @@
     hover-a:underline  hover-a:underline-offset-2
   } 
     aside {
-    @apply flex flex-col child:m-1 child:w-full  child:border-b child:border-gray-500/10 child:px-2 child:py-2 select-none  font-oswald text-lg
+    @apply flex flex-col child:m-1 child:w-full  child:border-b child:border-gray-500/10 child:px-2 child:py-2   font-oswald text-lg max-lg:hidden mr-4
   }
-  aside {
-    @apply max-lg:hidden mr-4
-  }
+ 
   nav{ @apply flex  text-sm  font-mono hover-a:underline  hover-a:underline-offset-2}
  
   input[type="text"],
@@ -30,7 +30,7 @@
     @apply input  w-full;
   }
   
-  button{ @apply disabled:opacity-25    disabled:cursor-default  border-current font-oswald text-lg uppercase}
+  button{ @apply disabled:opacity-25    disabled:cursor-default  border-current font-oswald text-lg uppercase ring-primary}
  
   button[type="submit"] {
      @apply    gap-2 bg-primary text-white enabled:hover:bg-primary_light col-span-2  select-none   rounded-md 

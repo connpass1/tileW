@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { Inter, JetBrains_Mono, Lobster, Noto_Sans, Oswald, Roboto_Mono, Sofia_Sans } from "next/font/google";
+import { JetBrains_Mono, Noto_Sans, Oswald } from "next/font/google";
  
  
 const Layout = dynamic(() => import("@/app/_layout/index")    )  
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: ChildrenType) {
     <html lang="ru" className="dark">
       <body className={` ${sans.variable}  ${mono.variable} ${oswald.variable}`}>
         <div
-          className="font-gothic col-span-full col-start-2 row-start-2 grid h-full w-full grid-flow-row 
+          className="font-sans col-span-full col-start-2 row-start-2 grid h-full w-full grid-flow-row 
           auto-rows-max grid-cols-6 gap-y-4  
          max-lg:col-start-1"
         >

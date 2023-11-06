@@ -15,11 +15,10 @@ const  Add  = dynamic(() =>
 export default async function X({ params: { uid }  }:IItemProps) { 
   const data = await getItem(uid);  
   const path = { pathname: `/item/${uid}`}
-  return<>    <span className="items-end  text-3xl  " > 
-   { data.quantity}</span>   
+  return<>  
         <span className="items-end text-7xl   text-primary_dark after:text-3xl after:content-['р.']" > 
          {data.price} </span> 
-            { data.quantity!==0? <span className='text-4xl text-red-600'> нет в наличии</span>: <Add item={data as IItem}/>} 
+            { data.quantity!==0? <span className='text-2xl self-center text-red-600'> нет в наличии</span>: <Add item={data as IItem}/>} 
          
   </>
   }

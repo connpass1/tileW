@@ -9,7 +9,7 @@ export default async function X({ params: { uid }  }:IItemProps) {
   const item =  data as IItem 
  
 
-  return<Gallery item={item} /> 
+  return<Gallery {...item} /> 
   
 //   <div className="relative  h-full   text-slate-100 md:col-span-4  ">
 //   <NextImage
