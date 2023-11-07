@@ -1,5 +1,9 @@
+import { Metadata } from "next";
 import Link from "next/link";
-
+export const metadata: Metadata = {
+  title:  process.env.NEXT_PUBLIC_SITE_NAME ,
+  description:  process.env.NEXT_PUBLIC_SITE_DESCRIPTION,
+};
 export default function IndexPage(){ 
     return <  >
   

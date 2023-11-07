@@ -9,7 +9,7 @@
     @apply grid  
       min-h-screen max-w-screen-2xl  
       grid-cols-[280px_1fr] grid-rows-[60px_1fr_min-content] gap-4
-       text-slate-950 dark:bg-slate-950 dark:text-slate-400 2xl:mx-auto  contrast-more:dark:text-slate-100
+       text-base dark:bg-base dark:text-slate-400 2xl:mx-auto  contrast-more:dark:text-slate-100
        contrast-less:dark:text-slate-500
   } 
   footer {
@@ -22,33 +22,34 @@
  
   input[type="text"],
   [type="email"],
-  [type="number"],
+  [type="number"],[type="password"],
   textarea {
-    @apply input  w-full;
+    @apply    w-full 
+      block rounded-lg border  border-slate-300 bg-slate-50 p-1.5 text-sm  text-base font-mono
+    shadow outline-none hover:border-primary hover:shadow-lg focus:border-primary_light
+     focus:ring-primary dark:border-slate-600 dark:bg-slate-800 dark:text-white dark:placeholder-slate-400
+      hover:dark:bg-base dark:focus:border-primary_dark
+     dark:focus:ring-primary_light;
+
+
+
   }
   
-  button{ @apply disabled:opacity-25    disabled:cursor-default  border-current font-oswald text-lg uppercase ring-primary disabled:ring-transparent}
+  button{ @apply disabled:opacity-25 rounded-md  disabled:cursor-default
+      border-current font-oswald text-lg uppercase ring-primary disabled:ring-transparent}
  
   button[type="submit"] {
-     @apply    gap-2 bg-primary text-white enabled:hover:bg-primary_light col-span-2  select-none   rounded-md 
+     @apply    gap-2 bg-primary text-white enabled:hover:bg-primary_light col-span-2  select-none   
      p-2  
   }
   button[type="reset"] {
     @apply  border border-slate-800 text-slate-900
    before:content-['отмена']   enabled:hover:bg-slate-900  enabled:hover:text-white dark:border-slate-600
-   dark:text-slate-400 enabled:dark:hover:bg-slate-600 enabled:dark:hover:text-white col-span-2  select-none  gap-2  rounded-md 
-   p-2  ;
+   dark:text-slate-400 enabled:dark:hover:bg-slate-600 enabled:dark:hover:text-white col-span-2  select-none  gap-2   
+   p-2 
   }
 }
-@layer components { 
-  .input {
-    @apply block rounded-lg border-2 border-slate-300 bg-slate-50 p-1.5 text-sm  text-slate-900
-    shadow outline-none hover:border-primary hover:shadow-lg focus:border-primary_light
-     focus:ring-primary dark:border-slate-600 dark:bg-slate-700 dark:text-white dark:placeholder-slate-400
-      hover:dark:bg-slate-600 dark:focus:border-primary_dark
-     dark:focus:ring-primary_light;
-  }
- 
+@layer components {  
   .test {
     @apply flex flex-col bg-green-800  before:content-['min'] sm:bg-slate-600 sm:before:content-['sm']  
     md:bg-red-800 md:before:content-['md'] lg:bg-orange-800   lg:before:content-['lg'] 

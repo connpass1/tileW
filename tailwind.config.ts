@@ -25,7 +25,7 @@ const config: Config = {
         error_dark: "#991b1b",
         error_light: "#dc2626",
         error: "#b91c1c",
- 
+        base:"#020617"
       } 
   
     },
