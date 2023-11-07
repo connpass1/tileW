@@ -18,6 +18,7 @@ export async function GET(request: NextRequest) {
     quantity: getRandomInt(4) as QuantityType,
     rate: getRandomInt(10) as RateType,
     images: [
+       
       faker.image.urlLoremFlickr(),
       faker.image.urlLoremFlickr(),
       faker.image.urlLoremFlickr(),

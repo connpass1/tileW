@@ -33,7 +33,7 @@ export default function IndexPage(){
     
     
       </div>
-      <div className="font-mono flex col-span-3 gap flex-col bg-gray-700">
+      <div className="font-mono flex col-span-3 gap flex-col bg-slate-700">
       
       <span className="font-extrabold">kjkгггшгf+-Юf</span>
       <span className="font-thin">kjkгггшгf+-Юf</span>

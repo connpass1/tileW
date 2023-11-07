@@ -6,6 +6,6 @@ module.exports = {
   },
   images: {
     domains: ['firebasestorage.googleapis.com',
-    'loremflickr.com'],
+    'loremflickr.com'  ],
 },swcMinify: true
 }

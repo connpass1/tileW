@@ -9,18 +9,15 @@
     @apply grid  
       min-h-screen max-w-screen-2xl  
       grid-cols-[280px_1fr] grid-rows-[60px_1fr_min-content] gap-4
-       text-gray-900 dark:bg-slate-950 dark:text-gray-200 2xl:mx-auto  
-
+       text-slate-950 dark:bg-slate-950 dark:text-slate-400 2xl:mx-auto  contrast-more:dark:text-slate-100
+       contrast-less:dark:text-slate-500
   } 
   footer {
     @apply flex items-center justify-center  col-span-full row-start-[-1]  flex-col   border-t-2 border-slate-500/50 
     p-4   shadow  child:m-2  dark:border-slate-500/10 lg:my-4 lg:flex-row  lg:justify-between lg:child:m-0 
     hover-a:underline  hover-a:underline-offset-2
   } 
-    aside {
-    @apply flex flex-col child:m-1 child:w-full  child:border-b child:border-gray-500/10 child:px-2 child:py-2   font-oswald text-lg max-lg:hidden mr-4
-  }
- 
+    aside { @apply col-start-1 row-start-2 max-lg:hidden mr-4 } 
   nav{ @apply flex  text-sm  font-mono hover-a:underline  hover-a:underline-offset-2}
  
   input[type="text"],
@@ -30,33 +27,30 @@
     @apply input  w-full;
   }
   
-  button{ @apply disabled:opacity-25    disabled:cursor-default  border-current font-oswald text-lg uppercase ring-primary}
+  button{ @apply disabled:opacity-25    disabled:cursor-default  border-current font-oswald text-lg uppercase ring-primary disabled:ring-transparent}
  
   button[type="submit"] {
      @apply    gap-2 bg-primary text-white enabled:hover:bg-primary_light col-span-2  select-none   rounded-md 
      p-2  
   }
   button[type="reset"] {
-    @apply  border border-gray-800 text-gray-900
-   before:content-['отмена']   enabled:hover:bg-gray-900  enabled:hover:text-white dark:border-gray-600
-   dark:text-gray-400 enabled:dark:hover:bg-gray-600 enabled:dark:hover:text-white col-span-2  select-none  gap-2  rounded-md 
+    @apply  border border-slate-800 text-slate-900
+   before:content-['отмена']   enabled:hover:bg-slate-900  enabled:hover:text-white dark:border-slate-600
+   dark:text-slate-400 enabled:dark:hover:bg-slate-600 enabled:dark:hover:text-white col-span-2  select-none  gap-2  rounded-md 
    p-2  ;
   }
 }
-@layer components {
- 
-
- 
+@layer components { 
   .input {
-    @apply block rounded-lg border-2 border-gray-300 bg-gray-50 p-1.5 text-sm  text-gray-900
+    @apply block rounded-lg border-2 border-slate-300 bg-slate-50 p-1.5 text-sm  text-slate-900
     shadow outline-none hover:border-primary hover:shadow-lg focus:border-primary_light
-     focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400
-      hover:dark:bg-gray-600 dark:focus:border-primary_dark
+     focus:ring-primary dark:border-slate-600 dark:bg-slate-700 dark:text-white dark:placeholder-slate-400
+      hover:dark:bg-slate-600 dark:focus:border-primary_dark
      dark:focus:ring-primary_light;
   }
  
   .test {
-    @apply flex flex-col bg-green-800  before:content-['min'] sm:bg-gray-600 sm:before:content-['sm']  
+    @apply flex flex-col bg-green-800  before:content-['min'] sm:bg-slate-600 sm:before:content-['sm']  
     md:bg-red-800 md:before:content-['md'] lg:bg-orange-800   lg:before:content-['lg'] 
      xl:bg-sky-600     xl:before:content-['xl']  2xl:bg-slate-900 2xl:before:content-['2xl'];
   } 

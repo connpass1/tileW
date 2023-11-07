@@ -24,7 +24,7 @@ export default function Gallery({images=["/box.png"],title="" }: { images?:strin
         { load&&images.length  &&images.map((it, k) => (
           <button
             key={k}
-            className={`relative aspect-video h-full   focus:ring-4`}
+            className={`relative aspect-video h-full focus:ring-4`}
             onClick={() => setState(k)}
           >
             <BlurImage

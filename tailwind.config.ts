@@ -16,7 +16,7 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-sans)'],
         mono: ['var(--font-mono)'],
-        oswald: ['var(--font-oswald)'],
+        oswald:['var(--font-oswald)'],
       },
       colors: { 
         primary: "#1d4ed8",
@@ -26,11 +26,8 @@ const config: Config = {
         error_light: "#dc2626",
         error: "#b91c1c",
  
-      },
-      spacing: { 
-        '124': '32rem',
-        '144': '36rem',
-      }
+      } 
+  
     },
   },
   plugins: [

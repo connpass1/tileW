@@ -1,6 +1,5 @@
 "use client";
 import NextImage from "next/image";
- 
 import { useEffect, useState } from "react";
 export default function BlurImage({
   src,
@@ -28,11 +27,11 @@ export default function BlurImage({
       alt={alt}
       layout="fill"
           sizes={sizes}
-          className={`bg-gray-400 transition duration-200 ${
-            load ? 'grayscale-100 bg-gray-400 blur-0' : 'grayscale-20 blur-2xl'
+          className={`bg-slate-400 transition duration-200 ${
+            load ? 'grayscale-100 bg-slate-400 blur-0' : 'grayscale-20 blur-2xl'
           }`}
       priority={priority}
-      objectFit="cover"
+      style={{objectFit:"cover"}}
       placeholder="blur"
       blurDataURL="/blur.png"
       onLoadingComplete={ onLoadingComplete}
