@@ -1,6 +1,6 @@
-import Loading from "../loading";
+ 
 export default function LoadingLogin() {
   return (
-    <Loading/> 
+    <div className="w-full h-full bg-slate-500 animate-pulse " />   
   );
 }

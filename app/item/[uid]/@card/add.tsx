@@ -7,9 +7,7 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 export default function Add({item }:{  item:IItem}) { 
     const router = useRouter()
      const [state,setState]=useState(1)
-    const handle = () => router.push(`/card/${item.uid}/${state}`) 
-    
-   
+    const handle = () => router.push(`/card/${item.uid}/${state}`)  
     return<>    
      <div  className="text-5xl   text-slate-500  gap-6  ">
      <button type="button"  aria-label="-" onClick={()=>setState(state-1)} disabled={state===1}

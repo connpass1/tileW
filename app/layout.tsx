@@ -22,8 +22,7 @@ const oswald = Oswald({
   variable: '--font-oswald',
   weight:"400" 
 })
-
-
+ 
 export type ChildrenType = { children: React.ReactNode };
 export default function RootLayout({ children }: ChildrenType) {
   return (

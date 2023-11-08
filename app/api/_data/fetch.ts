@@ -3,40 +3,33 @@ export async function getItem(slug: string) {
     if (!res.ok)    return false
     return res.json()
 }
-export async function login(email: string,password :string) { 
+export async function signIn(email: string,password :string) { 
   const res = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`, {
-   method: 'POST',
-   headers: {
-     'Content-Type': 'application/json'  }, 
-    body: JSON.stringify({
-      email: email, password:   password
-    }),
-  }) 
-  if (!res.ok) {
-    return {
-      status: res.statusText,
-     
-    }
-  }  
-  return res.json()
+   
+      method: 'POST', 
+     headers: {
+       'Content-Type': 'application/json' }, 
+      body: JSON.stringify({
+        email: email, password:   password
+      }),
+    }) 
+    if (res.ok) { return  res.json()  }
+    else return {  error: res.status,email: "jj"+email, password:   password   }
 }  
  
 export async function signUp(email: string,password :string) { 
   const res = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`, {
-   method: 'POST',
+    method: 'POST',
+     
    headers: {
-     'Content-Type': 'application/json'  }, 
+     'Content-Type': 'application/json' }, 
     body: JSON.stringify({
       email: email, password:   password
     }),
   }) 
-  if (!res.ok) {
-    return {
-      status: res.statusText,
-     
-    }
-  }  
-  return res.json()
+  if (res.ok) { return {res:res.json() }}
+  else return {  error: res.status,email: "jj"+email, password:   password   }
+  
 }  
  
 export async function getUserData(idToken: string ) { 

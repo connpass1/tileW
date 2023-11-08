@@ -18,7 +18,7 @@ export default function X() {
 
     return <>
      <label htmlFor="drawer-toggle" aria-label="navigation open" > 
-    <BiMenu className={` peer h-8 w-8  max-md:h-6  max-md:w-6 cursor-pointer  ${open!&&"rotate-90"}`}  /> 
+    <BiMenu className={` h-8 w-8  max-md:h-6  max-md:w-6 cursor-pointer  ${open!&&"rotate-90"}`}  /> 
   </label> 
     
     
