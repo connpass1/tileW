@@ -9,7 +9,7 @@ export default function Add({item }:{  item:IItem}) {
      const [state,setState]=useState(1)
     const handle = () => router.push(`/card/${item.uid}/${state}`)  
     return<>    
-     <div  className="text-5xl   text-slate-500  gap-6  ">
+     <div  className="text-5xl   text-slate-500  gap-6 font-font3">
      <button type="button"  aria-label="-" onClick={()=>setState(state-1)} disabled={state===1}
             className="border p-2 rounded hover:ring-1 dark:bg-slate-950 ring-primary" ><AiOutlineMinus /></button >  
         <span >{state}</span> 
@@ -18,6 +18,6 @@ export default function Add({item }:{  item:IItem}) {
            
          </div> 
       <button type="button"  onClick={handle}
-       className="border p-2 rounded hover:ring-1 dark:bg-slate-950 text-slate-500 m-8 ring-primary" > add to card </button> 
+       className="border p-2 rounded hover:text-primary dark:bg-base text-slate-500 m-8 ring-primary" > add to card </button> 
     </>
     }

@@ -13,7 +13,7 @@ export default async function X({ params: { uid } }: IItemProps) {
   const data = await getItem(uid); 
   return (
     <>
-      <span className="items-end text-7xl  text-primary_dark   after:text-3xl  after:content-['р.'] dark:text-primary_light">
+      <span className="items-end text-7xl  text-primary_dark font-font1 after:text-3xl after:px-l after:content-['р.'] dark:text-primary_light">
         {data.price} 
       </span>
       {data.quantity !== 0 ? (

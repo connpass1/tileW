@@ -2,7 +2,7 @@ import { ChildrenType } from "@/app/layout";
 
 export default function RootLayout({ children }: ChildrenType) {
   return (
-    <h1 className="font-os text-xl font-oswald font-bold leading-tight tracking-tight text-slate-900 dark:text-white md:text-2xl">
+    <h1 className="text-xl font-font2   leading-tight tracking-tight  dark:text-white md:text-2xl">
       {children}
     </h1>
   );

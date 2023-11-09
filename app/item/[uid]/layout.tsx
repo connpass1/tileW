@@ -24,7 +24,7 @@ export default function Layout({
         <Link href="/items">items </Link> &gt;
         {breadcrumb}
       </nav>
-      <h1 className="col-span-full h-12  text-xl first-letter:uppercase max-lg:pl-4 font-oswald">
+      <h1 className="col-span-full h-12  text-xl first-letter:uppercase max-lg:pl-4 font-font2">
          {title}
       </h1>
       <div className="col-span-full  flex h-12 items-center justify-between text-2xl  max-2xl:pr-4 max-lg:pl-4">
@@ -35,8 +35,8 @@ export default function Layout({
       </div> 
       <div className="col-span-full  md:col-span-2 flex flex-col justify-center gap-8 child:inline-flex  bg-slate-100 h-full
        dark:bg-slate-900/50 shadow-lg
-       child:rounded  child:justify-center   py-8  font-mono "  >{card}</div>
-      <span className="col-span-full max-2xl:pr-4 max-lg:pl-4 xl:py-4 font-sans">{description}</span>
+       child:rounded  child:justify-center   py-8  font-font3 "  >{card}</div>
+      <span className="col-span-full max-2xl:pr-4 max-lg:pl-4 xl:py-4 font-font1">{description}</span>
      
     </> 
   );

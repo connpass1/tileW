@@ -1,11 +1,11 @@
 "use client";
 import { SubmitButton } from "@/app/_components/form/button";
-import { minLength ,ErrorText} from "@/app/_components/form/errorMessage";
-import { signIn } from "@/app/api/_data/fetch"; 
+import { ErrorText, minLength } from "@/app/_components/form/errorMessage";
+import { signIn } from "@/app/api/_data/fetch";
 import Link from "next/link";
 import { useState } from "react";
 import { ErrorOption, useForm } from "react-hook-form";
-import { BiChevronLeft, BiHome,BiCheckboxChecked,BiCheckboxMinus  } from "react-icons/bi"; 
+import { BiCheckboxChecked, BiCheckboxMinus } from "react-icons/bi";
 export interface IFormInput {
   email: string;
   password: string;
@@ -41,7 +41,7 @@ export default function Page() {
  
   return (
     <form className="grid grid-cols-2 gap-4" onSubmit={handleSubmit(onSubmit)}>
-      <label   className="mb-2 block text-right font-sans text-sm font-medium"
+      <label   className="block text-right font-font1   italic"
         htmlFor="email" >   Your email
       </label> 
       <input
@@ -61,7 +61,7 @@ export default function Page() {
       <ErrorText >{errors?.email?.message}</ErrorText >
       <label
         htmlFor="password"
-        className="mb-2 block text-right font-sans text-sm font-medium"
+        className="block text-right font-font1 italic"
       >
         Password
       </label>
@@ -72,15 +72,15 @@ export default function Page() {
         placeholder="••••••••"
         className={errors?.password?.message===undefined?"input":" err"}    />
  <ErrorText >{errors?.password?.message}</ErrorText >
-      <label className="flex items-center cursor-pointer">
+      <label className="flex items-center cursor-pointer ">
         <input
           id="remember"
           aria-describedby="remember"
           type="checkbox"
           className="peer sr-only collapse relative"
         />
-          <BiCheckboxChecked className="  h-8 w-8 peer-checked:hidden " />
-          <BiCheckboxMinus className="  hidden h-8 w-8  peer-checked:block " />
+          <BiCheckboxChecked className="h-8 w-8 peer-checked:hidden text-primary" />
+          <BiCheckboxMinus className="hidden h-8 w-8  peer-checked:block " />
         <span className="px-4 ">Remember me</span>
 
       </label> 
@@ -89,7 +89,7 @@ export default function Page() {
         className="self-end justify-self-end text-sm font-medium hover:underline"
       > Forgot password? </Link> 
         <ErrorText>{errors?.root?.message }</ErrorText>  
-      <SubmitButton loading  disabled={errors?.email!==undefined||errors?.password!==undefined}> Sign in </SubmitButton>
+      <SubmitButton loading={loading}  disabled={errors?.email!==undefined||errors?.password!==undefined}> Sign in </SubmitButton>
     </form>
   );
 }

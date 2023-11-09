@@ -18,14 +18,14 @@
     hover-a:underline  hover-a:underline-offset-2
   } 
     aside { @apply col-start-1 row-start-2 max-lg:hidden mr-4 } 
-  nav{ @apply flex  text-sm  font-mono hover-a:underline  hover-a:underline-offset-2}
+  nav{ @apply flex  text-sm  font-font3 hover-a:underline  hover-a:underline-offset-2}
  
   /* input[type="text"],
   [type="email"],
   [type="number"],[type="password"],
   textarea {
     @apply    w-full 
-      block rounded-lg border  border-slate-300 bg-slate-50 p-1.5 text-sm  text-base font-mono
+      block rounded-lg border  border-slate-300 bg-slate-50 p-1.5 text-sm  text-base font-font3
     shadow outline-none hover:border-primary hover:shadow-lg focus:border-primary_light
      focus:ring-primary dark:border-slate-600 dark:bg-slate-800 dark:text-white dark:placeholder-slate-400
       hover:dark:bg-base dark:focus:border-primary_dark
@@ -35,9 +35,9 @@
  }
    */
  
-  h1{ @apply font-oswald}
+  h1{ @apply font-font2}
   button{ @apply disabled:opacity-25 rounded-md  disabled:cursor-default  text-sm font-medium
-      border-current font-oswald text-lg uppercase ring-primary disabled:ring-transparent}
+      border-current font-font2 text-lg uppercase ring-primary disabled:ring-transparent}
  
   button[type="reset"] {
     @apply  border border-slate-800 text-slate-900

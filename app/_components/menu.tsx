@@ -3,7 +3,7 @@ import { mainMenu } from "../api/_data/menu";
 
 export default function Menu() {
   return (
-    <ol className= "font-oswald text-lg child:grid child:my-1">
+    <ol className= "font-font2 text-lg child:grid child:my-1">
     
       {mainMenu.map((l, i) => (<li  key={i }>
         <Link href={l[1]} className="hover:text-primary p-2 focus:text-primary  px-4 dark:focus:bg-slate-900 

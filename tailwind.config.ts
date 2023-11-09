@@ -14,9 +14,9 @@ const config: Config = {
       },
     
       fontFamily: {
-        sans: ['var(--font-sans)'],
-        mono: ['var(--font-mono)'],
-        oswald:['var(--font-oswald)'],
+        font1: ['var(--font-font1)'],
+        font3: ['var(--font-font3)'],
+        font2:['var(--font-font2)'],
       },
       colors: { 
         primary: "#1d4ed8",

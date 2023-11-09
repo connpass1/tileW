@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: `${process.env.NEXT_PUBLIC_SITE_NAME} -404`,
 };
 
-const Error404: React.FC = () =>  <div className= "font-oswald m-8 flex items-center justify-center w-full  flex-col col-span-full row-span-full gap-12  text-slate-800 dark:text-slate-500 p-8 text-center" >  
+const Error404: React.FC = () =>  <div className= "font-font2 m-8 flex items-center justify-center w-full  flex-col col-span-full row-span-full gap-12  text-slate-800 dark:text-slate-500 p-8 text-center" >  
        
             <h1 className="m-24 text-9xl tracking-tight    lg:text-9xl">404</h1>
             <p className="mx-4 text-3xl tracking-tight    md:text-4xl  ">Что-то пошло не так..</p>

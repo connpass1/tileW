@@ -14,7 +14,7 @@ export default async function X({ params: { uid } }: ColUidParamsType) {
       {rate / 2 < i ? <IoIosStarOutline /> : rate / 2 > i ? <IoIosStar /> : <IoIosStarHalf />}
       </React.Fragment>) } 
   </div>
-    <span className="font-sans text-sm">
+    <span className="font-font1 text-sm">
       {data.quantity?"нет в наличии" : "в наличи: много"}
   </span> 
   </>
