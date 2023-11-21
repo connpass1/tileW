@@ -1,10 +1,8 @@
  
- 
+import { selectBYiD } from "@/app/action";
 import { getItem } from "@/app/api/_data/fetch";
 import { ColUidParamsType } from "@/app/api/_data/types";
-import { sql } from "@vercel/postgres";
 import { Metadata, ResolvingMetadata } from "next";
- 
 import Link from "next/link";
  
  
@@ -19,16 +17,12 @@ export async function generateMetadata(
   if (item?.images.length) meta.openGraph = { images: item.images };
   return meta;
 }
- 
-export async function selectAll(uid:number) { 
-
-    const  req = await sql`SELECT id, name,render,sort from items where parent_id =${uid}  ORDER BY sort  DESC;`  
-    return req 
-    }
+  
+  
 
 export default async function X({ params: { uid } }: ColUidParamsType) {
-  const { rows } = await selectAll(Number.isInteger(parseInt(uid)) ? parseInt(uid):1  );
+  const   rows   = await selectBYiD(Number.isInteger(parseInt(uid)) ? parseInt(uid):1  );
   
  
-    return <div>   { rows.map((r, k) => <p key={k}><Link href={`/${r.id}`}> {r.name } </Link>  {r.render }</p>) }</div>
+    return <div>   { (rows as unknown as any[]).map((r, k) => <p key={k}><Link href={`/${r.id}`}> {r.name } </Link>  {r.render }</p>) }</div>
 }

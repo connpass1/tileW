@@ -1,8 +1,7 @@
 import { ColUidParamsType } from "@/app/api/_data/types";
 import { sql } from "@vercel/postgres";
 import Link from "next/link";
-export async function getSelection ( uid: string | number   ) { 
- // revalidatePath('/')
+export async function getSelection ( uid: string | number   ) {  
     const  req = await sql`SELECT id, name,render,sort from items where parent_id =${uid} ORDER BY sort  DESC;`  
     return req 
     }

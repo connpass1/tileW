@@ -15,8 +15,7 @@ export default function RootLayout({
       {aside}
       <main
         className="col-span-full col-start-2 row-start-[3] grid h-full w-full grid-flow-row auto-rows-max px-4
-          grid-cols-6   font-font1  
-         max-lg:col-start-1"
+          grid-cols-6   font-font1    max-lg:col-start-1" 
       >
         {children}
       </main>

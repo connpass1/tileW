@@ -1,21 +1,18 @@
 'use server' 
 import { sql } from "@vercel/postgres";
 import { IFormInput } from "./(.)/admin/addItem/page";
-export async function myAction() {
-    await new Promise((res) => setTimeout(res, 500));
-	return "p2";
-}
+ 
 //"createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 //"updatedAt" TIMESTAMP(3) NOT NULL,
 
-export async function createAction( )   {
-    "use server"
+export async function createAction() {
+  "use server"
  
   const req1 = await sql`  
 DROP TABLE IF EXISTS Items; 
-` 
+`
   
-const req2 = await sql`  
+  const req2 = await sql`  
 CREATE TABLE IF NOT EXISTS Items  (
 id SERIAL, 
 title VARCHAR(25)  DEFAULT '' NOT NULL ,
@@ -26,10 +23,9 @@ parent_id INTEGER DEFAULT 1 NOT NULL REFERENCES Items,
 sort   smallint DEFAULT 0 NOT NULL, 
 PRIMARY KEY (id) 
 );  
-`   
-const ob={  r1:req1,r2:req2   }  
- return ob 
+`
 }
+  
 export async function dropAction( )   {  
 const  req = await sql`DROP TABLE Items`  
 return req 
@@ -43,7 +39,11 @@ const  req = await sql`INSERT INTO  Items  ( parent_id , title  , name , render 
 
 return req 
 }
-
+export async function getItem (uid:number) { 
+ 
+  const  req = await sql`SELECT * from items where id =${uid};`  
+  return req.rows[0]
+  }
  
 
 export async function selectAll() { 
@@ -51,6 +51,8 @@ export async function selectAll() {
   return req 
   }
 
-function submitForm() {
-  throw new Error("Function not implemented.");
-}
+ 
+export async function selectBYiD(uid:number) {  
+  const  req = await sql`SELECT id, name,render,sort from items where parent_id =${uid}  ORDER BY sort  DESC;`  
+  return req 
+  }
