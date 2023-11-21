@@ -1,6 +1,6 @@
 import { sql } from "@vercel/postgres";
 import Link from "next/link";
-export async function select ( ) { 
+  async function select ( ) { 
  // revalidatePath('/')
     const  req = await sql`SELECT id, name,render,sort from items where parent_id =1 ORDER BY sort  DESC;`  
     return req 
