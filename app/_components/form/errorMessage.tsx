@@ -1,5 +1,3 @@
-import { CgSpinner } from "react-icons/cg";
-import { FaExclamationCircle } from "react-icons/fa";
 import { ChildrenType } from "@/app/layout";
 interface IForm {
   errors: any;
@@ -14,7 +12,10 @@ interface IButton {
 }
 
 export const maxLength = (field: string, num: number) => {
-  return { maxLength: { value: num, message: `${field} - максимум ${num} знаков` } } as any
+  return {
+    required: `${field} - обязательное поле`,
+    maxLength: { value: num, message: `${field} - максимум ${num} знаков` }
+  } as any
 }
 export const required = (field: string) => {
   return { required: `${field} - обязательное поле` } as any
@@ -31,7 +32,7 @@ export const minLength = (field: string, num: number) => {
   
 export function ErrorText({children }: ChildrenType) {
   if (children === undefined) return null;
-  return <span className="col-span-2 text-sm text-error"> {children} </span>;
+  return <span className="col-span-full text-sm text-error"> {children} </span>;
 } 
 export function ResetButton({
   text = "отмена",

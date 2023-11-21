@@ -13,7 +13,7 @@ export default function Label({
   return (
     <label
       htmlFor={htmlFor}
-      className={`${hasError ? "text-error" : "text-gray-600"} text-sm`}
+      className={`${hasError ? "text-error" : "text-gray-600"}`}
     >
       {text ?? htmlFor}
     </label>

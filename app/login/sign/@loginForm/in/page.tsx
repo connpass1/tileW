@@ -1,5 +1,5 @@
 "use client";
-import { SubmitButton } from "@/app/_components/form/button";
+ 
 import { ErrorText, minLength } from "@/app/_components/form/errorMessage";
 import { signIn } from "@/app/api/_data/fetch";
 import Link from "next/link";
@@ -40,8 +40,8 @@ export default function Page() {
   };
  
   return (
-    <form className="grid grid-cols-2 gap-4" onSubmit={handleSubmit(onSubmit)}>
-      <label   className="block text-right font-font1   italic"
+    <form  onSubmit={handleSubmit(onSubmit)}>
+      <label  
         htmlFor="email" >   Your email
       </label> 
       <input
@@ -55,13 +55,12 @@ export default function Page() {
             message: "не валидный email",
           },
         })}
-        className={errors?.email?.message===undefined?"input":" err"}
+        className={errors?.email?.message===undefined?"input":"input text-error"}
         placeholder="name@company.com"
       /> 
       <ErrorText >{errors?.email?.message}</ErrorText >
       <label
-        htmlFor="password"
-        className="block text-right font-font1 italic"
+        htmlFor="password" 
       >
         Password
       </label>
@@ -70,26 +69,24 @@ export default function Page() {
         {...register("password", minLength("password", 6))} 
         id="password"
         placeholder="••••••••"
-        className={errors?.password?.message===undefined?"input":" err"}    />
+        className={errors?.password?.message===undefined? "input":"input text-error"}    />
  <ErrorText >{errors?.password?.message}</ErrorText >
       <label className="flex items-center cursor-pointer ">
         <input
           id="remember"
           aria-describedby="remember"
           type="checkbox"
-          className="peer sr-only collapse relative"
-        />
-          <BiCheckboxChecked className="h-8 w-8 peer-checked:hidden text-primary" />
-          <BiCheckboxMinus className="hidden h-8 w-8  peer-checked:block " />
+          className="checkbox"
+        /> 
         <span className="px-4 ">Remember me</span>
 
       </label> 
       <Link
         href="forgot"
-        className="self-end justify-self-end text-sm font-medium hover:underline"
+        className="self-end justify-self-end text-sm font-medium hover:underline col-span-2"
       > Forgot password? </Link> 
         <ErrorText>{errors?.root?.message }</ErrorText>  
-      <SubmitButton loading={loading}  disabled={errors?.email!==undefined||errors?.password!==undefined}> Sign in </SubmitButton>
+      <button   disabled={errors?.email!==undefined||errors?.password!==undefined}> Sign in </button>
     </form>
   );
 }

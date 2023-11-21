@@ -1,63 +1,60 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
 @layer base {
-  html {
-    @apply dark:bg-slate-900;
-  } 
+  
   body {
     @apply grid  
       min-h-screen max-w-screen-2xl  
-      grid-cols-[280px_1fr] grid-rows-[60px_1fr_min-content] gap-4
-       text-base dark:bg-base dark:text-slate-400 2xl:mx-auto  contrast-more:dark:text-slate-100
-       contrast-less:dark:text-slate-500
-  } 
+      grid-cols-[280px_1fr] grid-rows-[60px_24px_1fr_min-content] gap-4 
+       2xl:mx-auto  ;
+  }
   footer {
-    @apply flex items-center justify-center  col-span-full row-start-[-1]  flex-col   border-t-2 border-slate-500/50 
-    p-4   shadow  child:m-2  dark:border-slate-500/10 lg:my-4 lg:flex-row  lg:justify-between lg:child:m-0 
-    hover-a:underline  hover-a:underline-offset-2
-  } 
-    aside { @apply col-start-1 row-start-2 max-lg:hidden mr-4 } 
-  nav{ @apply flex  text-sm  font-font3 hover-a:underline  hover-a:underline-offset-2}
- 
-  /* input[type="text"],
-  [type="email"],
-  [type="number"],[type="password"],
-  textarea {
-    @apply    w-full 
-      block rounded-lg border  border-slate-300 bg-slate-50 p-1.5 text-sm  text-base font-font3
-    shadow outline-none hover:border-primary hover:shadow-lg focus:border-primary_light
-     focus:ring-primary dark:border-slate-600 dark:bg-slate-800 dark:text-white dark:placeholder-slate-400
-      hover:dark:bg-base dark:focus:border-primary_dark
-     dark:focus:ring-primary_light;
+    @apply col-span-full  row-start-[-1] flex  flex-col   items-center   
+  gap-8   border-t-2 border-base-200  footer p-10   text-base-content/60
+  
+  }
 
+  footer > nav > a {
+    @apply italic  hover:underline;
+  }
+  aside {
+    @apply flex flex-col font-font1 text-lg     h-full;
+  }
+  aside > a {
+    @apply px-4 py-1 hover:text-primary hover:bg-base-300  ;
+  }
 
- }
-   */
+  nav {
+    @apply flex  font-font3  text-sm;
+  }
+
+  form {
+    @apply grid grid-cols-3  gap-4 ;
+  }
+  form > label {
+    @apply col-start-1 label    font-font1 block text-right    italic;
+  }
+  form > input {
+    @apply input col-span-2;
+  }
  
-  h1{ @apply font-font2}
-  button{ @apply disabled:opacity-25 rounded-md  disabled:cursor-default  text-sm font-medium
-      border-current font-font2 text-lg uppercase ring-primary disabled:ring-transparent}
+form > button {
+    @apply btn  font-font3  font-semibold  uppercase col-span-full;
+  }
+
  
-  button[type="reset"] {
-    @apply  border border-slate-800 text-slate-900
-   before:content-['отмена']   enabled:hover:bg-slate-900  enabled:hover:text-white dark:border-slate-600
-   dark:text-slate-400 enabled:dark:hover:bg-slate-600 enabled:dark:hover:text-white col-span-2  select-none  gap-2   
-   p-2 
+  form > div {
+    @apply col-span-full  col-start-1;
   }
 }
-@layer components {  
-  .test {
-    @apply flex flex-col bg-green-800  before:content-['min'] sm:bg-slate-600 sm:before:content-['sm']  
-    md:bg-red-800 md:before:content-['md'] lg:bg-orange-800   lg:before:content-['lg'] 
-     xl:bg-sky-600     xl:before:content-['xl']  2xl:bg-slate-900 2xl:before:content-['2xl'];
-  } 
-  .err{
-    @apply  input dark:border-error     dark:text-error  text-error border-error   focus:text-slate-900
-  } 
-  .input {
-    @apply  focus:ring-primary  focus:border-primary  block w-full rounded  border border-slate-300 bg-slate-50 px-2 py-1.5  text-slate-900 sm:text-lg 
-    outline-none dark:border-slate-600 dark:placeholder-slate-600 dark:bg-base  dark:text-slate-200
-    dark:focus:text-white  dark:focus:border-primary/50  
-  } 
- } 
+ 
+ 
+
+@layer utilities {
+  .grid-center {
+    @apply grid  place-items-center;
+  }
+  .swap-on ,.swap-off{@apply h-8 w-8 max-md:h-6 max-md:w-6 }
+  .input{@apply  focus:!border-0 input-md}
+}

@@ -1,10 +1,10 @@
-export type ColUidParamsType = { params: { uid: string; col: string } };
+export type ColUidParamsType = { params: { slug: string,uid: string,col: string } };
 
 export type LinkType = {
   name: string;
   slug: string;
 };
-export type ColIdParamsType = { params: { id: string; col: string } };
+export type ColIdParamsType = { params: { slug: string, col: string,uid: string; } };
 export type RateType = 0 | 1 | 2 | 3 | 4 | 6 | 5 | 7 | 8 | 9 | 10;
 export type QuantityType = 0 | 1 | 2 | 3;
 export interface IItem {

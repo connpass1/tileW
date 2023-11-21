@@ -1,5 +1,5 @@
 "use client";
-import { SubmitButton } from "@/app/_components/form/button";
+ 
 import { minLength } from "@/app/_components/form/errorMessage";
 import { signUp } from "@/app/api/_data/fetch";
 import { useState } from "react";
@@ -31,24 +31,21 @@ export default function Page() {
       });
   };
   return (
-    <form className="grid grid-cols-2 gap-4" onSubmit={handleSubmit(onSubmit)}>
+    <form   onSubmit={handleSubmit(onSubmit)}>
       <label
-        htmlFor="email"
-        className="mb-2 block text-right text-sm font-medium"
-      >
+        htmlFor="email">
+        
+      
         Your email
       </label>
       <input
-        type="text"
-        
+        type="text" 
         id="email"
-        {...register("email", minLength("email", 6))}
-        className="focus:ring-primary-600 focus:border-primary-600 block w-full rounded-lg border border-slate-300 bg-slate-50 p-2.5 font-font3 text-slate-900 dark:border-slate-600 dark:bg-slate-700 dark:text-white dark:placeholder-slate-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 sm:text-sm"
+        {...register("email", minLength("email", 6))} 
         placeholder="name@company.com"
       />
       <label
-        htmlFor="password"
-        className="mb-2 block text-right font-font1 text-sm font-medium"
+        htmlFor="password" 
       >
         Password
       </label>
@@ -56,12 +53,10 @@ export default function Page() {
         type="password"
         {...register("password", minLength("password", 6))} 
         id="password"
-        placeholder="••••••••"
-        className="focus:ring-primary-600 focus:border-primary-600 block w-full rounded-lg border border-slate-300 bg-slate-50 p-2.5 text-slate-900 dark:border-slate-600 dark:bg-slate-700 dark:text-white dark:placeholder-slate-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 sm:text-sm"
+        placeholder="••••••••" 
       />
  <label
-      htmlFor="password1"
-      className="mb-2 block text-sm font-medium text-right font-font1"
+      htmlFor="password1" 
     >
       Password repeat
     </label>
@@ -69,11 +64,10 @@ export default function Page() {
       type="password"
       name="password1"
       id="password1"
-      placeholder="••••••••"
-      className="focus:ring-primary-600 focus:border-primary-600 block w-full rounded-lg border border-slate-300 bg-slate-50 p-2.5 text-slate-900 dark:border-slate-600 dark:bg-slate-700 dark:text-white dark:placeholder-slate-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 sm:text-sm"
+      placeholder="••••••••"  
       required
     /> 
-      <SubmitButton loading={loading}> Sign in </SubmitButton>
+      <button> Sign in </button>
     </form>
   );
 }
