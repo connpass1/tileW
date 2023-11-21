@@ -4,7 +4,7 @@ import { getItem } from "@/app/api/_data/fetch";
 import { ColUidParamsType } from "@/app/api/_data/types";
 import { sql } from "@vercel/postgres";
 import { Metadata, ResolvingMetadata } from "next";
-import { revalidatePath } from "next/cache";
+ 
 import Link from "next/link";
  
  
@@ -21,7 +21,7 @@ export async function generateMetadata(
 }
  
 export async function selectAll(uid:number) { 
-   revalidatePath('/')
+
     const  req = await sql`SELECT id, name,render,sort from items where parent_id =${uid}  ORDER BY sort  DESC;`  
     return req 
     }
